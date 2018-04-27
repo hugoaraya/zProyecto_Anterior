@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ff8d46a009fb4939b62fd1090685ed17" Name="Diagram1">
+        <EntityTypeShape EntityType="ModeloEntities.CALENDARIO_MINUTA" Width="1.5" PointX="16.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.CLIENTE" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.COMEDOR" Width="1.5" PointX="14.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.DETALLE_MINUTA" Width="1.5" PointX="16.5" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.EMPLEADO" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.EMPRESA" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.ESTADO_HABITACION" Width="1.5" PointX="12" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.FACTURA" Width="1.5" PointX="9.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.FAMILIA" Width="1.5" PointX="12" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.HABITACION" Width="1.5" PointX="14.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.HUESPED" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.MINUTA" Width="1.5" PointX="14.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.ORDEN_DE_COMPRA" Width="1.5" PointX="12" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.ORDEN_DE_PEDIDO" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.PRODUCTO" Width="1.5" PointX="12" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.PROVEEDOR" Width="1.5" PointX="7.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.RUBRO" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.STOCK" Width="1.5" PointX="9.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.TIPO_HABITACION" Width="1.5" PointX="12" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.TIPO_PRODUCTO" Width="1.5" PointX="12" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.TIPO_SERVICIO" Width="1.5" PointX="12" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.TIPO_USUARIO" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.TRABAJADOR" Width="1.5" PointX="9.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloEntities.USUARIO" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="ModeloEntities.ID_CALENDARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.ID_CLIENTE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.USUARIO_CLIENTE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.COMEDOR_ORDEN_DE_COMPRA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.COMEDOR_TIPO_SERVICIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.DETALLE_MINUTA_MINUTA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.ORDEN_DE_PEDIDO_EMPLEADO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.USUARIO_EMLEADO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.ID_EMPRESA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.ID_ESTADO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.ORDEN_DE_COMPRA_FACTURA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.FAMILIA_STOCK_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.HABITACION_ORDEN_DE_COMPRA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.HABITACION_TIPO_HABITACION_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.MINUTA_TIPO_SERVICIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.ORDEN_DE_COMPRA_TRABAJADOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.ID_ORDEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.PRODUCTO_STOCK_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.ID_PROVEEDOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.PROVEEDOR_RUBRO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.TIPO_PRODUCTO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModeloEntities.TIPO_USUARIO_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
