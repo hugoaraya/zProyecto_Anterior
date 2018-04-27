@@ -1,0 +1,43 @@
+
+/* Estilo para el menú
+    --HTML..
+
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/menu-style.css">
+
+
+  <nav>
+        <ul>
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
+            <li>
+                <a href="#">Galería</a>
+            </li>
+            <li>
+                <a href="#">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+*/
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:black;
+}
+
+nav li {
+    float: left;
+    margin-right: 40px;
+    padding: 14px 16px;
+}
+
+nav li a{
+    color:white;
+}
+
+nav li:hover {
+    background-color: gray;
+}

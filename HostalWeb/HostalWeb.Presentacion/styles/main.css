@@ -1,0 +1,24 @@
+header img {
+    width: 100px;
+}
+
+img, video, embed, object {
+	max-width: 100%;
+}
+a {
+	text-decoration: none;
+}
+body { 
+    text-align:center;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.box {
+    text-align:center;
+    padding:30px;
+}
