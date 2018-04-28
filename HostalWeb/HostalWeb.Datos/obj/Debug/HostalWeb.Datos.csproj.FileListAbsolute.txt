@@ -10,15 +10,3 @@ C:\Users\Hugo\Desktop\HostalWebEnCapas\HostalWeb.Datos\bin\Debug\EntityFramework
 C:\Users\Hugo\Desktop\HostalWebEnCapas\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.csprojResolveAssemblyReference.cache
 C:\Users\Hugo\Desktop\HostalWebEnCapas\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.dll
 C:\Users\Hugo\Desktop\HostalWebEnCapas\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.pdb
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\bin\Debug\HostalWeb.Datos.dll.config
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\bin\Debug\HostalWeb.Datos.dll
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\bin\Debug\HostalWeb.Datos.pdb
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\bin\Debug\EntityFramework.dll
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\bin\Debug\Oracle.ManagedDataAccess.dll
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\bin\Debug\EntityFramework.xml
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.csprojResolveAssemblyReference.cache
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.dll
-C:\Users\Hugo\Desktop\HostalWebEnCapas_2\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.pdb

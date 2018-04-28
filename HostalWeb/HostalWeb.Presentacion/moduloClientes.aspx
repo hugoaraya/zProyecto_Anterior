@@ -2,15 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2>Modulo Administracion Clientes</h2>
+    <h2>Módulo Administración Clientes</h2>
       <div class="contenedor">
         <div class="box" >
             <h3>Registrar Cliente</h3>
                 <a href="../templates/mantenedorCliente.aspx">Mantenedor Cliente (completo)???</a><br />
                 <a href="../templates/ingresarCliente.aspx">Ingresar Cliente</a><br />
                 <a href="../templates/obtenerDatoCliente.aspx">Obtener Dato Cliente</a><br />
-                <a href="../templates/obtenerListaClientes.aspx">Obtener Lista Clientes</a><br />
-                <a href="../templates/ModificarClientes.aspx">Modificar Cliente</a>
+                <a href="../templates/obtenerListaClientes.aspx">Obtener Lista Cliente</a><br />
+                <a href="../templates/ModificarCliente.aspx">Modificar Cliente</a>
         </div>
         <div class="box" >
              <h3>Registrar Empresa</h3>
@@ -28,9 +28,5 @@
                 <a href="../templates/obtenerListaTrabajadores.aspx">Obtener Lista Trabajadores</a><br />
                 <a href="../templates/ModificarTrabajador.aspx">Modificar Trabajador</a>
         </div>
-
-
-
-
     </div>
 </asp:Content>

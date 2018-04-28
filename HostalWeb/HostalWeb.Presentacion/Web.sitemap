@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="index.aspx" title="Pagina de Inicio"  description="Pagina de Inicio">
-        <siteMapNode url="moduloClientes.aspx" title="Modulo Administracion de Clientes"  description="Modulo Administracion de Clientes" />
-      <siteMapNode url="moduloHostal.aspx" title="Modulo Administracion de Hostal"  description="Modulo Administracion de Hostal" />
-      <siteMapNode url="moduloProveedores.aspx" title="Modulo Administracion de Proveedores"  description="Modulo Administracion de Proveedores" />
-      <siteMapNode url="ingresarCliente.aspx" title="Modulo Administracion de Proveedores"  description="Modulo Administracion de Proveedores" />
+    <siteMapNode url="index.aspx" title="Página de Inicio"  description="Página de Inicio">
+        <siteMapNode url="moduloClientes.aspx" title="Módulo Administración de Clientes"  description="Módulo Administración de Clientes" />
+      <siteMapNode url="moduloHostal.aspx" title="Módulo Administración de Hostal"  description="Módulo Administración de Hostal" />
+      <siteMapNode url="moduloProveedores.aspx" title="Módulo Administración de Proveedores"  description="Módulo Administración de Proveedores" />
+      <siteMapNode url="ingresarCliente.aspx" title="Módulo Administración de Proveedores"  description="Módulo Administración de Proveedores" />
 
     </siteMapNode>
 </siteMap>
