@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6AD0C9BC-455A-42F7-B7F2-B5D3C0FFF338}</ProjectGuid>
+    <ProjectGuid>{586F6F6D-D9FC-411C-AEFE-201F161518E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HostalWeb.Datos</RootNamespace>
@@ -75,6 +75,9 @@
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="EMPRESA.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESTADO_EMPLEADO.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="ESTADO_HABITACION.cs">
@@ -149,13 +152,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <EntityDeploy Include="HostalEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HostalEDM.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="HostalEDM.edmx.diagram">
       <DependentUpon>HostalEDM.edmx</DependentUpon>
     </None>

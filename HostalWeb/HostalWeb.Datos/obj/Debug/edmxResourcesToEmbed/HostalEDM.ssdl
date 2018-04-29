@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ModeloEntities.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="CALENDARIO_MINUTA">
     <Key>
       <PropertyRef Name="ID_CALENDARIO" />
@@ -14,14 +14,14 @@
       <PropertyRef Name="ID_CLIENTE" />
     </Key>
     <Property Name="ID_CLIENTE" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="RUT_EMPRESA" Type="varchar2" MaxLength="15" Nullable="false" />
-    <Property Name="NOMBRE_CLIENTE" Type="varchar2" MaxLength="15" Nullable="false" />
-    <Property Name="TELEFONO_CLIENTE" Type="varchar2" MaxLength="10" Nullable="false" />
-    <Property Name="CORREO_CLIENTE" Type="varchar2" MaxLength="30" Nullable="false" />
-    <Property Name="USUARIO_CLIENTE" Type="varchar2" MaxLength="15" Nullable="false" />
-    <Property Name="CONTRASENA_CLIENTE" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="RUT_CLIENTE" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="DV_CLIENTE" Type="varchar2" MaxLength="2" />
+    <Property Name="NOMBRES_CLIENTE" Type="varchar2" MaxLength="40" Nullable="false" />
+    <Property Name="APELLIDOS_CLIENTE" Type="varchar2" MaxLength="40" Nullable="false" />
+    <Property Name="TELEFONO_CLIENTE" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="CORREO_CLIENTE" Type="varchar2" MaxLength="62" Nullable="false" />
     <Property Name="ID_USUARIO" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="PERFIL_CLIENTE" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="ID_EMPRESA" Type="number" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="COMEDOR">
     <Key>
@@ -44,26 +44,32 @@
       <PropertyRef Name="ID_EMPLEADO" />
     </Key>
     <Property Name="ID_EMPLEADO" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="RUT_EMPLEADO" Type="varchar2" MaxLength="10" Nullable="false" />
-    <Property Name="NOMBRES_EMPLEADO" Type="varchar2" MaxLength="15" Nullable="false" />
-    <Property Name="APELLIDOS_EMPLEADO" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="TELEFONO_EMPLEADO" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="RUT_EMPLEADO" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="DV_EMPLEADO" Type="varchar2" MaxLength="2" />
+    <Property Name="NOMBRES_EMPLEADO" Type="varchar2" MaxLength="40" Nullable="false" />
+    <Property Name="APELLIDOS_EMPLEADO" Type="varchar2" MaxLength="40" />
+    <Property Name="TELEFONO_EMPLEADO" Type="varchar2" MaxLength="20" Nullable="false" />
     <Property Name="ESTADO_EMPLEADO" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="CORREO_EMPLEADO" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="PERFIL_EMPLEADO" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="ID_USUARIO" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="USUARIO_USUARIO" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="CORREO_EMPLEADO" Type="varchar2" MaxLength="62" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="number" Precision="10" Scale="0" />
   </EntityType>
   <EntityType Name="EMPRESA">
     <Key>
       <PropertyRef Name="ID_EMPRESA" />
     </Key>
     <Property Name="ID_EMPRESA" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="RUT_EMPRESA" Type="varchar2" MaxLength="10" Nullable="false" />
-    <Property Name="NOMBRE_EMPRESA" Type="varchar2" MaxLength="15" Nullable="false" />
-    <Property Name="DIRECCION_EMPRESA" Type="varchar2" MaxLength="20" Nullable="false" />
-    <Property Name="GIRO_EMPRESA" Type="varchar2" MaxLength="15" Nullable="false" />
-    <Property Name="ID_CLIENTE" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="RUT_EMPRESA" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="DV_EMPRESA" Type="varchar2" MaxLength="2" />
+    <Property Name="NOMBRE_EMPRESA" Type="varchar2" MaxLength="40" Nullable="false" />
+    <Property Name="DIRECCION_EMPRESA" Type="varchar2" MaxLength="60" Nullable="false" />
+    <Property Name="GIRO_EMPRESA" Type="varchar2" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESTADO_EMPLEADO">
+    <Key>
+      <PropertyRef Name="ID_ESTADO" />
+    </Key>
+    <Property Name="ID_ESTADO" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="40" Nullable="false" />
   </EntityType>
   <EntityType Name="ESTADO_HABITACION">
     <Key>
@@ -126,7 +132,7 @@
     <Property Name="ID_FACTURA" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="DETALLE_ORDEN" Type="varchar2" MaxLength="30" Nullable="false" />
     <Property Name="PRECIO_ORDEN" Type="number" Precision="10" Scale="0" />
-    <Property Name="RUT_TRABAJADOR" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="ID_TRABAJADOR" Type="number" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="ORDEN_DE_PEDIDO">
     <Key>
@@ -154,18 +160,20 @@
     </Key>
     <Property Name="ID_PROVEEDOR" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="RUT_PROVEEDOR" Type="varchar2" MaxLength="10" Nullable="false" />
-    <Property Name="NOMBRES_PROVEEDOR" Type="varchar2" MaxLength="15" Nullable="false" />
-    <Property Name="APELLIDOS_PROVEEDOR" Type="varchar2" MaxLength="15" Nullable="false" />
-    <Property Name="TELEFONO_PROVEEDOR" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="DV_PROVEEDOR" Type="varchar2" MaxLength="2" />
+    <Property Name="NOMBRES_PROVEEDOR" Type="varchar2" MaxLength="40" Nullable="false" />
+    <Property Name="APELLIDOS_PROVEEDOR" Type="varchar2" MaxLength="40" />
+    <Property Name="TELEFONO_PROVEEDOR" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="CORREO_PROVEEDOR" Type="varchar2" MaxLength="62" Nullable="false" />
     <Property Name="ID_RUBRO" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="PERFIL_PROOVEDOR" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="number" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="RUBRO">
     <Key>
       <PropertyRef Name="ID_RUBRO" />
     </Key>
     <Property Name="ID_RUBRO" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="NOMBRE_RUBRO" Type="varchar2" MaxLength="15" Nullable="false" />
+    <Property Name="DESCRIPCION_RUBRO" Type="varchar2" MaxLength="40" Nullable="false" />
   </EntityType>
   <EntityType Name="STOCK">
     <Key>
@@ -208,17 +216,18 @@
       <PropertyRef Name="ID_TIPO" />
     </Key>
     <Property Name="ID_TIPO" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="15" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="40" Nullable="false" />
   </EntityType>
   <EntityType Name="TRABAJADOR">
     <Key>
-      <PropertyRef Name="RUT_TRABAJADOR" />
+      <PropertyRef Name="ID_TRABAJADOR" />
     </Key>
+    <Property Name="ID_TRABAJADOR" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="RUT_TRABAJADOR" Type="varchar2" MaxLength="10" Nullable="false" />
     <Property Name="DV_TRABAJADOR" Type="varchar2" MaxLength="2" />
-    <Property Name="NOMBRE_TRABAJADOR" Type="varchar2" MaxLength="15" Nullable="false" />
-    <Property Name="APELLIDO_TRABAJADOR" Type="varchar2" MaxLength="15" />
-    <Property Name="TELEFONO" Type="varchar2" MaxLength="15" Nullable="false" />
+    <Property Name="NOMBRE_TRABAJADOR" Type="varchar2" MaxLength="40" Nullable="false" />
+    <Property Name="APELLIDO_TRABAJADOR" Type="varchar2" MaxLength="40" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar2" MaxLength="20" />
     <Property Name="ID_EMPRESA" Type="number" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="USUARIO">
@@ -226,7 +235,7 @@
       <PropertyRef Name="ID_USUARIO" />
     </Key>
     <Property Name="ID_USUARIO" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="USUARIO" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="USUARIO" Type="varchar2" MaxLength="20" Nullable="false" />
     <Property Name="CONTRASENA" Type="varchar2" MaxLength="10" Nullable="false" />
     <Property Name="ID_TIPO" Type="number" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
@@ -263,6 +272,30 @@
       </Principal>
       <Dependent Role="DETALLE_MINUTA">
         <PropertyRef Name="ID_MINUTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EMPRESA_CLIENTE_FK">
+    <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EMPRESA_PROVEEDOR_FK">
+    <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+    <End Role="TRABAJADOR" Type="Self.TRABAJADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Principal>
+      <Dependent Role="TRABAJADOR">
+        <PropertyRef Name="ID_EMPRESA" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -311,30 +344,6 @@
       </Principal>
       <Dependent Role="CALENDARIO_MINUTA">
         <PropertyRef Name="ID_MINUTA" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ID_CLIENTE_FK">
-    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
-    <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CLIENTE">
-        <PropertyRef Name="ID_CLIENTE" />
-      </Principal>
-      <Dependent Role="EMPRESA">
-        <PropertyRef Name="ID_CLIENTE" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ID_EMPRESA_FK">
-    <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
-    <End Role="TRABAJADOR" Type="Self.TRABAJADOR" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EMPRESA">
-        <PropertyRef Name="ID_EMPRESA" />
-      </Principal>
-      <Dependent Role="TRABAJADOR">
-        <PropertyRef Name="ID_EMPRESA" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -403,10 +412,10 @@
     <End Role="ORDEN_DE_COMPRA" Type="Self.ORDEN_DE_COMPRA" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TRABAJADOR">
-        <PropertyRef Name="RUT_TRABAJADOR" />
+        <PropertyRef Name="ID_TRABAJADOR" />
       </Principal>
       <Dependent Role="ORDEN_DE_COMPRA">
-        <PropertyRef Name="RUT_TRABAJADOR" />
+        <PropertyRef Name="ID_TRABAJADOR" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -434,7 +443,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PROVEEDOR_RUBRO_FK">
+  <Association Name="RUBRO_PROVEEDOR_FK">
     <End Role="RUBRO" Type="Self.RUBRO" Multiplicity="1" />
     <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
     <ReferentialConstraint>
@@ -483,7 +492,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="USUARIO_EMLEADO_FK">
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
     <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="USUARIO">
@@ -494,13 +503,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ModeloEntitiesStoreContainer">
+  <Association Name="USUARIO_PROVEEDOR_FK">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="CALENDARIO_MINUTA" EntityType="Self.CALENDARIO_MINUTA" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="COMEDOR" EntityType="Self.COMEDOR" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="DETALLE_MINUTA" EntityType="Self.DETALLE_MINUTA" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="HOSTALDB" store:Type="Tables" />
+    <EntitySet Name="ESTADO_EMPLEADO" EntityType="Self.ESTADO_EMPLEADO" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="ESTADO_HABITACION" EntityType="Self.ESTADO_HABITACION" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="FACTURA" EntityType="Self.FACTURA" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="FAMILIA" EntityType="Self.FAMILIA" Schema="HOSTALDB" store:Type="Tables" />
@@ -531,6 +553,14 @@
       <End Role="MINUTA" EntitySet="MINUTA" />
       <End Role="DETALLE_MINUTA" EntitySet="DETALLE_MINUTA" />
     </AssociationSet>
+    <AssociationSet Name="EMPRESA_CLIENTE_FK" Association="Self.EMPRESA_CLIENTE_FK">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="EMPRESA_PROVEEDOR_FK" Association="Self.EMPRESA_PROVEEDOR_FK">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
+    </AssociationSet>
     <AssociationSet Name="FAMILIA_STOCK_FK" Association="Self.FAMILIA_STOCK_FK">
       <End Role="STOCK" EntitySet="STOCK" />
       <End Role="FAMILIA" EntitySet="FAMILIA" />
@@ -546,14 +576,6 @@
     <AssociationSet Name="ID_CALENDARIO_FK" Association="Self.ID_CALENDARIO_FK">
       <End Role="MINUTA" EntitySet="MINUTA" />
       <End Role="CALENDARIO_MINUTA" EntitySet="CALENDARIO_MINUTA" />
-    </AssociationSet>
-    <AssociationSet Name="ID_CLIENTE_FK" Association="Self.ID_CLIENTE_FK">
-      <End Role="CLIENTE" EntitySet="CLIENTE" />
-      <End Role="EMPRESA" EntitySet="EMPRESA" />
-    </AssociationSet>
-    <AssociationSet Name="ID_EMPRESA_FK" Association="Self.ID_EMPRESA_FK">
-      <End Role="EMPRESA" EntitySet="EMPRESA" />
-      <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
     </AssociationSet>
     <AssociationSet Name="ID_ESTADO_FK" Association="Self.ID_ESTADO_FK">
       <End Role="ESTADO_HABITACION" EntitySet="ESTADO_HABITACION" />
@@ -587,7 +609,7 @@
       <End Role="STOCK" EntitySet="STOCK" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
     </AssociationSet>
-    <AssociationSet Name="PROVEEDOR_RUBRO_FK" Association="Self.PROVEEDOR_RUBRO_FK">
+    <AssociationSet Name="RUBRO_PROVEEDOR_FK" Association="Self.RUBRO_PROVEEDOR_FK">
       <End Role="RUBRO" EntitySet="RUBRO" />
       <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
     </AssociationSet>
@@ -606,6 +628,10 @@
     <AssociationSet Name="USUARIO_EMLEADO_FK" Association="Self.USUARIO_EMLEADO_FK">
       <End Role="USUARIO" EntitySet="USUARIO" />
       <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="USUARIO_PROVEEDOR_FK" Association="Self.USUARIO_PROVEEDOR_FK">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
