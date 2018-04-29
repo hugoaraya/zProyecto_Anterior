@@ -21,6 +21,6 @@
         # imagen de modulo clientes
     </p>
       
-     <img src="../img/ImagenEjemplo.png" alt="Imagen de ejemplo">
+     <img src="../img/ImagenEjemplo.png" alt="Imagen de ejemplo"/>
    
 </asp:Content>
