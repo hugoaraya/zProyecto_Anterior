@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using HostalWeb.Datos;
 namespace HostalWeb.Negocio
 {
-    public class Conexion
+     internal class Conexion
     {
         private static HostalEntities _modeloEntities;
 
@@ -20,11 +20,8 @@ namespace HostalWeb.Negocio
                 }
                 return _modeloEntities;
             }
+            set { _modeloEntities = value; }
         }
 
-        public Conexion()
-        {
-
-        }
     }
 }

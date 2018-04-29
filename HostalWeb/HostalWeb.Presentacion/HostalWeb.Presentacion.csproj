@@ -113,7 +113,7 @@
     <Content Include="img\ImagenEjemplo.png" />
     <Content Include="img\logo.png" />
     <Content Include="index.aspx" />
-    <Content Include="templates\ingresarCliente.aspx" />
+    <Content Include="templates\IngresarCliente.aspx" />
     <Content Include="moduloClientes.aspx" />
     <Content Include="moduloHostal.aspx" />
     <Content Include="moduloProveedores.aspx" />
@@ -130,6 +130,9 @@
     </None>
     <Content Include="styles\main.css" />
     <Content Include="styles\menu-style.css" />
+    <Content Include="templates\IngresarEmpresa.aspx" />
+    <Content Include="templates\MantenedorEmpresa.aspx" />
+    <Content Include="templates\ObtenerListaEmpresas.aspx" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -145,12 +148,12 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="templates\ingresarCliente.aspx.cs">
-      <DependentUpon>ingresarCliente.aspx</DependentUpon>
+    <Compile Include="templates\IngresarCliente.aspx.cs">
+      <DependentUpon>IngresarCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="templates\ingresarCliente.aspx.designer.cs">
-      <DependentUpon>ingresarCliente.aspx</DependentUpon>
+    <Compile Include="templates\IngresarCliente.aspx.designer.cs">
+      <DependentUpon>IngresarCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Maestra.Master.cs">
       <DependentUpon>Maestra.Master</DependentUpon>
@@ -181,6 +184,27 @@
       <DependentUpon>moduloProveedores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="templates\IngresarEmpresa.aspx.cs">
+      <DependentUpon>IngresarEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\IngresarEmpresa.aspx.designer.cs">
+      <DependentUpon>IngresarEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\MantenedorEmpresa.aspx.cs">
+      <DependentUpon>MantenedorEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\MantenedorEmpresa.aspx.designer.cs">
+      <DependentUpon>MantenedorEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\ObtenerListaEmpresas.aspx.cs">
+      <DependentUpon>ObtenerListaEmpresas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ObtenerListaEmpresas.aspx.designer.cs">
+      <DependentUpon>ObtenerListaEmpresas.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HostalWeb.Negocio\HostalWeb.Negocio.csproj">

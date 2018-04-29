@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Colecciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HostalWeb.Datos\HostalWeb.Datos.csproj">
-      <Project>{6ad0c9bc-455a-42f7-b7f2-b5d3c0fff338}</Project>
+      <Project>{586f6f6d-d9fc-411c-aefe-201f161518e0}</Project>
       <Name>HostalWeb.Datos</Name>
     </ProjectReference>
   </ItemGroup>
