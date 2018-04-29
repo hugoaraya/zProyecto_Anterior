@@ -13,7 +13,7 @@
 
         Y se pueden guiar con el modulo clientes que tiene contenido <br />
         <br />
-         Solo el link <b>Ingresar Cliente</b> esta funcionando con su archivo en carpeta templates
+         Solo el link Ingresar Cliente esta funcionando con su archivo en carpeta templates
         <br />
         <br />
          <br />
