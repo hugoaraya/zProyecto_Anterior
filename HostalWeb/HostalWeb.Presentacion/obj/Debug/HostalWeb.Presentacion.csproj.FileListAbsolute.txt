@@ -171,9 +171,5 @@ C:\Users\Hugo\Desktop\GIT\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Presentacion\
 C:\Users\Hugo\Desktop\GIT\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Presentacion\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Hugo\Desktop\GIT\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Hugo\Desktop\GIT\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Presentacion\bin\HostalWeb.Datos.pdb
-<<<<<<< HEAD
-C:\Users\Hugo\Desktop\GIT\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Presentacion\obj\Debug\HostalWeb.Presentacion.csprojResolveAssemblyReference.cache
-=======
->>>>>>> HugoAraya
 C:\Users\Hugo\Desktop\GIT\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Presentacion\obj\Debug\HostalWeb.Presentacion.dll
 C:\Users\Hugo\Desktop\GIT\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Presentacion\obj\Debug\HostalWeb.Presentacion.pdb
