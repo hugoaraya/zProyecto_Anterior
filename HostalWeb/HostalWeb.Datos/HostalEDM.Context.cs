@@ -25,28 +25,11 @@ namespace HostalWeb.Datos
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<CALENDARIO_MINUTA> CALENDARIO_MINUTA { get; set; }
-        public virtual DbSet<CLIENTE> CLIENTE { get; set; }
-        public virtual DbSet<COMEDOR> COMEDOR { get; set; }
-        public virtual DbSet<DETALLE_MINUTA> DETALLE_MINUTA { get; set; }
         public virtual DbSet<EMPLEADO> EMPLEADO { get; set; }
         public virtual DbSet<EMPRESA> EMPRESA { get; set; }
         public virtual DbSet<ESTADO_EMPLEADO> ESTADO_EMPLEADO { get; set; }
-        public virtual DbSet<ESTADO_HABITACION> ESTADO_HABITACION { get; set; }
-        public virtual DbSet<FACTURA> FACTURA { get; set; }
-        public virtual DbSet<FAMILIA> FAMILIA { get; set; }
-        public virtual DbSet<HABITACION> HABITACION { get; set; }
-        public virtual DbSet<HUESPED> HUESPED { get; set; }
-        public virtual DbSet<MINUTA> MINUTA { get; set; }
-        public virtual DbSet<ORDEN_DE_COMPRA> ORDEN_DE_COMPRA { get; set; }
-        public virtual DbSet<ORDEN_DE_PEDIDO> ORDEN_DE_PEDIDO { get; set; }
-        public virtual DbSet<PRODUCTO> PRODUCTO { get; set; }
         public virtual DbSet<PROVEEDOR> PROVEEDOR { get; set; }
         public virtual DbSet<RUBRO> RUBRO { get; set; }
-        public virtual DbSet<STOCK> STOCK { get; set; }
-        public virtual DbSet<TIPO_HABITACION> TIPO_HABITACION { get; set; }
-        public virtual DbSet<TIPO_PRODUCTO> TIPO_PRODUCTO { get; set; }
-        public virtual DbSet<TIPO_SERVICIO> TIPO_SERVICIO { get; set; }
         public virtual DbSet<TIPO_USUARIO> TIPO_USUARIO { get; set; }
         public virtual DbSet<TRABAJADOR> TRABAJADOR { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }

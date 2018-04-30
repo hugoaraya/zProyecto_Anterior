@@ -20,8 +20,8 @@ namespace HostalWeb.Datos
             this.PROVEEDOR = new HashSet<PROVEEDOR>();
         }
     
-        public int ID_RUBRO { get; set; }
-        public string DESCRIPCION_RUBRO { get; set; }
+        public int ID { get; set; }
+        public string DESCRIPCION { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROVEEDOR> PROVEEDOR { get; set; }

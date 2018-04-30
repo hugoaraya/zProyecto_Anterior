@@ -1,0 +1,453 @@
+
+--LIMPIEZA DE AMBIENTE...
+--SELECT 'DROP TABLE '||table_name||' CASCADE CONSTRAINTS;' FROM user_tables
+
+
+--MODIFICADA quite campo nombre..
+CREATE TABLE tipo_usuario (
+    id            NUMBER(10) NOT NULL,
+    descripcion   VARCHAR2(45) NOT NULL
+);
+ALTER TABLE tipo_usuario ADD CONSTRAINT tipo_usuario_pk PRIMARY KEY ( id );
+
+
+--MODIFICADA quite NOT NULL a trabajador_id,empleado_id y proveedor_id
+CREATE TABLE usuario (
+    id                NUMBER(10) NOT NULL,
+    nombre            VARCHAR2(45) NOT NULL,
+    contrasena        VARCHAR2(45) NOT NULL,
+    tipo_usuario_id   NUMBER(10) NOT NULL,
+    trabajador_id     NUMBER(10),
+    empleado_id       NUMBER(10),
+    proveedor_id      NUMBER(10)
+);
+ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( id );
+
+ALTER TABLE usuario
+    ADD CONSTRAINT usuario_tipo_usuario_fk FOREIGN KEY ( tipo_usuario_id )
+        REFERENCES tipo_usuario ( id );
+
+		
+		
+--agregue estado_empleado para ver si es trabajador del hostal o esta despedido		
+CREATE TABLE estado_empleado (
+    id			      NUMBER(10) NOT NULL,
+    descripcion       VARCHAR2(40) NOT NULL
+);
+ALTER TABLE estado_empleado ADD CONSTRAINT estado_empleado_pk PRIMARY KEY( id);
+
+
+--MODIFICADA -Agregue telefono y correo-- y estado_empleado
+CREATE TABLE empleado (
+    id           NUMBER(10) NOT NULL,
+    rut          NUMBER(10) NOT NULL,
+    dv           CHAR(1) NOT NULL,
+    nombre       VARCHAR2(45) NOT NULL,
+    apellido     VARCHAR2(45),
+    cargo        VARCHAR2(45) NOT NULL,
+    telefono	 VARCHAR2(20),
+    correo	 	 VARCHAR2(50),
+	estado_id    NUMBER(10) NOT NULL,
+    usuario_id   NUMBER(10)
+);
+
+ALTER TABLE empleado ADD CONSTRAINT empleado_pk PRIMARY KEY ( id );	
+--agregue relacion empleado usuario..
+ALTER TABLE empleado
+    ADD CONSTRAINT empleado_usuario_fk FOREIGN KEY ( usuario_id )
+        REFERENCES usuario ( id );
+--agregue relacion empleado usuario..
+ALTER TABLE empleado
+    ADD CONSTRAINT empleado_estado_fk FOREIGN KEY ( estado_id )
+        REFERENCES estado_empleado ( id );
+--agregue relacion usuario empleado ..		
+ALTER TABLE usuario 
+    ADD CONSTRAINT usuario_empleado_fk FOREIGN KEY ( empleado_id )
+        REFERENCES empleado ( id );
+
+		
+		
+--MODIFICADA ..quite trabajador_id   NUMBER(10) NOT NULL  .
+CREATE TABLE empresa (
+    id              NUMBER(10) NOT NULL,
+    rut             NUMBER(10) NOT NULL,
+    dv              CHAR(1) NOT NULL,
+    nombre          VARCHAR2(45) NOT NULL,
+    giro            VARCHAR2(45) NOT NULL,
+    direccion       VARCHAR2(100) NOT NULL
+);
+ALTER TABLE empresa ADD CONSTRAINT empresa_pk PRIMARY KEY ( id );
+
+-- MODIFICADO ELIMINE RELACION CON TRABAJADOR:..
+--ALTER TABLE empresa
+  --  ADD CONSTRAINT empresa_trabajador_fk FOREIGN KEY ( trabajador_id )
+    --    REFERENCES trabajador ( id );
+	
+--MODIFICADA -Agregue telefono y correo
+CREATE TABLE trabajador (
+    id           NUMBER(10) NOT NULL,
+    rut          NUMBER(10) NOT NULL,
+    dv           CHAR(1) NOT NULL,
+    nombre       VARCHAR2(45) NOT NULL,
+    apellido     VARCHAR2(45) NOT NULL,
+	telefono	 VARCHAR2(20),
+    correo	 	 VARCHAR2(50),
+    empresa_id   NUMBER(10) NOT NULL,
+    usuario_id   NUMBER(10)
+);
+ALTER TABLE trabajador ADD CONSTRAINT trabajador_pk PRIMARY KEY ( id );
+--agregue relacion trabajador empresa...
+ALTER TABLE trabajador
+    ADD CONSTRAINT trabajador_empresa_fk FOREIGN KEY ( empresa_id )
+        REFERENCES empresa ( id );
+--agregue relacion trabajador usuario
+ALTER TABLE trabajador
+    ADD CONSTRAINT trabajador_usuario_fk FOREIGN KEY ( usuario_id )
+        REFERENCES usuario ( id );
+--agregue relacion  usuario trabajador
+ALTER TABLE usuario
+    ADD CONSTRAINT usuario_trabajador_fk FOREIGN KEY ( trabajador_id )
+        REFERENCES trabajador ( id );
+
+		
+--MODIFICADO elimine rubro_id   NUMBER NOT NULL y canbie nombre por descripcion
+CREATE TABLE rubro (
+    id         	NUMBER(10) NOT NULL,
+    descripcion VARCHAR2(45) NOT NULL
+);
+ALTER TABLE rubro ADD CONSTRAINT rubro_pk PRIMARY KEY ( id );
+
+
+--MODiFICADO largo telefono  - elimine rubro_rubro_id   NUMBER NOT NULL --agregue correo
+CREATE TABLE proveedor (
+    id               NUMBER(10) NOT NULL,
+    rut              NUMBER(10) NOT NULL,
+    dv               CHAR(1) NOT NULL,
+    nombre           VARCHAR2(45) NOT NULL,
+    telefono         NUMBER(20),
+    direccion        VARCHAR2(45) NOT NULL,
+	correo	 	 	 VARCHAR2(50),
+    rubro_id         NUMBER(10) NOT NULL,
+    usuario_id       NUMBER(10) NOT NULL
+);
+ALTER TABLE proveedor ADD CONSTRAINT proveedor_pk PRIMARY KEY ( id );
+
+ALTER TABLE proveedor
+    ADD CONSTRAINT proveedor_rubro_fk FOREIGN KEY ( rubro_id )
+        REFERENCES rubro ( id );
+--agregue relacion proveedor usuario.
+ALTER TABLE proveedor
+    ADD CONSTRAINT proveedor_usuario_fk FOREIGN KEY ( usuario_id )
+        REFERENCES usuario ( id );
+--agregue relacion usuario proveedor.		
+ALTER TABLE usuario
+    ADD CONSTRAINT usuario_proveedor_fk FOREIGN KEY ( proveedor_id )
+        REFERENCES proveedor ( id );
+
+
+--(HUGO)HASTA ACA REVISE PARA CREAR USUARIOS Y TABLAS QUE ME CORRESPONDIAN ....
+
+--*********************
+-- AL CARGAR EL RESTO DEL SCRIPT ME GENERA ERROR EN VISUAL STUDIO AL CARGAR LA BD,,, :o
+--*********************
+
+/*
+
+
+
+CREATE TABLE factura (
+    id                NUMBER(10) NOT NULL,
+    orden_compra_id   NUMBER(10) NOT NULL,
+    empresa_id        NUMBER NOT NULL,
+    total             NUMBER(10) NOT NULL
+);
+
+ALTER TABLE factura ADD CONSTRAINT factura_pk PRIMARY KEY ( id );
+
+CREATE TABLE familia_producto (
+    id       NUMBER(10) NOT NULL,
+    nombre   VARCHAR2(45) NOT NULL
+);
+
+ALTER TABLE familia_producto ADD CONSTRAINT familia_producto_pk PRIMARY KEY ( id );
+
+CREATE TABLE habitacion (
+    id            NUMBER(10) NOT NULL,
+    estado        CHAR(1) NOT NULL,
+    valor         NUMBER(10) NOT NULL,
+    descripcion   VARCHAR2(45) NOT NULL
+);
+
+ALTER TABLE habitacion ADD CONSTRAINT habitacion_pk PRIMARY KEY ( id );
+
+CREATE TABLE habitacion_factura (
+    id               NUMBER(10) NOT NULL,
+    habitacion_id    NUMBER(10) NOT NULL,
+    factura_id       NUMBER(10) NOT NULL,
+    nombre           VARCHAR2(45) NOT NULL,
+    valor            NUMBER(10) NOT NULL
+);
+
+ALTER TABLE habitacion_factura ADD CONSTRAINT habitacion_factura_pk PRIMARY KEY ( id );
+
+CREATE TABLE habitacion_orden_compra (
+    id                 NUMBER(10) NOT NULL,
+    habitacion_id      NUMBER(10) NOT NULL,
+    orden_compra_id    NUMBER(10) NOT NULL,
+    valor              NUMBER(10) NOT NULL,
+    descripcion        VARCHAR2(45) NOT NULL
+);
+
+
+ALTER TABLE habitacion_orden_compra ADD CONSTRAINT habitacion_orden_compra_pk PRIMARY KEY ( id );
+
+CREATE TABLE huesped (
+    id               NUMBER(10) NOT NULL,
+    trabajador_id    NUMBER(10) NOT NULL,
+    habitacion_id    NUMBER(10) NOT NULL,
+    entrada          NUMBER(10) NOT NULL,
+    salida           NUMBER(10) NOT NULL
+);
+
+ALTER TABLE huesped ADD CONSTRAINT huesped_pk PRIMARY KEY ( id );
+
+CREATE TABLE minuta (
+    id             NUMBER(10) NOT NULL,
+    dia            TIMESTAMP,
+    servicio_id    NUMBER(10)
+);
+
+ALTER TABLE minuta ADD CONSTRAINT minuta_pk PRIMARY KEY ( id );
+
+CREATE TABLE minuta_plato (
+    id           NUMBER(10) NOT NULL,
+    minuta_id    NUMBER(10) NOT NULL,
+    plato_id     NUMBER(10) NOT NULL,
+    hora         DATE
+);
+
+ALTER TABLE minuta_plato ADD CONSTRAINT minuta_plato_pk PRIMARY KEY ( id );
+
+CREATE TABLE orden_compra (
+    id           NUMBER(10) NOT NULL,
+    detalle      VARCHAR2(45) NOT NULL,
+    empresa_id   NUMBER(10) NOT NULL,
+    creador_id   NUMBER NOT NULL
+);
+
+ALTER TABLE orden_compra ADD CONSTRAINT orden_compra_pk PRIMARY KEY ( id );
+
+CREATE TABLE orden_pedido (
+    id              NUMBER(10) NOT NULL,
+    detalle         VARCHAR2(255) NOT NULL,
+    proveedor_id    NUMBER(10) NOT NULL,
+    empleado_id     NUMBER(10) NOT NULL,
+    estado          CHAR(1) NOT NULL
+);
+
+ALTER TABLE orden_pedido ADD CONSTRAINT orden_pedido_pk PRIMARY KEY ( id );
+
+CREATE TABLE orden_pedido_producto (
+    id                 NUMBER(10) NOT NULL,
+    producto_id        NUMBER(10) NOT NULL,
+    orden_pedido_id    NUMBER(10) NOT NULL,
+    descripcion        VARCHAR2(255),
+    valor              NUMBER(10) NOT NULL
+);
+
+ALTER TABLE orden_pedido_producto ADD CONSTRAINT orden_pedido_producto_pk PRIMARY KEY ( id );
+
+CREATE TABLE plato (
+    id            NUMBER(10) NOT NULL,
+    nombre        VARCHAR2(45) NOT NULL,
+    descripcion   VARCHAR2(255) NOT NULL
+);
+
+ALTER TABLE plato ADD CONSTRAINT plato_pk PRIMARY KEY ( id );
+
+CREATE TABLE producto (
+    id                    NUMBER(10) NOT NULL,
+    nombre                VARCHAR2(45),
+    fecha_vencimiento     DATE,
+    tipo_producto_id      NUMBER(10) NOT NULL,
+    familia_id            NUMBER(10) NOT NULL,
+    proveedor_id          NUMBER(10) NOT NULL,
+    codigo_barras         NUMBER(17) NOT NULL,
+    familia_producto_id   NUMBER(10) NOT NULL,
+    stock_total           NUMBER(10) NOT NULL,
+    stock_saldo           NUMBER(10) NOT NULL
+);
+
+ALTER TABLE producto ADD CONSTRAINT producto_pk PRIMARY KEY ( id );
+
+CREATE TABLE servicio (
+    id       NUMBER(10) NOT NULL,
+    nombre   VARCHAR2(45) NOT NULL,
+    valor    NUMBER(10) NOT NULL
+);
+
+ALTER TABLE servicio ADD CONSTRAINT servicio_pk PRIMARY KEY ( id );
+
+CREATE TABLE servicio_factura (
+    id             NUMBER(10) NOT NULL,
+    servicio_id    NUMBER(10) NOT NULL,
+    nombre         VARCHAR2(45) NOT NULL,
+    valor          NUMBER(10) NOT NULL,
+    factura_id     NUMBER(10) NOT NULL
+);
+
+ALTER TABLE servicio_factura ADD CONSTRAINT servicio_factura_pk PRIMARY KEY ( id );
+
+CREATE TABLE servicio_oden_compra (
+    id                 NUMBER(10) NOT NULL,
+    servicio_id        NUMBER(10) NOT NULL,
+    orden_compra_id    NUMBER(10) NOT NULL,
+    valor              NUMBER(10) NOT NULL,
+    descripcion        VARCHAR2(45) NOT NULL
+);
+
+ALTER TABLE servicio_oden_compra ADD CONSTRAINT servicio_oden_compra_pk PRIMARY KEY ( id );
+
+CREATE TABLE tipo_producto (
+    id       NUMBER(10) NOT NULL,
+    nombre   VARCHAR2(45) NOT NULL
+);
+
+ALTER TABLE tipo_producto ADD CONSTRAINT tipo_producto_pk PRIMARY KEY ( id );
+
+
+ALTER TABLE factura
+    ADD CONSTRAINT factura_empresa_fk FOREIGN KEY ( empresa_id )
+        REFERENCES empresa ( id );
+
+ALTER TABLE habitacion_orden_compra
+    ADD CONSTRAINT hab_orden_orden_compra_fk FOREIGN KEY ( orden_compra_id )
+        REFERENCES orden_compra ( id );
+
+ALTER TABLE habitacion_factura
+    ADD CONSTRAINT habitacion_factura_factura_fk FOREIGN KEY ( factura_id )
+        REFERENCES factura ( id );
+
+ALTER TABLE habitacion_factura
+    ADD CONSTRAINT habitacion_factura_hab_fk FOREIGN KEY ( habitacion_id )
+        REFERENCES habitacion ( id );
+
+ALTER TABLE huesped
+    ADD CONSTRAINT huesped_habitacion_fk FOREIGN KEY ( habitacion_id )
+        REFERENCES habitacion ( id );
+
+ALTER TABLE huesped
+    ADD CONSTRAINT huesped_trabajador_fk FOREIGN KEY ( trabajador_id )
+        REFERENCES trabajador ( id );
+
+ALTER TABLE minuta_plato
+    ADD CONSTRAINT minuta_plato_minuta_fk FOREIGN KEY ( minuta_id )
+        REFERENCES minuta ( id );
+
+ALTER TABLE minuta_plato
+    ADD CONSTRAINT minuta_plato_plato_fk FOREIGN KEY ( plato_id )
+        REFERENCES plato ( id );
+
+ALTER TABLE minuta
+    ADD CONSTRAINT minuta_servicio_fk FOREIGN KEY ( servicio_id)
+        REFERENCES servicio ( id );
+
+ALTER TABLE habitacion_orden_compra
+    ADD CONSTRAINT orden_compra_habitacion_fk FOREIGN KEY ( habitacion_id )
+        REFERENCES habitacion ( id );
+
+ALTER TABLE orden_pedido
+    ADD CONSTRAINT orden_pedido_empleado_fk FOREIGN KEY ( empleado_id )
+        REFERENCES empleado ( id );
+
+ALTER TABLE orden_pedido
+    ADD CONSTRAINT orden_pedido_proveedor_fk FOREIGN KEY ( proveedor_id )
+        REFERENCES proveedor ( id );
+
+ALTER TABLE orden_pedido_producto
+    ADD CONSTRAINT orden_producto_orden_pedido_fk FOREIGN KEY ( orden_pedido_id )
+        REFERENCES orden_pedido ( id );
+
+ALTER TABLE orden_pedido_producto
+    ADD CONSTRAINT orden_producto_producto_fk FOREIGN KEY ( producto_id )
+        REFERENCES producto ( id );
+
+ALTER TABLE producto
+    ADD CONSTRAINT producto_familia_producto_fk FOREIGN KEY ( familia_producto_id )
+        REFERENCES familia_producto ( id );
+
+ALTER TABLE producto
+    ADD CONSTRAINT producto_tipo_producto_fk FOREIGN KEY ( tipo_producto_id )
+        REFERENCES tipo_producto ( id );
+
+ALTER TABLE servicio_oden_compra
+    ADD CONSTRAINT serv_compra_orden_compra_fk FOREIGN KEY ( orden_compra_id )
+        REFERENCES orden_compra ( id );
+
+ALTER TABLE servicio_oden_compra
+    ADD CONSTRAINT servicio_compra_servicio_fk FOREIGN KEY ( servicio_id )
+        REFERENCES servicio ( id );
+
+ALTER TABLE servicio_factura
+    ADD CONSTRAINT servicio_factura_factura_fk FOREIGN KEY ( factura_id )
+        REFERENCES factura ( id );
+
+ALTER TABLE servicio_factura
+    ADD CONSTRAINT servicio_factura_servicio_fk FOREIGN KEY ( servicio_id )
+        REFERENCES servicio ( id );
+
+
+		
+*/
+
+
+-- ESTE DOCUMENTO SE VEE MEJOR EN SQL DEVELOPER --- Y ES PARA POBLAR DATOS ANTES DE PROGRAMAR
+--select  from TABS;
+
+--select * from TIPO_USUARIO;
+insert into TIPO_USUARIO (ID,DESCRIPCION) values (1,'Administrador');
+insert into TIPO_USUARIO (ID,DESCRIPCION) values (2,'Empleado');
+insert into TIPO_USUARIO (ID,DESCRIPCION) values (3,'Cliente');
+insert into TIPO_USUARIO (ID,DESCRIPCION) values (4,'Proveedor');
+
+--select * from USUARIO;
+insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO_ID,PROVEEDOR_ID) values (1,'admin','admin',1,null,null,null);
+insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO_ID,PROVEEDOR_ID) values (2,'empleado1','empleado1',3,null,null,null);
+insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO_ID,PROVEEDOR_ID) values (3,'ciente1','cliente1',2,null,null,null);
+insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO_ID,PROVEEDOR_ID) values (4,'proveedor1','proveedor1',2,null,null,null);
+
+--select * from estado_empleado;
+insert into estado_empleado (ID,DESCRIPCION) values (1,'Contratado');
+insert into estado_empleado (ID,DESCRIPCION) values (2,'Despedido');
+insert into estado_empleado (ID,DESCRIPCION) values (3,'Temporal');
+
+--select * from EMPLEADO;
+insert into EMPLEADO (ID,RUT,DV,NOMBRE,APELLIDO,CARGO,TELEFONO,CORREO,ESTADO_ID,USUARIO_ID)
+values (1,1,'9','Administrador','Dueño','Dueño','123456789','correo@hostalclarita.cl',1,1);
+
+UPDATE USUARIO SET EMPLEADO_ID = 1 WHERE ID = 1;
+
+--select * from EMPRESA;
+insert into EMPRESA (ID,RUT,DV,NOMBRE,GIRO,DIRECCION)
+values (1,1,'7','Empresa 1','Informatica','Campos de hielo 1584, Maipu');
+
+--select * from TRABAJADOR;
+insert into TRABAJADOR (ID,RUT,DV,NOMBRE,APELLIDO,TELEFONO,CORREO,EMPRESA_ID,USUARIO_ID)
+values ('1',1,'9','nomTrabajador1e1','apTrabajador1e1','1234567890','correo@hostalclarita.cl',1,3);
+UPDATE USUARIO SET TRABAJADOR_ID = 1 WHERE ID = 3;
+
+--select * from rubro;
+insert into rubro (ID,DESCRIPCION) values (1,'Limpieza');
+insert into rubro (ID,DESCRIPCION) values (2,'Abarrotes');
+insert into rubro (ID,DESCRIPCION) values (3,'Alimentos');
+insert into rubro (ID,DESCRIPCION) values (4,'Panaderia');
+
+--select * from proveedor
+insert into proveedor (ID,RUT,DV,NOMBRE,TELEFONO,DIRECCION,CORREO,RUBRO_ID,USUARIO_ID)
+values (1,1,'6','Proveedor1','1234567890','Las brisas 1234, Santiago Centro','provee@provee.cl',2,4);
+
+UPDATE USUARIO SET PROVEEDOR_ID = 1 WHERE ID = 4;
+
+*/
+
+commit;
