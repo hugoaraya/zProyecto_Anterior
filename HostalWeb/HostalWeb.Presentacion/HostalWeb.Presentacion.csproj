@@ -113,7 +113,8 @@
     <Content Include="img\ImagenEjemplo.png" />
     <Content Include="img\logo.png" />
     <Content Include="index.aspx" />
-    <Content Include="templates\IngresarCliente.aspx" />
+    <Content Include="templates\ObtenerListaTrabajadores.aspx" />
+    <Content Include="templates\IngresarUsuario.aspx" />
     <Content Include="moduloClientes.aspx" />
     <Content Include="moduloHostal.aspx" />
     <Content Include="moduloProveedores.aspx" />
@@ -133,6 +134,7 @@
     <Content Include="templates\IngresarEmpresa.aspx" />
     <Content Include="templates\MantenedorEmpresa.aspx" />
     <Content Include="templates\ObtenerListaEmpresas.aspx" />
+    <Content Include="templates\ObtenerListaUsuarios.aspx" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -148,12 +150,19 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="templates\IngresarCliente.aspx.cs">
-      <DependentUpon>IngresarCliente.aspx</DependentUpon>
+    <Compile Include="templates\ObtenerListaTrabajadores.aspx.cs">
+      <DependentUpon>ObtenerListaTrabajadores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="templates\IngresarCliente.aspx.designer.cs">
-      <DependentUpon>IngresarCliente.aspx</DependentUpon>
+    <Compile Include="templates\ObtenerListaTrabajadores.aspx.designer.cs">
+      <DependentUpon>ObtenerListaTrabajadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\IngresarUsuario.aspx.cs">
+      <DependentUpon>IngresarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\IngresarUsuario.aspx.designer.cs">
+      <DependentUpon>IngresarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Maestra.Master.cs">
       <DependentUpon>Maestra.Master</DependentUpon>
@@ -204,6 +213,13 @@
     </Compile>
     <Compile Include="templates\ObtenerListaEmpresas.aspx.designer.cs">
       <DependentUpon>ObtenerListaEmpresas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\ObtenerListaUsuarios.aspx.cs">
+      <DependentUpon>ObtenerListaUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ObtenerListaUsuarios.aspx.designer.cs">
+      <DependentUpon>ObtenerListaUsuarios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

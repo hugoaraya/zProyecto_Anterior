@@ -5,12 +5,12 @@
     <h2>Módulo Administración Clientes</h2>
       <div class="contenedor">
         <div class="box" >
-            <h3>Registrar Cliente</h3>
-                <a href="../templates/MantenedorCliente.aspx">Mantenedor Cliente (completo)???</a><br />
-                <a href="../templates/IngresarCliente.aspx">Ingresar Cliente</a><br />
-                <a href="../templates/ObtenerDatoCliente.aspx">Obtener Dato Cliente</a><br />
-                <a href="../templates/ObtenerListaClientes.aspx">Obtener Lista Clientes</a><br />
-                <a href="../templates/ModificarClientes.aspx">Modificar Cliente</a>
+            <h3>Registrar Usuario</h3>
+                <a href="../templates/MantenedorUsuario.aspx">Mantenedor Usuario (completo)???</a><br />
+                <a href="../templates/IngresarUsuario.aspx">Ingresar Usuario</a><br />
+                <a href="../templates/ObtenerDatoUsuario.aspx">Obtener Dato Usuario</a><br />
+                <a href="../templates/ObtenerListaUsuarios.aspx">Obtener Lista Usuario</a><br />
+                <a href="../templates/ModificarUsuario.aspx">Modificar Usuario</a>
         </div>
         <div class="box" >
              <h3>Registrar Empresa</h3>
