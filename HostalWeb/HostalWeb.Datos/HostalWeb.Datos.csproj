@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{398C9956-7215-499A-BFE3-60530B872768}</ProjectGuid>
+    <ProjectGuid>{586F6F6D-D9FC-411C-AEFE-201F161518E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HostalWeb.Datos</RootNamespace>
@@ -59,6 +59,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EMPLEADO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPRESA.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ESTADO_EMPLEADO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="HostalEDM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,19 +84,37 @@
       <DependentUpon>HostalEDM.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PROVEEDOR.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RUBRO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIPO_USUARIO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRABAJADOR.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USUARIO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="HostalEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HostalEDM.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="HostalEDM.edmx.diagram">
       <DependentUpon>HostalEDM.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="HostalEDM.Context.tt">
@@ -100,9 +127,6 @@
       <DependentUpon>HostalEDM.edmx</DependentUpon>
       <LastGenOutput>HostalEDM.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

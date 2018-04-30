@@ -207,10 +207,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HostalWeb.Datos\HostalWeb.Datos.csproj">
-      <Project>{398c9956-7215-499a-bfe3-60530b872768}</Project>
-      <Name>HostalWeb.Datos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HostalWeb.Negocio\HostalWeb.Negocio.csproj">
       <Project>{3931619c-0d0d-4e0b-bdd6-7169e593e61e}</Project>
       <Name>HostalWeb.Negocio</Name>

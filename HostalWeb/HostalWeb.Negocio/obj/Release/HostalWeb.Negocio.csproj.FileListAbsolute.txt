@@ -1,0 +1,14 @@
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\HostalWeb.Negocio.dll.config
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\HostalWeb.Negocio.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\HostalWeb.Negocio.pdb
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\EntityFramework.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\HostalWeb.Datos.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\Oracle.ManagedDataAccess.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\HostalWeb.Datos.pdb
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\EntityFramework.xml
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\obj\Release\HostalWeb.Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\obj\Release\HostalWeb.Negocio.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Negocio\obj\Release\HostalWeb.Negocio.pdb
