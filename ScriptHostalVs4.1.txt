@@ -143,9 +143,92 @@ ALTER TABLE proveedor
 ALTER TABLE usuario
     ADD CONSTRAINT usuario_proveedor_fk FOREIGN KEY ( proveedor_id )
         REFERENCES proveedor ( id );
+	
+		
+--familia_producto_id  eliminado, stock_saldo cambiado a precio
+CREATE TABLE producto (
+    id                    NUMBER(10) NOT NULL,
+    nombre                VARCHAR2(45),
+    fecha_vencimiento     DATE,
+    tipo_producto_id      NUMBER(10) ,
+    familia_id            NUMBER(10) ,
+    proveedor_id          NUMBER(10) ,
+    codigo_barras         NUMBER(17) ,    
+    stock_total           NUMBER(10) NOT NULL,
+    precio	              NUMBER(10) NOT NULL
+);
+
+ALTER TABLE producto ADD CONSTRAINT producto_pk PRIMARY KEY ( id );	
+--relacion producto con proveedor
+ALTER TABLE producto
+    ADD CONSTRAINT proveedor_producto_fk FOREIGN KEY ( proveedor_id )
+        REFERENCES proveedor ( id );
+--relacion familia del producto con tabla producto		
+ALTER TABLE producto
+    ADD CONSTRAINT producto_familia_fk FOREIGN KEY ( familia_id )
+        REFERENCES familia_producto ( id );
+--relacion de producto con tipo_producto		
+ALTER TABLE producto
+    ADD CONSTRAINT producto_tipo_fk FOREIGN KEY ( tipo_producto_id )
+        REFERENCES tipo_producto ( id );
+	
+-- cambiado nombre a descripcion
+CREATE TABLE tipo_producto (
+    id       NUMBER(10) NOT NULL,
+    descripcion   VARCHAR2(45) NOT NULL
+);
+
+ALTER TABLE tipo_producto ADD CONSTRAINT tipo_producto_pk PRIMARY KEY ( id );
+-- cambiado nombre a descripcion
+CREATE TABLE familia_producto (
+    id       NUMBER(10) NOT NULL,
+    descripcion   VARCHAR2(45) NOT NULL
+);
+
+ALTER TABLE familia_producto ADD CONSTRAINT familia_producto_pk PRIMARY KEY ( id );
+--AGREGADO ESTADO DE ORDEN DIVIDIDO EN CATEGORIAS COMO PENDIENTE,ENTREGADO,ETC
+
+CREATE TABLE estado_orden(
+    id       NUMBER(10) NOT NULL,
+    descripcion   VARCHAR2(45) NOT NULL
+);
+
+ALTER TABLE estado_orden ADD CONSTRAINT estado_orden_pk PRIMARY KEY ( id );
+
+--SE ARREGLAN ALGUNOS DETALLES,SE CAMBIA ESTADO POR ESTADO_ORDEN_ID PARA LA FK
+CREATE TABLE orden_pedido (
+    id              NUMBER(10) NOT NULL,
+	proveedor_id    NUMBER(10) NOT NULL,
+	producto_id        NUMBER(10) NOT NULL,
+    detalle         VARCHAR2(255) NOT NULL,    
+    empleado_id     NUMBER(10) NOT NULL,
+	total 			NUMBER(10) NOT NULL,
+	estado_orden_id       NUMBER(10) NOT NULL
+    
+);
+
+ALTER TABLE orden_pedido ADD CONSTRAINT orden_pedido_pk PRIMARY KEY ( id );
+
+--relacion orden_pedido con proveedor
+ALTER TABLE orden_pedido
+    ADD CONSTRAINT orden_proveedor_fk FOREIGN KEY ( proveedor_id )
+        REFERENCES proveedor ( id );
+--relacion  orden_pedido con tabla producto		
+ALTER TABLE orden_pedido
+    ADD CONSTRAINT orden_producto_fk FOREIGN KEY ( producto_id )
+        REFERENCES producto ( id );
+--relacion de empleado con orden_pedido		
+ALTER TABLE orden_pedido
+    ADD CONSTRAINT orden_empleado_fk FOREIGN KEY ( empleado_id )
+        REFERENCES empleado ( id );
+--relacion de empleado con estado_pedido		
+ALTER TABLE orden_pedido
+    ADD CONSTRAINT estado_orden_fk FOREIGN KEY ( estado_orden_id )
+        REFERENCES estado_orden ( id );
 
 
 --(HUGO)HASTA ACA REVISE PARA CREAR USUARIOS Y TABLAS QUE ME CORRESPONDIAN ....
+--(JORDAN)AGREGADO ARREGLOS A TABLAS QUE ME CORRESPONDIAN,INCLUYENDO ORDEN DE PEDIDO > PROVEEDOR
 
 --*********************
 -- AL CARGAR EL RESTO DEL SCRIPT ME GENERA ERROR EN VISUAL STUDIO AL CARGAR LA BD,,, :o
@@ -163,13 +246,6 @@ CREATE TABLE factura (
 );
 
 ALTER TABLE factura ADD CONSTRAINT factura_pk PRIMARY KEY ( id );
-
-CREATE TABLE familia_producto (
-    id       NUMBER(10) NOT NULL,
-    nombre   VARCHAR2(45) NOT NULL
-);
-
-ALTER TABLE familia_producto ADD CONSTRAINT familia_producto_pk PRIMARY KEY ( id );
 
 CREATE TABLE habitacion (
     id            NUMBER(10) NOT NULL,
@@ -237,25 +313,7 @@ CREATE TABLE orden_compra (
 
 ALTER TABLE orden_compra ADD CONSTRAINT orden_compra_pk PRIMARY KEY ( id );
 
-CREATE TABLE orden_pedido (
-    id              NUMBER(10) NOT NULL,
-    detalle         VARCHAR2(255) NOT NULL,
-    proveedor_id    NUMBER(10) NOT NULL,
-    empleado_id     NUMBER(10) NOT NULL,
-    estado          CHAR(1) NOT NULL
-);
 
-ALTER TABLE orden_pedido ADD CONSTRAINT orden_pedido_pk PRIMARY KEY ( id );
-
-CREATE TABLE orden_pedido_producto (
-    id                 NUMBER(10) NOT NULL,
-    producto_id        NUMBER(10) NOT NULL,
-    orden_pedido_id    NUMBER(10) NOT NULL,
-    descripcion        VARCHAR2(255),
-    valor              NUMBER(10) NOT NULL
-);
-
-ALTER TABLE orden_pedido_producto ADD CONSTRAINT orden_pedido_producto_pk PRIMARY KEY ( id );
 
 CREATE TABLE plato (
     id            NUMBER(10) NOT NULL,
@@ -265,20 +323,7 @@ CREATE TABLE plato (
 
 ALTER TABLE plato ADD CONSTRAINT plato_pk PRIMARY KEY ( id );
 
-CREATE TABLE producto (
-    id                    NUMBER(10) NOT NULL,
-    nombre                VARCHAR2(45),
-    fecha_vencimiento     DATE,
-    tipo_producto_id      NUMBER(10) NOT NULL,
-    familia_id            NUMBER(10) NOT NULL,
-    proveedor_id          NUMBER(10) NOT NULL,
-    codigo_barras         NUMBER(17) NOT NULL,
-    familia_producto_id   NUMBER(10) NOT NULL,
-    stock_total           NUMBER(10) NOT NULL,
-    stock_saldo           NUMBER(10) NOT NULL
-);
 
-ALTER TABLE producto ADD CONSTRAINT producto_pk PRIMARY KEY ( id );
 
 CREATE TABLE servicio (
     id       NUMBER(10) NOT NULL,
@@ -308,12 +353,7 @@ CREATE TABLE servicio_oden_compra (
 
 ALTER TABLE servicio_oden_compra ADD CONSTRAINT servicio_oden_compra_pk PRIMARY KEY ( id );
 
-CREATE TABLE tipo_producto (
-    id       NUMBER(10) NOT NULL,
-    nombre   VARCHAR2(45) NOT NULL
-);
 
-ALTER TABLE tipo_producto ADD CONSTRAINT tipo_producto_pk PRIMARY KEY ( id );
 
 
 ALTER TABLE factura
