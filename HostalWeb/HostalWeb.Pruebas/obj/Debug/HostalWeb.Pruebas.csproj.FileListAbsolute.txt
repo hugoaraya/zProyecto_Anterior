@@ -52,3 +52,21 @@ C:\Users\Hugo\Desktop\HostalWeb bd3.4_29-04\HostalWeb\HostalWeb.Pruebas\bin\Debu
 C:\Users\Hugo\Desktop\HostalWeb bd3.4_29-04\HostalWeb\HostalWeb.Pruebas\obj\Debug\HostalWeb.Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\Hugo\Desktop\HostalWeb bd3.4_29-04\HostalWeb\HostalWeb.Pruebas\obj\Debug\HostalWeb.Pruebas.dll
 C:\Users\Hugo\Desktop\HostalWeb bd3.4_29-04\HostalWeb\HostalWeb.Pruebas\obj\Debug\HostalWeb.Pruebas.pdb
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\HostalWeb.Pruebas.dll.config
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\HostalWeb.Pruebas.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\HostalWeb.Pruebas.pdb
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\EntityFramework.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\HostalWeb.Datos.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\HostalWeb.Negocio.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\HostalWeb.Datos.pdb
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\HostalWeb.Negocio.pdb
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\EntityFramework.xml
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\obj\Debug\HostalWeb.Pruebas.csprojResolveAssemblyReference.cache
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\obj\Debug\HostalWeb.Pruebas.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Pruebas\obj\Debug\HostalWeb.Pruebas.pdb

@@ -1,22 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HostalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EMPLEADO" EntityType="Model.EMPLEADO" />
+    <EntitySet Name="EMPRESA" EntityType="Model.EMPRESA" />
+    <EntitySet Name="ESTADO_EMPLEADO" EntityType="Model.ESTADO_EMPLEADO" />
+    <EntitySet Name="ESTADO_ORDEN" EntityType="Model.ESTADO_ORDEN" />
+    <EntitySet Name="FAMILIA_PRODUCTO" EntityType="Model.FAMILIA_PRODUCTO" />
+    <EntitySet Name="ORDEN_PEDIDO" EntityType="Model.ORDEN_PEDIDO" />
+    <EntitySet Name="PRODUCTO" EntityType="Model.PRODUCTO" />
+    <EntitySet Name="PROVEEDOR" EntityType="Model.PROVEEDOR" />
+    <EntitySet Name="RUBRO" EntityType="Model.RUBRO" />
+    <EntitySet Name="TIPO_PRODUCTO" EntityType="Model.TIPO_PRODUCTO" />
+    <EntitySet Name="TIPO_USUARIO" EntityType="Model.TIPO_USUARIO" />
+    <EntitySet Name="TRABAJADOR" EntityType="Model.TRABAJADOR" />
+    <EntitySet Name="USUARIO" EntityType="Model.USUARIO" />
+    <AssociationSet Name="EMPLEADO_ESTADO_FK" Association="Model.EMPLEADO_ESTADO_FK">
+      <End Role="ESTADO_EMPLEADO" EntitySet="ESTADO_EMPLEADO" />
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="EMPLEADO_USUARIO_FK" Association="Model.EMPLEADO_USUARIO_FK">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="ORDEN_EMPLEADO_FK" Association="Model.ORDEN_EMPLEADO_FK">
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="USUARIO_EMPLEADO_FK" Association="Model.USUARIO_EMPLEADO_FK">
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="TRABAJADOR_EMPRESA_FK" Association="Model.TRABAJADOR_EMPRESA_FK">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
+    </AssociationSet>
+    <AssociationSet Name="ESTADO_ORDEN_FK" Association="Model.ESTADO_ORDEN_FK">
+      <End Role="ESTADO_ORDEN" EntitySet="ESTADO_ORDEN" />
+      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="PRODUCTO_FAMILIA_FK" Association="Model.PRODUCTO_FAMILIA_FK">
+      <End Role="FAMILIA_PRODUCTO" EntitySet="FAMILIA_PRODUCTO" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="ORDEN_PRODUCTO_FK" Association="Model.ORDEN_PRODUCTO_FK">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="ORDEN_PROVEEDOR_FK" Association="Model.ORDEN_PROVEEDOR_FK">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="PRODUCTO_TIPO_FK" Association="Model.PRODUCTO_TIPO_FK">
+      <End Role="TIPO_PRODUCTO" EntitySet="TIPO_PRODUCTO" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="PROVEEDOR_PRODUCTO_FK" Association="Model.PROVEEDOR_PRODUCTO_FK">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="PROVEEDOR_RUBRO_FK" Association="Model.PROVEEDOR_RUBRO_FK">
+      <End Role="RUBRO" EntitySet="RUBRO" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="PROVEEDOR_USUARIO_FK" Association="Model.PROVEEDOR_USUARIO_FK">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="USUARIO_PROVEEDOR_FK" Association="Model.USUARIO_PROVEEDOR_FK">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="USUARIO_TIPO_USUARIO_FK" Association="Model.USUARIO_TIPO_USUARIO_FK">
+      <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="TRABAJADOR_USUARIO_FK" Association="Model.TRABAJADOR_USUARIO_FK">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
+    </AssociationSet>
+    <AssociationSet Name="USUARIO_TRABAJADOR_FK" Association="Model.USUARIO_TRABAJADOR_FK">
+      <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="EMPLEADO">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="RUT" Type="Int32" Nullable="false" />
-    <Property Name="DV" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="NOMBRE" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DV" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="APELLIDO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-    <Property Name="CARGO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CARGO" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="CORREO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ESTADO_ID" Type="Int32" Nullable="false" />
     <Property Name="USUARIO_ID" Type="Int32" />
-    <NavigationProperty Name="ESTADO_EMPLEADO" Relationship="Self.EMPLEADO_ESTADO_FK" FromRole="EMPLEADO" ToRole="ESTADO_EMPLEADO" />
-    <NavigationProperty Name="USUARIO" Relationship="Self.EMPLEADO_USUARIO_FK" FromRole="EMPLEADO" ToRole="USUARIO" />
-    <NavigationProperty Name="USUARIO1" Relationship="Self.USUARIO_EMPLEADO_FK" FromRole="EMPLEADO" ToRole="USUARIO" />
+    <NavigationProperty Name="ESTADO_EMPLEADO" Relationship="Model.EMPLEADO_ESTADO_FK" FromRole="EMPLEADO" ToRole="ESTADO_EMPLEADO" />
+    <NavigationProperty Name="USUARIO" Relationship="Model.EMPLEADO_USUARIO_FK" FromRole="EMPLEADO" ToRole="USUARIO" />
+    <NavigationProperty Name="ORDEN_PEDIDO" Relationship="Model.ORDEN_EMPLEADO_FK" FromRole="EMPLEADO" ToRole="ORDEN_PEDIDO" />
+    <NavigationProperty Name="USUARIO1" Relationship="Model.USUARIO_EMPLEADO_FK" FromRole="EMPLEADO" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="EMPRESA">
     <Key>
@@ -24,19 +108,69 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="RUT" Type="Int32" Nullable="false" />
-    <Property Name="DV" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="NOMBRE" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="GIRO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="TRABAJADOR" Relationship="Self.TRABAJADOR_EMPRESA_FK" FromRole="EMPRESA" ToRole="TRABAJADOR" />
+    <Property Name="DV" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="GIRO" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TRABAJADOR" Relationship="Model.TRABAJADOR_EMPRESA_FK" FromRole="EMPRESA" ToRole="TRABAJADOR" />
   </EntityType>
   <EntityType Name="ESTADO_EMPLEADO">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="DESCRIPCION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="EMPLEADO" Relationship="Self.EMPLEADO_ESTADO_FK" FromRole="ESTADO_EMPLEADO" ToRole="EMPLEADO" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Model.EMPLEADO_ESTADO_FK" FromRole="ESTADO_EMPLEADO" ToRole="EMPLEADO" />
+  </EntityType>
+  <EntityType Name="ESTADO_ORDEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ORDEN_PEDIDO" Relationship="Model.ESTADO_ORDEN_FK" FromRole="ESTADO_ORDEN" ToRole="ORDEN_PEDIDO" />
+  </EntityType>
+  <EntityType Name="FAMILIA_PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Model.PRODUCTO_FAMILIA_FK" FromRole="FAMILIA_PRODUCTO" ToRole="PRODUCTO" />
+  </EntityType>
+  <EntityType Name="ORDEN_PEDIDO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="PROVEEDOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="PRODUCTO_ID" Type="Int32" Nullable="false" />
+    <Property Name="DETALLE" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EMPLEADO_ID" Type="Int32" Nullable="false" />
+    <Property Name="TOTAL" Type="Int32" Nullable="false" />
+    <Property Name="ESTADO_ORDEN_ID" Type="Int32" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Model.ORDEN_EMPLEADO_FK" FromRole="ORDEN_PEDIDO" ToRole="EMPLEADO" />
+    <NavigationProperty Name="ESTADO_ORDEN" Relationship="Model.ESTADO_ORDEN_FK" FromRole="ORDEN_PEDIDO" ToRole="ESTADO_ORDEN" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Model.ORDEN_PRODUCTO_FK" FromRole="ORDEN_PEDIDO" ToRole="PRODUCTO" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="Model.ORDEN_PROVEEDOR_FK" FromRole="ORDEN_PEDIDO" ToRole="PROVEEDOR" />
+  </EntityType>
+  <EntityType Name="PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_VENCIMIENTO" Type="DateTime" />
+    <Property Name="TIPO_PRODUCTO_ID" Type="Int32" />
+    <Property Name="FAMILIA_ID" Type="Int32" />
+    <Property Name="PROVEEDOR_ID" Type="Int32" />
+    <Property Name="CODIGO_BARRAS" Type="Int64" />
+    <Property Name="STOCK_TOTAL" Type="Int32" Nullable="false" />
+    <Property Name="PRECIO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FAMILIA_PRODUCTO" Relationship="Model.PRODUCTO_FAMILIA_FK" FromRole="PRODUCTO" ToRole="FAMILIA_PRODUCTO" />
+    <NavigationProperty Name="ORDEN_PEDIDO" Relationship="Model.ORDEN_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="ORDEN_PEDIDO" />
+    <NavigationProperty Name="TIPO_PRODUCTO" Relationship="Model.PRODUCTO_TIPO_FK" FromRole="PRODUCTO" ToRole="TIPO_PRODUCTO" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="Model.PROVEEDOR_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="PROVEEDOR" />
   </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>
@@ -44,32 +178,42 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="RUT" Type="Int32" Nullable="false" />
-    <Property Name="DV" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="NOMBRE" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DV" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="TELEFONO" Type="Decimal" Precision="20" Scale="0" />
-    <Property Name="DIRECCION" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="CORREO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="RUBRO_ID" Type="Int32" Nullable="false" />
     <Property Name="USUARIO_ID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="RUBRO" Relationship="Self.PROVEEDOR_RUBRO_FK" FromRole="PROVEEDOR" ToRole="RUBRO" />
-    <NavigationProperty Name="USUARIO" Relationship="Self.PROVEEDOR_USUARIO_FK" FromRole="PROVEEDOR" ToRole="USUARIO" />
-    <NavigationProperty Name="USUARIO1" Relationship="Self.USUARIO_PROVEEDOR_FK" FromRole="PROVEEDOR" ToRole="USUARIO" />
+    <NavigationProperty Name="ORDEN_PEDIDO" Relationship="Model.ORDEN_PROVEEDOR_FK" FromRole="PROVEEDOR" ToRole="ORDEN_PEDIDO" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Model.PROVEEDOR_PRODUCTO_FK" FromRole="PROVEEDOR" ToRole="PRODUCTO" />
+    <NavigationProperty Name="RUBRO" Relationship="Model.PROVEEDOR_RUBRO_FK" FromRole="PROVEEDOR" ToRole="RUBRO" />
+    <NavigationProperty Name="USUARIO" Relationship="Model.PROVEEDOR_USUARIO_FK" FromRole="PROVEEDOR" ToRole="USUARIO" />
+    <NavigationProperty Name="USUARIO1" Relationship="Model.USUARIO_PROVEEDOR_FK" FromRole="PROVEEDOR" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="RUBRO">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="DESCRIPCION" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="PROVEEDOR" Relationship="Self.PROVEEDOR_RUBRO_FK" FromRole="RUBRO" ToRole="PROVEEDOR" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="Model.PROVEEDOR_RUBRO_FK" FromRole="RUBRO" ToRole="PROVEEDOR" />
+  </EntityType>
+  <EntityType Name="TIPO_PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Model.PRODUCTO_TIPO_FK" FromRole="TIPO_PRODUCTO" ToRole="PRODUCTO" />
   </EntityType>
   <EntityType Name="TIPO_USUARIO">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="DESCRIPCION" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="USUARIO" Relationship="Self.USUARIO_TIPO_USUARIO_FK" FromRole="TIPO_USUARIO" ToRole="USUARIO" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="USUARIO" Relationship="Model.USUARIO_TIPO_USUARIO_FK" FromRole="TIPO_USUARIO" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="TRABAJADOR">
     <Key>
@@ -77,39 +221,39 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="RUT" Type="Int32" Nullable="false" />
-    <Property Name="DV" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="NOMBRE" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="APELLIDO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DV" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="APELLIDO" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="CORREO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="EMPRESA_ID" Type="Int32" Nullable="false" />
     <Property Name="USUARIO_ID" Type="Int32" />
-    <NavigationProperty Name="EMPRESA" Relationship="Self.TRABAJADOR_EMPRESA_FK" FromRole="TRABAJADOR" ToRole="EMPRESA" />
-    <NavigationProperty Name="USUARIO" Relationship="Self.TRABAJADOR_USUARIO_FK" FromRole="TRABAJADOR" ToRole="USUARIO" />
-    <NavigationProperty Name="USUARIO1" Relationship="Self.USUARIO_TRABAJADOR_FK" FromRole="TRABAJADOR" ToRole="USUARIO" />
+    <NavigationProperty Name="EMPRESA" Relationship="Model.TRABAJADOR_EMPRESA_FK" FromRole="TRABAJADOR" ToRole="EMPRESA" />
+    <NavigationProperty Name="USUARIO" Relationship="Model.TRABAJADOR_USUARIO_FK" FromRole="TRABAJADOR" ToRole="USUARIO" />
+    <NavigationProperty Name="USUARIO1" Relationship="Model.USUARIO_TRABAJADOR_FK" FromRole="TRABAJADOR" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="USUARIO">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="NOMBRE" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CONTRASENA" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="CONTRASENA" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="TIPO_USUARIO_ID" Type="Int32" Nullable="false" />
     <Property Name="TRABAJADOR_ID" Type="Int32" />
     <Property Name="EMPLEADO_ID" Type="Int32" />
     <Property Name="PROVEEDOR_ID" Type="Int32" />
-    <NavigationProperty Name="EMPLEADO" Relationship="Self.EMPLEADO_USUARIO_FK" FromRole="USUARIO" ToRole="EMPLEADO" />
-    <NavigationProperty Name="EMPLEADO1" Relationship="Self.USUARIO_EMPLEADO_FK" FromRole="USUARIO" ToRole="EMPLEADO" />
-    <NavigationProperty Name="PROVEEDOR" Relationship="Self.PROVEEDOR_USUARIO_FK" FromRole="USUARIO" ToRole="PROVEEDOR" />
-    <NavigationProperty Name="PROVEEDOR1" Relationship="Self.USUARIO_PROVEEDOR_FK" FromRole="USUARIO" ToRole="PROVEEDOR" />
-    <NavigationProperty Name="TIPO_USUARIO" Relationship="Self.USUARIO_TIPO_USUARIO_FK" FromRole="USUARIO" ToRole="TIPO_USUARIO" />
-    <NavigationProperty Name="TRABAJADOR" Relationship="Self.TRABAJADOR_USUARIO_FK" FromRole="USUARIO" ToRole="TRABAJADOR" />
-    <NavigationProperty Name="TRABAJADOR1" Relationship="Self.USUARIO_TRABAJADOR_FK" FromRole="USUARIO" ToRole="TRABAJADOR" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Model.EMPLEADO_USUARIO_FK" FromRole="USUARIO" ToRole="EMPLEADO" />
+    <NavigationProperty Name="EMPLEADO1" Relationship="Model.USUARIO_EMPLEADO_FK" FromRole="USUARIO" ToRole="EMPLEADO" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="Model.PROVEEDOR_USUARIO_FK" FromRole="USUARIO" ToRole="PROVEEDOR" />
+    <NavigationProperty Name="PROVEEDOR1" Relationship="Model.USUARIO_PROVEEDOR_FK" FromRole="USUARIO" ToRole="PROVEEDOR" />
+    <NavigationProperty Name="TIPO_USUARIO" Relationship="Model.USUARIO_TIPO_USUARIO_FK" FromRole="USUARIO" ToRole="TIPO_USUARIO" />
+    <NavigationProperty Name="TRABAJADOR" Relationship="Model.TRABAJADOR_USUARIO_FK" FromRole="USUARIO" ToRole="TRABAJADOR" />
+    <NavigationProperty Name="TRABAJADOR1" Relationship="Model.USUARIO_TRABAJADOR_FK" FromRole="USUARIO" ToRole="TRABAJADOR" />
   </EntityType>
   <Association Name="EMPLEADO_ESTADO_FK">
-    <End Role="ESTADO_EMPLEADO" Type="Self.ESTADO_EMPLEADO" Multiplicity="1" />
-    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+    <End Type="Model.ESTADO_EMPLEADO" Role="ESTADO_EMPLEADO" Multiplicity="1" />
+    <End Type="Model.EMPLEADO" Role="EMPLEADO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ESTADO_EMPLEADO">
         <PropertyRef Name="ID" />
@@ -120,8 +264,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="EMPLEADO_USUARIO_FK">
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
-    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="0..1" />
+    <End Type="Model.EMPLEADO" Role="EMPLEADO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="USUARIO">
         <PropertyRef Name="ID" />
@@ -131,9 +275,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ORDEN_EMPLEADO_FK">
+    <End Type="Model.EMPLEADO" Role="EMPLEADO" Multiplicity="1" />
+    <End Type="Model.ORDEN_PEDIDO" Role="ORDEN_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORDEN_PEDIDO">
+        <PropertyRef Name="EMPLEADO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="USUARIO_EMPLEADO_FK">
-    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <End Type="Model.EMPLEADO" Role="EMPLEADO" Multiplicity="0..1" />
+    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="EMPLEADO">
         <PropertyRef Name="ID" />
@@ -144,8 +300,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="TRABAJADOR_EMPRESA_FK">
-    <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
-    <End Role="TRABAJADOR" Type="Self.TRABAJADOR" Multiplicity="*" />
+    <End Type="Model.EMPRESA" Role="EMPRESA" Multiplicity="1" />
+    <End Type="Model.TRABAJADOR" Role="TRABAJADOR" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="EMPRESA">
         <PropertyRef Name="ID" />
@@ -155,9 +311,81 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ESTADO_ORDEN_FK">
+    <End Type="Model.ESTADO_ORDEN" Role="ESTADO_ORDEN" Multiplicity="0..1" />
+    <End Type="Model.ORDEN_PEDIDO" Role="ORDEN_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_ORDEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORDEN_PEDIDO">
+        <PropertyRef Name="ESTADO_ORDEN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PRODUCTO_FAMILIA_FK">
+    <End Type="Model.FAMILIA_PRODUCTO" Role="FAMILIA_PRODUCTO" Multiplicity="0..1" />
+    <End Type="Model.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FAMILIA_PRODUCTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="FAMILIA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORDEN_PRODUCTO_FK">
+    <End Type="Model.PRODUCTO" Role="PRODUCTO" Multiplicity="1" />
+    <End Type="Model.ORDEN_PEDIDO" Role="ORDEN_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORDEN_PEDIDO">
+        <PropertyRef Name="PRODUCTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORDEN_PROVEEDOR_FK">
+    <End Type="Model.PROVEEDOR" Role="PROVEEDOR" Multiplicity="1" />
+    <End Type="Model.ORDEN_PEDIDO" Role="ORDEN_PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORDEN_PEDIDO">
+        <PropertyRef Name="PROVEEDOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PRODUCTO_TIPO_FK">
+    <End Type="Model.TIPO_PRODUCTO" Role="TIPO_PRODUCTO" Multiplicity="0..1" />
+    <End Type="Model.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_PRODUCTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="TIPO_PRODUCTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PROVEEDOR_PRODUCTO_FK">
+    <End Type="Model.PROVEEDOR" Role="PROVEEDOR" Multiplicity="0..1" />
+    <End Type="Model.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="PROVEEDOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="PROVEEDOR_RUBRO_FK">
-    <End Role="RUBRO" Type="Self.RUBRO" Multiplicity="1" />
-    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
+    <End Type="Model.RUBRO" Role="RUBRO" Multiplicity="1" />
+    <End Type="Model.PROVEEDOR" Role="PROVEEDOR" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="RUBRO">
         <PropertyRef Name="ID" />
@@ -168,8 +396,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="PROVEEDOR_USUARIO_FK">
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
-    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
+    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="1" />
+    <End Type="Model.PROVEEDOR" Role="PROVEEDOR" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="USUARIO">
         <PropertyRef Name="ID" />
@@ -180,8 +408,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="USUARIO_PROVEEDOR_FK">
-    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <End Type="Model.PROVEEDOR" Role="PROVEEDOR" Multiplicity="0..1" />
+    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PROVEEDOR">
         <PropertyRef Name="ID" />
@@ -192,8 +420,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="USUARIO_TIPO_USUARIO_FK">
-    <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="1" />
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <End Type="Model.TIPO_USUARIO" Role="TIPO_USUARIO" Multiplicity="1" />
+    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TIPO_USUARIO">
         <PropertyRef Name="ID" />
@@ -204,8 +432,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="TRABAJADOR_USUARIO_FK">
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
-    <End Role="TRABAJADOR" Type="Self.TRABAJADOR" Multiplicity="*" />
+    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="0..1" />
+    <End Type="Model.TRABAJADOR" Role="TRABAJADOR" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="USUARIO">
         <PropertyRef Name="ID" />
@@ -216,8 +444,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="USUARIO_TRABAJADOR_FK">
-    <End Role="TRABAJADOR" Type="Self.TRABAJADOR" Multiplicity="0..1" />
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <End Type="Model.TRABAJADOR" Role="TRABAJADOR" Multiplicity="0..1" />
+    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TRABAJADOR">
         <PropertyRef Name="ID" />
@@ -227,54 +455,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="HostalEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" />
-    <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" />
-    <EntitySet Name="ESTADO_EMPLEADO" EntityType="Self.ESTADO_EMPLEADO" />
-    <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" />
-    <EntitySet Name="RUBRO" EntityType="Self.RUBRO" />
-    <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" />
-    <EntitySet Name="TRABAJADOR" EntityType="Self.TRABAJADOR" />
-    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
-    <AssociationSet Name="EMPLEADO_ESTADO_FK" Association="Self.EMPLEADO_ESTADO_FK">
-      <End Role="ESTADO_EMPLEADO" EntitySet="ESTADO_EMPLEADO" />
-      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
-    </AssociationSet>
-    <AssociationSet Name="EMPLEADO_USUARIO_FK" Association="Self.EMPLEADO_USUARIO_FK">
-      <End Role="USUARIO" EntitySet="USUARIO" />
-      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
-    </AssociationSet>
-    <AssociationSet Name="USUARIO_EMPLEADO_FK" Association="Self.USUARIO_EMPLEADO_FK">
-      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
-    </AssociationSet>
-    <AssociationSet Name="TRABAJADOR_EMPRESA_FK" Association="Self.TRABAJADOR_EMPRESA_FK">
-      <End Role="EMPRESA" EntitySet="EMPRESA" />
-      <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
-    </AssociationSet>
-    <AssociationSet Name="PROVEEDOR_RUBRO_FK" Association="Self.PROVEEDOR_RUBRO_FK">
-      <End Role="RUBRO" EntitySet="RUBRO" />
-      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
-    </AssociationSet>
-    <AssociationSet Name="PROVEEDOR_USUARIO_FK" Association="Self.PROVEEDOR_USUARIO_FK">
-      <End Role="USUARIO" EntitySet="USUARIO" />
-      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
-    </AssociationSet>
-    <AssociationSet Name="USUARIO_PROVEEDOR_FK" Association="Self.USUARIO_PROVEEDOR_FK">
-      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
-    </AssociationSet>
-    <AssociationSet Name="USUARIO_TIPO_USUARIO_FK" Association="Self.USUARIO_TIPO_USUARIO_FK">
-      <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
-    </AssociationSet>
-    <AssociationSet Name="TRABAJADOR_USUARIO_FK" Association="Self.TRABAJADOR_USUARIO_FK">
-      <End Role="USUARIO" EntitySet="USUARIO" />
-      <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
-    </AssociationSet>
-    <AssociationSet Name="USUARIO_TRABAJADOR_FK" Association="Self.USUARIO_TRABAJADOR_FK">
-      <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

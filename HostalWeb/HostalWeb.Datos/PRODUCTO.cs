@@ -12,33 +12,28 @@ namespace HostalWeb.Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class PROVEEDOR
+    public partial class PRODUCTO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PROVEEDOR()
+        public PRODUCTO()
         {
             this.ORDEN_PEDIDO = new HashSet<ORDEN_PEDIDO>();
-            this.PRODUCTO = new HashSet<PRODUCTO>();
-            this.USUARIO1 = new HashSet<USUARIO>();
         }
     
         public int ID { get; set; }
-        public int RUT { get; set; }
-        public string DV { get; set; }
         public string NOMBRE { get; set; }
-        public Nullable<decimal> TELEFONO { get; set; }
-        public string DIRECCION { get; set; }
-        public string CORREO { get; set; }
-        public int RUBRO_ID { get; set; }
-        public int USUARIO_ID { get; set; }
+        public Nullable<System.DateTime> FECHA_VENCIMIENTO { get; set; }
+        public Nullable<int> TIPO_PRODUCTO_ID { get; set; }
+        public Nullable<int> FAMILIA_ID { get; set; }
+        public Nullable<int> PROVEEDOR_ID { get; set; }
+        public Nullable<long> CODIGO_BARRAS { get; set; }
+        public int STOCK_TOTAL { get; set; }
+        public int PRECIO { get; set; }
     
+        public virtual FAMILIA_PRODUCTO FAMILIA_PRODUCTO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ORDEN_PEDIDO> ORDEN_PEDIDO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
-        public virtual RUBRO RUBRO { get; set; }
-        public virtual USUARIO USUARIO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<USUARIO> USUARIO1 { get; set; }
+        public virtual TIPO_PRODUCTO TIPO_PRODUCTO { get; set; }
+        public virtual PROVEEDOR PROVEEDOR { get; set; }
     }
 }

@@ -44,3 +44,15 @@ C:\Users\Hugo\Desktop\HostalWeb bd3.4_29-04\HostalWeb\HostalWeb.Datos\bin\Debug\
 C:\Users\Hugo\Desktop\HostalWeb bd3.4_29-04\HostalWeb\HostalWeb.Datos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Hugo\Desktop\HostalWeb bd3.4_29-04\HostalWeb\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.dll
 C:\Users\Hugo\Desktop\HostalWeb bd3.4_29-04\HostalWeb\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.pdb
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\bin\Debug\HostalWeb.Datos.dll.config
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\bin\Debug\HostalWeb.Datos.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\bin\Debug\HostalWeb.Datos.pdb
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\bin\Debug\EntityFramework.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\bin\Debug\EntityFramework.xml
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.csprojResolveAssemblyReference.cache
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.dll
+C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Datos\obj\Debug\HostalWeb.Datos.pdb

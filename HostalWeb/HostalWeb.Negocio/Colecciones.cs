@@ -28,5 +28,50 @@ namespace HostalWeb.Negocio
             }
             return salida;
         }
+
+        public List<Proveedor> ListadoProveedores()
+        {
+            List<Proveedor> salida = new List<Proveedor>();
+            //guarad todos los datos de todas las Proveedor
+            foreach (Datos.PROVEEDOR datosproveedor in Conexion.ModeloEntities.PROVEEDOR)
+            {
+                salida.Add(
+                    new Proveedor()
+                    {
+
+                        ID_PROVEEDOR = datosproveedor.ID,
+                        RUT_PROVEEDOR = datosproveedor.RUT + datosproveedor.DV,
+                        NOMBRE_PROVEEDOR = datosproveedor.NOMBRE,
+                        TELEFONO_PROVEEDOR = datosproveedor.TELEFONO,
+                        DIRECCION_PROVEEDOR = datosproveedor.DIRECCION,
+                        RUBRO_ID = datosproveedor.RUBRO_ID,
+                        CORREO = datosproveedor.CORREO
+                    }
+          );
+            }
+            return salida;
+        }
+
+        //listar rubros
+
+        public List<Rubro> ListadoRubros()
+        {
+            List<Rubro> salida = new List<Rubro>();
+            //guarad todos los datos de todas las Proveedor
+            foreach (Datos.RUBRO datosrubro in Conexion.ModeloEntities.RUBRO)
+            {
+                salida.Add(
+                    new Rubro()
+                    {
+
+
+                        DESCRIPCION_RUBRO = datosrubro.DESCRIPCION,
+                        RUBRO_ID = datosrubro.ID
+
+                    }
+          );
+            }
+            return salida;
+        }
     }
 }

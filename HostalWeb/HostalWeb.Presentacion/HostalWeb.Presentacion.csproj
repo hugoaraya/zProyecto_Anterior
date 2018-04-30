@@ -131,8 +131,10 @@
     <Content Include="styles\main.css" />
     <Content Include="styles\menu-style.css" />
     <Content Include="templates\IngresarEmpresa.aspx" />
+    <Content Include="templates\IngresarProveedor.aspx" />
     <Content Include="templates\MantenedorEmpresa.aspx" />
     <Content Include="templates\ObtenerListaEmpresas.aspx" />
+    <Content Include="templates\ObtenerListaProveedores.aspx" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +193,13 @@
     <Compile Include="templates\IngresarEmpresa.aspx.designer.cs">
       <DependentUpon>IngresarEmpresa.aspx</DependentUpon>
     </Compile>
+    <Compile Include="templates\IngresarProveedor.aspx.cs">
+      <DependentUpon>IngresarProveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\IngresarProveedor.aspx.designer.cs">
+      <DependentUpon>IngresarProveedor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="templates\MantenedorEmpresa.aspx.cs">
       <DependentUpon>MantenedorEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,6 +213,13 @@
     </Compile>
     <Compile Include="templates\ObtenerListaEmpresas.aspx.designer.cs">
       <DependentUpon>ObtenerListaEmpresas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\ObtenerListaProveedores.aspx.cs">
+      <DependentUpon>ObtenerListaProveedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ObtenerListaProveedores.aspx.designer.cs">
+      <DependentUpon>ObtenerListaProveedores.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

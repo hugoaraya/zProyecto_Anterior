@@ -17,6 +17,7 @@ namespace HostalWeb.Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public EMPLEADO()
         {
+            this.ORDEN_PEDIDO = new HashSet<ORDEN_PEDIDO>();
             this.USUARIO1 = new HashSet<USUARIO>();
         }
     
@@ -33,6 +34,8 @@ namespace HostalWeb.Datos
     
         public virtual ESTADO_EMPLEADO ESTADO_EMPLEADO { get; set; }
         public virtual USUARIO USUARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORDEN_PEDIDO> ORDEN_PEDIDO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<USUARIO> USUARIO1 { get; set; }
     }
