@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HostalWeb.Datos\HostalWeb.Datos.csproj">
-      <Project>{586f6f6d-d9fc-411c-aefe-201f161518e0}</Project>
+      <Project>{398c9956-7215-499a-bfe3-60530b872768}</Project>
       <Name>HostalWeb.Datos</Name>
     </ProjectReference>
   </ItemGroup>
