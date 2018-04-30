@@ -8,7 +8,6 @@ namespace HostalWeb.Negocio
 {
     public class Empresa
     {
-
         private int _rut;
         private string _dv;
         public int ID_EMPRESA { get; set; }
@@ -60,12 +59,12 @@ namespace HostalWeb.Negocio
                     //objeto que entra en la base de datos
                     Datos.EMPRESA objetoDato = new Datos.EMPRESA()
                     {
-                        ID_EMPRESA = ID_EMPRESA,
-                        RUT_EMPRESA = _rut,
-                        DV_EMPRESA =_dv,
-                        NOMBRE_EMPRESA = NOMBRE_EMPRESA,
-                        DIRECCION_EMPRESA = DIRECCION_EMPRESA,
-                        GIRO_EMPRESA = GIRO_EMPRESA
+                        ID = ID_EMPRESA,
+                        RUT = _rut,
+                        DV =_dv,
+                        NOMBRE = NOMBRE_EMPRESA,
+                        DIRECCION = DIRECCION_EMPRESA,
+                        GIRO = GIRO_EMPRESA
             };
                     Conexion.ModeloEntities.EMPRESA.Add(objetoDato);
                 Conexion.ModeloEntities.SaveChanges(); //abre la conexion, hace el comando sql, actualiza la BD, cierra la conexion
@@ -85,14 +84,14 @@ namespace HostalWeb.Negocio
                 {
                     Datos.EMPRESA empresaDatos = (
                         from empre in Conexion.ModeloEntities.EMPRESA
-                        where empre.RUT_EMPRESA == _rut
+                        where empre.RUT == _rut
                         select empre
                         ).First();
-                            ID_EMPRESA = empresaDatos.ID_EMPRESA;
-                            NOMBRE_EMPRESA = empresaDatos.NOMBRE_EMPRESA;
-                            DIRECCION_EMPRESA = empresaDatos.DIRECCION_EMPRESA;
-                            GIRO_EMPRESA = empresaDatos.GIRO_EMPRESA;
-                            _dv = empresaDatos.DV_EMPRESA;
+                            ID_EMPRESA = empresaDatos.ID;
+                            NOMBRE_EMPRESA = empresaDatos.NOMBRE;
+                            DIRECCION_EMPRESA = empresaDatos.DIRECCION;
+                            GIRO_EMPRESA = empresaDatos.GIRO;
+                            _dv = empresaDatos.DV;
                 //si no lo encuentra el resultado sera null 
                 return true;
                 }
@@ -107,13 +106,13 @@ namespace HostalWeb.Negocio
                 try
                 {
                     Datos.EMPRESA empresaDatos =
-                        Conexion.ModeloEntities.EMPRESA.First(e => e.RUT_EMPRESA == _rut);
+                        Conexion.ModeloEntities.EMPRESA.First(e => e.RUT == _rut);
                         //aqui usamos lambda
-                        empresaDatos.ID_EMPRESA = ID_EMPRESA;
-                        empresaDatos.NOMBRE_EMPRESA = NOMBRE_EMPRESA;
-                        empresaDatos.DIRECCION_EMPRESA = DIRECCION_EMPRESA;
-                        empresaDatos.GIRO_EMPRESA = GIRO_EMPRESA;
-                        empresaDatos.DV_EMPRESA = _dv;
+                        empresaDatos.ID = ID_EMPRESA;
+                        empresaDatos.NOMBRE = NOMBRE_EMPRESA;
+                        empresaDatos.DIRECCION = DIRECCION_EMPRESA;
+                        empresaDatos.GIRO = GIRO_EMPRESA;
+                        empresaDatos.DV = _dv;
                     Conexion.ModeloEntities.SaveChanges();
                     return true;
                 }

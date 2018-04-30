@@ -8,17 +8,17 @@
     <title>Web Hostal Doña Clarita</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
      <link rel="icon" type="image/png" href="img/logo.png" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/menu-style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/menu-style.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
     <header>
      <h1>
          <a ¨href="../index.aspx">
-                <img src="../img/logo.png" alt="Imagen de Logotipo Hostal">
+                <img src="../img/logo.png" alt="Imagen de Logotipo Hostal"/>
          </a>
            Sistema Web Hostal Doña Clarita
      </h1>

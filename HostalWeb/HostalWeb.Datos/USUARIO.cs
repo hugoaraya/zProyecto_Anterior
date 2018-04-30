@@ -17,22 +17,28 @@ namespace HostalWeb.Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public USUARIO()
         {
-            this.CLIENTE = new HashSet<CLIENTE>();
             this.EMPLEADO = new HashSet<EMPLEADO>();
             this.PROVEEDOR = new HashSet<PROVEEDOR>();
+            this.TRABAJADOR = new HashSet<TRABAJADOR>();
         }
     
-        public int ID_USUARIO { get; set; }
-        public string USUARIO1 { get; set; }
+        public int ID { get; set; }
+        public string NOMBRE { get; set; }
         public string CONTRASENA { get; set; }
-        public int ID_TIPO { get; set; }
+        public int TIPO_USUARIO_ID { get; set; }
+        public Nullable<int> TRABAJADOR_ID { get; set; }
+        public Nullable<int> EMPLEADO_ID { get; set; }
+        public Nullable<int> PROVEEDOR_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CLIENTE> CLIENTE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EMPLEADO> EMPLEADO { get; set; }
+        public virtual EMPLEADO EMPLEADO1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROVEEDOR> PROVEEDOR { get; set; }
+        public virtual PROVEEDOR PROVEEDOR1 { get; set; }
         public virtual TIPO_USUARIO TIPO_USUARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TRABAJADOR> TRABAJADOR { get; set; }
+        public virtual TRABAJADOR TRABAJADOR1 { get; set; }
     }
 }

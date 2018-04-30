@@ -20,7 +20,7 @@ namespace HostalWeb.Datos
             this.USUARIO = new HashSet<USUARIO>();
         }
     
-        public int ID_TIPO { get; set; }
+        public int ID { get; set; }
         public string DESCRIPCION { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

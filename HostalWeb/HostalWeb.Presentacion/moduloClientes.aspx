@@ -6,19 +6,11 @@
       <div class="contenedor">
         <div class="box" >
             <h3>Registrar Cliente</h3>
-<<<<<<< HEAD
-                <a href="../templates/mantenedorCliente.aspx">Mantenedor Cliente (completo)???</a><br />
-                <a href="../templates/ingresarCliente.aspx">Ingresar Cliente</a><br />
-                <a href="../templates/obtenerDatoCliente.aspx">Obtener Dato Cliente</a><br />
-                <a href="../templates/obtenerListaClientes.aspx">Obtener Lista Cliente</a><br />
-                <a href="../templates/ModificarCliente.aspx">Modificar Cliente</a>
-=======
                 <a href="../templates/MantenedorCliente.aspx">Mantenedor Cliente (completo)???</a><br />
                 <a href="../templates/IngresarCliente.aspx">Ingresar Cliente</a><br />
                 <a href="../templates/ObtenerDatoCliente.aspx">Obtener Dato Cliente</a><br />
                 <a href="../templates/ObtenerListaClientes.aspx">Obtener Lista Clientes</a><br />
                 <a href="../templates/ModificarClientes.aspx">Modificar Cliente</a>
->>>>>>> HugoAraya
         </div>
         <div class="box" >
              <h3>Registrar Empresa</h3>

@@ -17,19 +17,16 @@ namespace HostalWeb.Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public EMPRESA()
         {
-            this.CLIENTE = new HashSet<CLIENTE>();
             this.TRABAJADOR = new HashSet<TRABAJADOR>();
         }
     
-        public int ID_EMPRESA { get; set; }
-        public int RUT_EMPRESA { get; set; }
-        public string DV_EMPRESA { get; set; }
-        public string NOMBRE_EMPRESA { get; set; }
-        public string DIRECCION_EMPRESA { get; set; }
-        public string GIRO_EMPRESA { get; set; }
+        public int ID { get; set; }
+        public int RUT { get; set; }
+        public string DV { get; set; }
+        public string NOMBRE { get; set; }
+        public string GIRO { get; set; }
+        public string DIRECCION { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CLIENTE> CLIENTE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TRABAJADOR> TRABAJADOR { get; set; }
     }

@@ -5,6 +5,5 @@
       <siteMapNode url="moduloHostal.aspx" title="Módulo Administración de Hostal"  description="Módulo Administración de Hostal" />
       <siteMapNode url="moduloProveedores.aspx" title="Módulo Administración de Proveedores"  description="Módulo Administración de Proveedores" />
       <siteMapNode url="ingresarCliente.aspx" title="Módulo Administración de Proveedores"  description="Módulo Administración de Proveedores" />
-
     </siteMapNode>
 </siteMap>
