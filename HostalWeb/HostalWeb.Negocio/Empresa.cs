@@ -32,8 +32,11 @@ namespace HostalWeb.Negocio
 
                 }
             }
+
         public string NOMBRE_EMPRESA { get; set; }
+
         public string DIRECCION_EMPRESA { get; set; }
+
         public string GIRO_EMPRESA { get; set; }
 
         public Empresa()
@@ -56,20 +59,20 @@ namespace HostalWeb.Negocio
             {
                 try
                 {
-                    //objeto que entra en la base de datos
-                    Datos.EMPRESA objetoDato = new Datos.EMPRESA()
-                    {
+                //objeto que entra en la base de datos
+                Datos.EMPRESA objetoDato = new Datos.EMPRESA()
+                {
                         ID = ID_EMPRESA,
                         RUT = _rut,
                         DV =_dv,
                         NOMBRE = NOMBRE_EMPRESA,
                         DIRECCION = DIRECCION_EMPRESA,
                         GIRO = GIRO_EMPRESA
-            };
-                    Conexion.ModeloEntities.EMPRESA.Add(objetoDato);
-                Conexion.ModeloEntities.SaveChanges(); //abre la conexion, hace el comando sql, actualiza la BD, cierra la conexion
+                    };
 
-                    return true;
+                Conexion.ModeloEntities.EMPRESA.Add(objetoDato);
+                Conexion.ModeloEntities.SaveChanges(); //abre la conexion, hace el comando sql, actualiza la BD, cierra la conexion
+                return true;
                 }
                 catch (Exception)
                 {
@@ -77,7 +80,7 @@ namespace HostalWeb.Negocio
                 }
 
             }
-
+        
             public bool Read()
             {
                 try

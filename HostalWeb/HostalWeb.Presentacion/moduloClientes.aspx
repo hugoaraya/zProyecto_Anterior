@@ -6,11 +6,11 @@
       <div class="contenedor">
         <div class="box" >
             <h3>Registrar Usuario</h3>
-                <a href="../templates/MantenedorUsuario.aspx">Mantenedor Usuario (completo)???</a><br />
-                <a href="../templates/IngresarUsuario.aspx">Ingresar Usuario</a><br />
-                <a href="../templates/ObtenerDatoUsuario.aspx">Obtener Dato Usuario</a><br />
-                <a href="../templates/ObtenerListaUsuarios.aspx">Obtener Lista Usuario</a><br />
-                <a href="../templates/ModificarUsuario.aspx">Modificar Usuario</a>
+                <a href="../templates/MantenedorCliente.aspx">Mantenedor Cliente (completo)</a><br />
+                <a href="../templates/IngresarCliente.aspx">Ingresar Cliente</a><br />
+                <a href="../templates/ObtenerDatoCliente.aspx">Obtener Dato Cliente</a><br />
+                <a href="../templates/ObtenerListaClientes.aspx">Obtener Lista Clientes</a><br />
+                <a href="../templates/ModificarCliente.aspx">Modificar Cliente</a>
         </div>
         <div class="box" >
              <h3>Registrar Empresa</h3>
@@ -22,7 +22,7 @@
         </div>
         <div class="box" >
              <h3>Registrar Trabajador</h3>
-                <a href="../templates/MantenedorTrabajador.aspx">Mantenedor Trabajador (completo)???</a><br />
+                <a href="../templates/MantenedorTrabajador.aspx">Mantenedor Trabajador (completo)</a><br />
                 <a href="../templates/IngresarTrabajador.aspx">Ingresar Trabajador</a><br />
                 <a href="../templates/ObtenerDatoTrabajador.aspx">Obtener Dato Trabajador</a><br />
                 <a href="../templates/ObtenerListaTrabajadores.aspx">Obtener Lista Trabajadores</a><br />
