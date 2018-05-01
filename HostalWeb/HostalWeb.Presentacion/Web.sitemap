@@ -1,9 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="index.aspx" title="Página de Inicio"  description="Página de Inicio">
-        <siteMapNode url="moduloClientes.aspx" title="Módulo Administración de Clientes"  description="Módulo Administración de Clientes" />
-      <siteMapNode url="moduloHostal.aspx" title="Módulo Administración de Hostal"  description="Módulo Administración de Hostal" />
-      <siteMapNode url="moduloProveedores.aspx" title="Módulo Administración de Proveedores"  description="Módulo Administración de Proveedores" />
-      <siteMapNode url="ingresarCliente.aspx" title="Módulo Administración de Proveedores"  description="Módulo Administración de Proveedores" />
+    <siteMapNode url="index.aspx" title="Inicio"  description="Página de Inicio">
+        <siteMapNode url="moduloClientes.aspx" title="Administración de Clientes"  description="Módulo Administración de Clientes">
+            <siteMapNode url="templates/MantenedorCliente.aspx" title="Mantenedor Cliente"  description="Mantenedor Cliente" />
+            <siteMapNode url="templates/ingresarCliente.aspx" title="Ingreso CLiente"  description="Ingreso CLiente" />
+            <siteMapNode url="templates/ObtenerDatoCliente.aspx" title="Obtener Cliente"  description="Obtener Cliente" />
+            <siteMapNode url="templates/ObtenerListaClientes.aspx" title="Obtener Lista Clientes"  description="Obtener Lista Clientes" />
+            <siteMapNode url="templates/ModificarCliente.aspx" title="Modificar Cliente"  description="Modificar Cliente" />
+
+            <siteMapNode url="templates/MantenedorEmpresa.aspx" title="Mantenedor Empresa"  description="Mantenedor Empresa" />
+            <siteMapNode url="templates/IngresarEmpresa.aspx" title="Ingreso Empresa"  description="Ingreso Empresa" />
+            <siteMapNode url="templates/ObtenerDatoEmpresa.aspx" title="Obtener Empresa"  description="Obtener Empresa" />
+            <siteMapNode url="templates/ObtenerListaEmpresas.aspx" title="Obtener Lista Empresas"  description="Obtener Lista Empresas" />
+            <siteMapNode url="templates/ModificarEmpresa.aspx" title="Modificar Empresa"  description="Modificar Empresa" />
+        
+            <siteMapNode url="templates/MantenedorTrabajador.aspx" title="Mantenedor Trabajador"  description="Mantenedor Trabajador" />
+            <siteMapNode url="templates/IngresarTrabajador.aspx" title="Ingreso Trabajador"  description="Ingreso Trabajador" />
+            <siteMapNode url="templates/ObtenerDatoTrabajador.aspx" title="Obtener Trabajador"  description="Obtener Trabajador" />
+            <siteMapNode url="templates/ObtenerListaTrabajadores.aspx" title="Obtener Lista Trabajadores"  description="Obtener Lista Trabajador" />
+            <siteMapNode url="templates/ModificarTrabajador.aspx" title="Modificar Trabajador"  description="Modificar Trabajador" />
+        </siteMapNode>
+        <siteMapNode url="moduloHostal.aspx" title="Administración de Hostal"  description="Módulo Administración de Hostal">
+      
+        </siteMapNode>  
+        <siteMapNode url="moduloProveedores.aspx" title="Administración de Proveedores"  description="Módulo Administración de Proveedores">
+
+        </siteMapNode>
     </siteMapNode>
 </siteMap>
