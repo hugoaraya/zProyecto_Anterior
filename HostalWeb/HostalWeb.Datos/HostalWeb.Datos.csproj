@@ -59,18 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CALENDARIO_MINUTA.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CLIENTE.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="COMEDOR.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DETALLE_MINUTA.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="EMPLEADO.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
@@ -80,16 +68,10 @@
     <Compile Include="ESTADO_EMPLEADO.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="ESTADO_HABITACION.cs">
+    <Compile Include="ESTADO_ORDEN.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="FACTURA.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FAMILIA.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HABITACION.cs">
+    <Compile Include="FAMILIA_PRODUCTO.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="HostalEDM.Context.cs">
@@ -107,16 +89,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HostalEDM.edmx</DependentUpon>
     </Compile>
-    <Compile Include="HUESPED.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MINUTA.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ORDEN_DE_COMPRA.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ORDEN_DE_PEDIDO.cs">
+    <Compile Include="ORDEN_PEDIDO.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="PRODUCTO.cs">
@@ -129,16 +102,7 @@
     <Compile Include="RUBRO.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="STOCK.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TIPO_HABITACION.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="TIPO_PRODUCTO.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TIPO_SERVICIO.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="TIPO_USUARIO.cs">
@@ -152,7 +116,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="HostalEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HostalEDM.Designer.cs</LastGenOutput>
@@ -161,6 +127,9 @@
       <DependentUpon>HostalEDM.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="HostalEDM.Context.tt">
@@ -173,9 +142,6 @@
       <DependentUpon>HostalEDM.edmx</DependentUpon>
       <LastGenOutput>HostalEDM.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

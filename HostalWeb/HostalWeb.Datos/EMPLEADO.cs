@@ -17,21 +17,26 @@ namespace HostalWeb.Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public EMPLEADO()
         {
-            this.ORDEN_DE_PEDIDO = new HashSet<ORDEN_DE_PEDIDO>();
+            this.ORDEN_PEDIDO = new HashSet<ORDEN_PEDIDO>();
+            this.USUARIO1 = new HashSet<USUARIO>();
         }
     
-        public int ID_EMPLEADO { get; set; }
-        public int RUT_EMPLEADO { get; set; }
-        public string DV_EMPLEADO { get; set; }
-        public string NOMBRES_EMPLEADO { get; set; }
-        public string APELLIDOS_EMPLEADO { get; set; }
-        public string TELEFONO_EMPLEADO { get; set; }
-        public int ESTADO_EMPLEADO { get; set; }
-        public string CORREO_EMPLEADO { get; set; }
-        public Nullable<int> ID_USUARIO { get; set; }
+        public int ID { get; set; }
+        public int RUT { get; set; }
+        public string DV { get; set; }
+        public string NOMBRE { get; set; }
+        public string APELLIDO { get; set; }
+        public string CARGO { get; set; }
+        public string TELEFONO { get; set; }
+        public string CORREO { get; set; }
+        public int ESTADO_ID { get; set; }
+        public Nullable<int> USUARIO_ID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDEN_DE_PEDIDO> ORDEN_DE_PEDIDO { get; set; }
+        public virtual ESTADO_EMPLEADO ESTADO_EMPLEADO { get; set; }
         public virtual USUARIO USUARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORDEN_PEDIDO> ORDEN_PEDIDO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<USUARIO> USUARIO1 { get; set; }
     }
 }

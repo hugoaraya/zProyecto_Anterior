@@ -17,19 +17,22 @@ namespace HostalWeb.Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TRABAJADOR()
         {
-            this.ORDEN_DE_COMPRA = new HashSet<ORDEN_DE_COMPRA>();
+            this.USUARIO1 = new HashSet<USUARIO>();
         }
     
-        public int ID_TRABAJADOR { get; set; }
-        public string RUT_TRABAJADOR { get; set; }
-        public string DV_TRABAJADOR { get; set; }
-        public string NOMBRE_TRABAJADOR { get; set; }
-        public string APELLIDO_TRABAJADOR { get; set; }
+        public int ID { get; set; }
+        public int RUT { get; set; }
+        public string DV { get; set; }
+        public string NOMBRE { get; set; }
+        public string APELLIDO { get; set; }
         public string TELEFONO { get; set; }
-        public int ID_EMPRESA { get; set; }
+        public string CORREO { get; set; }
+        public int EMPRESA_ID { get; set; }
+        public Nullable<int> USUARIO_ID { get; set; }
     
         public virtual EMPRESA EMPRESA { get; set; }
+        public virtual USUARIO USUARIO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDEN_DE_COMPRA> ORDEN_DE_COMPRA { get; set; }
+        public virtual ICollection<USUARIO> USUARIO1 { get; set; }
     }
 }

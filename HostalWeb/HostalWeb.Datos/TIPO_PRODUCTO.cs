@@ -14,10 +14,16 @@ namespace HostalWeb.Datos
     
     public partial class TIPO_PRODUCTO
     {
-        public int ID_TIPO { get; set; }
-        public string NOMBRE_TIPO { get; set; }
-        public int ID_STOCK { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TIPO_PRODUCTO()
+        {
+            this.PRODUCTO = new HashSet<PRODUCTO>();
+        }
     
-        public virtual STOCK STOCK { get; set; }
+        public int ID { get; set; }
+        public string DESCRIPCION { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
     }
 }

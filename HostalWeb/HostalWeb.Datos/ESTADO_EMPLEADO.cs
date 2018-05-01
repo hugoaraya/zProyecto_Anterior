@@ -14,7 +14,16 @@ namespace HostalWeb.Datos
     
     public partial class ESTADO_EMPLEADO
     {
-        public int ID_ESTADO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ESTADO_EMPLEADO()
+        {
+            this.EMPLEADO = new HashSet<EMPLEADO>();
+        }
+    
+        public int ID { get; set; }
         public string DESCRIPCION { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EMPLEADO> EMPLEADO { get; set; }
     }
 }

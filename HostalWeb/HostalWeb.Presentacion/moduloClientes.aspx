@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2>Modulo Administracion Clientes</h2>
+    <h2>Módulo Administración Clientes</h2>
       <div class="contenedor">
         <div class="box" >
             <h3>Registrar Cliente</h3>
@@ -28,9 +28,5 @@
                 <a href="../templates/ObtenerListaTrabajadores.aspx">Obtener Lista Trabajadores</a><br />
                 <a href="../templates/ModificarTrabajador.aspx">Modificar Trabajador</a>
         </div>
-
-
-
-
     </div>
 </asp:Content>

@@ -1,0 +1,17 @@
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\HostalWeb.Pruebas.dll.config
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\HostalWeb.Pruebas.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\HostalWeb.Pruebas.pdb
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\EntityFramework.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\HostalWeb.Datos.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\HostalWeb.Negocio.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\Oracle.ManagedDataAccess.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\HostalWeb.Datos.pdb
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\HostalWeb.Negocio.pdb
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\EntityFramework.xml
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\bin\Release\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\obj\Release\HostalWeb.Pruebas.dll
+C:\Users\Hugo\Desktop\HostalWeb\HostalWeb.Pruebas\obj\Release\HostalWeb.Pruebas.pdb

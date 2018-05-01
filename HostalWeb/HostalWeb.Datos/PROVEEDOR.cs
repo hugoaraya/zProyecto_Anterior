@@ -17,22 +17,28 @@ namespace HostalWeb.Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PROVEEDOR()
         {
-            this.STOCK = new HashSet<STOCK>();
+            this.ORDEN_PEDIDO = new HashSet<ORDEN_PEDIDO>();
+            this.PRODUCTO = new HashSet<PRODUCTO>();
+            this.USUARIO1 = new HashSet<USUARIO>();
         }
     
-        public int ID_PROVEEDOR { get; set; }
-        public string RUT_PROVEEDOR { get; set; }
-        public string DV_PROVEEDOR { get; set; }
-        public string NOMBRES_PROVEEDOR { get; set; }
-        public string APELLIDOS_PROVEEDOR { get; set; }
-        public string TELEFONO_PROVEEDOR { get; set; }
-        public string CORREO_PROVEEDOR { get; set; }
-        public int ID_RUBRO { get; set; }
-        public int ID_USUARIO { get; set; }
+        public int ID { get; set; }
+        public int RUT { get; set; }
+        public string DV { get; set; }
+        public string NOMBRE { get; set; }
+        public Nullable<decimal> TELEFONO { get; set; }
+        public string DIRECCION { get; set; }
+        public string CORREO { get; set; }
+        public int RUBRO_ID { get; set; }
+        public int USUARIO_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<STOCK> STOCK { get; set; }
+        public virtual ICollection<ORDEN_PEDIDO> ORDEN_PEDIDO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
         public virtual RUBRO RUBRO { get; set; }
         public virtual USUARIO USUARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<USUARIO> USUARIO1 { get; set; }
     }
 }

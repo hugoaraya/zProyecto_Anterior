@@ -4,55 +4,37 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1df039c5cc8e480cba3db61dcff25fc0" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.CALENDARIO_MINUTA" Width="1.5" PointX="12" PointY="22.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.CLIENTE" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.COMEDOR" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.DETALLE_MINUTA" Width="1.5" PointX="12" PointY="24.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.EMPLEADO" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.EMPRESA" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ESTADO_EMPLEADO" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ESTADO_HABITACION" Width="1.5" PointX="10.5" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.FACTURA" Width="1.5" PointX="5.25" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.FAMILIA" Width="1.5" PointX="12" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.HABITACION" Width="1.5" PointX="12.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.HUESPED" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.MINUTA" Width="1.5" PointX="9.75" PointY="23.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ORDEN_DE_COMPRA" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ORDEN_DE_PEDIDO" Width="1.5" PointX="7.5" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="12" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PROVEEDOR" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.RUBRO" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.STOCK" Width="1.5" PointX="9.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TIPO_HABITACION" Width="1.5" PointX="10.5" PointY="18.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TIPO_PRODUCTO" Width="1.5" PointX="12" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TIPO_SERVICIO" Width="1.5" PointX="7.5" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TIPO_USUARIO" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TRABAJADOR" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <AssociationConnector Association="Model.ID_CALENDARIO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.EMPRESA_CLIENTE_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.USUARIO_CLIENTE_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.COMEDOR_ORDEN_DE_COMPRA_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.COMEDOR_TIPO_SERVICIO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.DETALLE_MINUTA_MINUTA_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ORDEN_DE_PEDIDO_EMPLEADO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.USUARIO_EMLEADO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.EMPRESA_PROVEEDOR_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ID_ESTADO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ORDEN_DE_COMPRA_FACTURA_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FAMILIA_STOCK_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.HABITACION_ORDEN_DE_COMPRA_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.HABITACION_TIPO_HABITACION_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.MINUTA_TIPO_SERVICIO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ORDEN_DE_COMPRA_TRABAJADOR_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ID_ORDEN_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.PRODUCTO_STOCK_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ID_PROVEEDOR_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.RUBRO_PROVEEDOR_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.USUARIO_PROVEEDOR_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.TIPO_PRODUCTO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.TIPO_USUARIO_FK" ManuallyRouted="false" />
+      <Diagram DiagramId="a893fa564a4a4b0ba0364cb614452d54" Name="Diagram1" ZoomLevel="52">
+        <EntityTypeShape EntityType="Model.EMPLEADO" Width="1.5" PointX="7.625" PointY="4.5" />
+        <EntityTypeShape EntityType="Model.EMPRESA" Width="1.5" PointX="12.875" PointY="9.125" />
+        <EntityTypeShape EntityType="Model.ESTADO_EMPLEADO" Width="1.5" PointX="5.375" PointY="5.5" />
+        <EntityTypeShape EntityType="Model.ESTADO_ORDEN" Width="1.5" PointX="10.625" PointY="9.25" />
+        <EntityTypeShape EntityType="Model.FAMILIA_PRODUCTO" Width="1.5" PointX="12.125" PointY="12.125" />
+        <EntityTypeShape EntityType="Model.ORDEN_PEDIDO" Width="1.5" PointX="12.875" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="14.375" PointY="0.625" />
+        <EntityTypeShape EntityType="Model.PROVEEDOR" Width="1.5" PointX="12.125" PointY="0.5" />
+        <EntityTypeShape EntityType="Model.RUBRO" Width="1.5" PointX="9.875" PointY="1.5" />
+        <EntityTypeShape EntityType="Model.TIPO_PRODUCTO" Width="1.5" PointX="12.125" PointY="14.375" />
+        <EntityTypeShape EntityType="Model.TIPO_USUARIO" Width="1.5" PointX="7.625" PointY="2" />
+        <EntityTypeShape EntityType="Model.TRABAJADOR" Width="1.5" PointX="15.125" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="9.875" PointY="4.5" />
+        <AssociationConnector Association="Model.EMPLEADO_ESTADO_FK" />
+        <AssociationConnector Association="Model.EMPLEADO_USUARIO_FK" />
+        <AssociationConnector Association="Model.ORDEN_EMPLEADO_FK" />
+        <AssociationConnector Association="Model.USUARIO_EMPLEADO_FK" />
+        <AssociationConnector Association="Model.TRABAJADOR_EMPRESA_FK" />
+        <AssociationConnector Association="Model.ESTADO_ORDEN_FK" />
+        <AssociationConnector Association="Model.PRODUCTO_FAMILIA_FK" />
+        <AssociationConnector Association="Model.ORDEN_PRODUCTO_FK" />
+        <AssociationConnector Association="Model.ORDEN_PROVEEDOR_FK" />
+        <AssociationConnector Association="Model.PRODUCTO_TIPO_FK" />
+        <AssociationConnector Association="Model.PROVEEDOR_PRODUCTO_FK" />
+        <AssociationConnector Association="Model.PROVEEDOR_RUBRO_FK" />
+        <AssociationConnector Association="Model.PROVEEDOR_USUARIO_FK" />
+        <AssociationConnector Association="Model.USUARIO_PROVEEDOR_FK" />
+        <AssociationConnector Association="Model.USUARIO_TIPO_USUARIO_FK" />
+        <AssociationConnector Association="Model.TRABAJADOR_USUARIO_FK" />
+        <AssociationConnector Association="Model.USUARIO_TRABAJADOR_FK" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
