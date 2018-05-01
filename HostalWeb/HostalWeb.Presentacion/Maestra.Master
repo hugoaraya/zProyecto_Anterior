@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<head runat="server"> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Web Hostal Doña Clarita</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/menu-style.css"/>
 </head>
-<body>
+<body class="container">
     <form id="form1" runat="server">
     <header>
      <h1>
