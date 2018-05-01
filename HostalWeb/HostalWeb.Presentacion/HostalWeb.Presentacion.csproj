@@ -113,6 +113,16 @@
     <Content Include="img\ImagenEjemplo.png" />
     <Content Include="img\logo.png" />
     <Content Include="index.aspx" />
+    <Content Include="templates\IngresarTrabajador.aspx" />
+    <Content Include="templates\MantenedorCliente.aspx" />
+    <Content Include="templates\MantenedorTrabajador.aspx" />
+    <Content Include="templates\ModificarCliente.aspx" />
+    <Content Include="templates\ModificarEmpresa.aspx" />
+    <Content Include="templates\ModificarTrabajador.aspx" />
+    <Content Include="templates\ObtenerDatoCliente.aspx" />
+    <Content Include="templates\ObtenerDatoEmpresa.aspx" />
+    <Content Include="templates\ObtenerDatoTrabajador.aspx" />
+    <Content Include="templates\ObtenerListaTrabajadores.aspx" />
     <Content Include="templates\IngresarCliente.aspx" />
     <Content Include="moduloClientes.aspx" />
     <Content Include="moduloHostal.aspx" />
@@ -134,7 +144,11 @@
     <Content Include="templates\IngresarProveedor.aspx" />
     <Content Include="templates\MantenedorEmpresa.aspx" />
     <Content Include="templates\ObtenerListaEmpresas.aspx" />
+<<<<<<< HEAD
     <Content Include="templates\ObtenerListaProveedores.aspx" />
+=======
+    <Content Include="templates\ObtenerListaClientes.aspx" />
+>>>>>>> HugoAraya
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +163,76 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\IngresarTrabajador.aspx.cs">
+      <DependentUpon>IngresarTrabajador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\IngresarTrabajador.aspx.designer.cs">
+      <DependentUpon>IngresarTrabajador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\MantenedorCliente.aspx.cs">
+      <DependentUpon>MantenedorCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\MantenedorCliente.aspx.designer.cs">
+      <DependentUpon>MantenedorCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\MantenedorTrabajador.aspx.cs">
+      <DependentUpon>MantenedorTrabajador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\MantenedorTrabajador.aspx.designer.cs">
+      <DependentUpon>MantenedorTrabajador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\ModificarCliente.aspx.cs">
+      <DependentUpon>ModificarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ModificarCliente.aspx.designer.cs">
+      <DependentUpon>ModificarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\ModificarEmpresa.aspx.cs">
+      <DependentUpon>ModificarEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ModificarEmpresa.aspx.designer.cs">
+      <DependentUpon>ModificarEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\ModificarTrabajador.aspx.cs">
+      <DependentUpon>ModificarTrabajador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ModificarTrabajador.aspx.designer.cs">
+      <DependentUpon>ModificarTrabajador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\ObtenerDatoCliente.aspx.cs">
+      <DependentUpon>ObtenerDatoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ObtenerDatoCliente.aspx.designer.cs">
+      <DependentUpon>ObtenerDatoCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\ObtenerDatoEmpresa.aspx.cs">
+      <DependentUpon>ObtenerDatoEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ObtenerDatoEmpresa.aspx.designer.cs">
+      <DependentUpon>ObtenerDatoEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\ObtenerDatoTrabajador.aspx.cs">
+      <DependentUpon>ObtenerDatoTrabajador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ObtenerDatoTrabajador.aspx.designer.cs">
+      <DependentUpon>ObtenerDatoTrabajador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="templates\ObtenerListaTrabajadores.aspx.cs">
+      <DependentUpon>ObtenerListaTrabajadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ObtenerListaTrabajadores.aspx.designer.cs">
+      <DependentUpon>ObtenerListaTrabajadores.aspx</DependentUpon>
     </Compile>
     <Compile Include="templates\IngresarCliente.aspx.cs">
       <DependentUpon>IngresarCliente.aspx</DependentUpon>
@@ -214,12 +298,21 @@
     <Compile Include="templates\ObtenerListaEmpresas.aspx.designer.cs">
       <DependentUpon>ObtenerListaEmpresas.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="templates\ObtenerListaProveedores.aspx.cs">
       <DependentUpon>ObtenerListaProveedores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="templates\ObtenerListaProveedores.aspx.designer.cs">
       <DependentUpon>ObtenerListaProveedores.aspx</DependentUpon>
+=======
+    <Compile Include="templates\ObtenerListaClientes.aspx.cs">
+      <DependentUpon>ObtenerListaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="templates\ObtenerListaClientes.aspx.designer.cs">
+      <DependentUpon>ObtenerListaClientes.aspx</DependentUpon>
+>>>>>>> HugoAraya
     </Compile>
   </ItemGroup>
   <ItemGroup>

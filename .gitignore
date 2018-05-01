@@ -1,2 +1,5 @@
 
 HostalWeb/.vs/HostalWeb/v14/.suo
+*.dll
+*.dll
+*.pdb

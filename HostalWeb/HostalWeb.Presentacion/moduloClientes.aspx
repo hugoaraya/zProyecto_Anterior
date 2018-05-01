@@ -5,12 +5,12 @@
     <h2>Módulo Administración Clientes</h2>
       <div class="contenedor">
         <div class="box" >
-            <h3>Registrar Cliente</h3>
-                <a href="../templates/MantenedorCliente.aspx">Mantenedor Cliente (completo)???</a><br />
+            <h3>Registrar Usuario</h3>
+                <a href="../templates/MantenedorCliente.aspx">Mantenedor Cliente (completo)</a><br />
                 <a href="../templates/IngresarCliente.aspx">Ingresar Cliente</a><br />
                 <a href="../templates/ObtenerDatoCliente.aspx">Obtener Dato Cliente</a><br />
                 <a href="../templates/ObtenerListaClientes.aspx">Obtener Lista Clientes</a><br />
-                <a href="../templates/ModificarClientes.aspx">Modificar Cliente</a>
+                <a href="../templates/ModificarCliente.aspx">Modificar Cliente</a>
         </div>
         <div class="box" >
              <h3>Registrar Empresa</h3>
@@ -22,7 +22,7 @@
         </div>
         <div class="box" >
              <h3>Registrar Trabajador</h3>
-                <a href="../templates/MantenedorTrabajador.aspx">Mantenedor Trabajador (completo)???</a><br />
+                <a href="../templates/MantenedorTrabajador.aspx">Mantenedor Trabajador (completo)</a><br />
                 <a href="../templates/IngresarTrabajador.aspx">Ingresar Trabajador</a><br />
                 <a href="../templates/ObtenerDatoTrabajador.aspx">Obtener Dato Trabajador</a><br />
                 <a href="../templates/ObtenerListaTrabajadores.aspx">Obtener Lista Trabajadores</a><br />

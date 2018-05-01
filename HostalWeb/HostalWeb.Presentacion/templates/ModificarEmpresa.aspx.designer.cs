@@ -10,7 +10,7 @@
 namespace HostalWeb.Presentacion.templates {
     
     
-    public partial class IngresarEmpresa {
+    public partial class ModificarEmpresa {
         
         /// <summary>
         /// Control lbRut.
@@ -85,13 +85,22 @@ namespace HostalWeb.Presentacion.templates {
         protected global::System.Web.UI.WebControls.TextBox txtDireccion;
         
         /// <summary>
-        /// Control btnCreate.
+        /// Control btnRead.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreate;
+        protected global::System.Web.UI.WebControls.Button btnRead;
+        
+        /// <summary>
+        /// Control btnUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
         
         /// <summary>
         /// Control btnlimpiar.
