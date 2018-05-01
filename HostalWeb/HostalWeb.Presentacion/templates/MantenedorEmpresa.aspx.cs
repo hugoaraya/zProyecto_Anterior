@@ -98,6 +98,39 @@ namespace HostalWeb.Presentacion.templates
             lblMessages.Text = "";
         }
 
-      
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Empresa enterprise2 = new Empresa()
+                {
+                    RUT_EMPRESA = txtRut.Text,
+                    NOMBRE_EMPRESA = txtNombre.Text,
+                    GIRO_EMPRESA = txtGiro.Text,
+                    DIRECCION_EMPRESA = txtDireccion.Text
+                    
+                };
+                if (txtRut.Text != "" && txtDireccion.Text != "" && txtGiro.Text != "")
+                {
+                    if (enterprise2.Update())
+                    {
+                        Clear();
+                        lblMessages.Text = "Actualizado ☺";
+                    }
+                    else
+                    {
+                        lblMessages.Text = "NO Actualizado";
+                    }
+                }
+                else
+                {
+                    lblMessages.Text = "No se pudo Actualizar Verifique datos";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessages.Text = ex.Message;
+            }
+        }
     }
 }
