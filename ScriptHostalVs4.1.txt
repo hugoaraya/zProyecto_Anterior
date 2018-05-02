@@ -1,5 +1,5 @@
 
---LIMPIEZA DE AMBIENTE...
+LIMPIEZA DE AMBIENTE...
 --SELECT 'DROP TABLE '||table_name||' CASCADE CONSTRAINTS;' FROM user_tables
 
 
@@ -12,15 +12,14 @@ ALTER TABLE tipo_usuario ADD CONSTRAINT tipo_usuario_pk PRIMARY KEY ( id );
 
 
 --MODIFICADA quite NOT NULL a trabajador_id,empleado_id y proveedor_id
+---Chris quite trabajador_id, empleado_id, proveedor_id
 CREATE TABLE usuario (
     id                NUMBER(10) NOT NULL,
     nombre            VARCHAR2(45) NOT NULL,
     contrasena        VARCHAR2(45) NOT NULL,
-    tipo_usuario_id   NUMBER(10) NOT NULL,
-    trabajador_id     NUMBER(10),
-    empleado_id       NUMBER(10),
-    proveedor_id      NUMBER(10)
+    tipo_usuario_id   NUMBER(10) NOT NULL  
 );
+
 ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( id );
 
 ALTER TABLE usuario
@@ -46,8 +45,8 @@ CREATE TABLE empleado (
     apellido     VARCHAR2(45),
     cargo        VARCHAR2(45) NOT NULL,
     telefono	 VARCHAR2(20),
-    correo	 	 VARCHAR2(50),
-	estado_id    NUMBER(10) NOT NULL,
+    correo 	 VARCHAR2(50),
+    estado_id    NUMBER(10) NOT NULL,
     usuario_id   NUMBER(10)
 );
 
@@ -60,10 +59,6 @@ ALTER TABLE empleado
 ALTER TABLE empleado
     ADD CONSTRAINT empleado_estado_fk FOREIGN KEY ( estado_id )
         REFERENCES estado_empleado ( id );
---agregue relacion usuario empleado ..		
-ALTER TABLE usuario 
-    ADD CONSTRAINT usuario_empleado_fk FOREIGN KEY ( empleado_id )
-        REFERENCES empleado ( id );
 
 		
 		
@@ -104,10 +99,6 @@ ALTER TABLE trabajador
 ALTER TABLE trabajador
     ADD CONSTRAINT trabajador_usuario_fk FOREIGN KEY ( usuario_id )
         REFERENCES usuario ( id );
---agregue relacion  usuario trabajador
-ALTER TABLE usuario
-    ADD CONSTRAINT usuario_trabajador_fk FOREIGN KEY ( trabajador_id )
-        REFERENCES trabajador ( id );
 
 		
 --MODIFICADO elimine rubro_id   NUMBER NOT NULL y canbie nombre por descripcion
@@ -139,10 +130,6 @@ ALTER TABLE proveedor
 ALTER TABLE proveedor
     ADD CONSTRAINT proveedor_usuario_fk FOREIGN KEY ( usuario_id )
         REFERENCES usuario ( id );
---agregue relacion usuario proveedor.		
-ALTER TABLE usuario
-    ADD CONSTRAINT usuario_proveedor_fk FOREIGN KEY ( proveedor_id )
-        REFERENCES proveedor ( id );
 	
 		
 --familia_producto_id  eliminado, stock_saldo cambiado a precio
@@ -159,6 +146,21 @@ CREATE TABLE producto (
 );
 
 ALTER TABLE producto ADD CONSTRAINT producto_pk PRIMARY KEY ( id );	
+-- cambiado nombre a descripcion
+CREATE TABLE tipo_producto (
+    id       NUMBER(10) NOT NULL,
+    descripcion   VARCHAR2(45) NOT NULL
+);
+ALTER TABLE tipo_producto ADD CONSTRAINT tipo_producto_pk PRIMARY KEY ( id );
+
+-- cambiado nombre a descripcion
+CREATE TABLE familia_producto (
+    id       NUMBER(10) NOT NULL,
+    descripcion   VARCHAR2(45) NOT NULL
+);
+ALTER TABLE familia_producto ADD CONSTRAINT familia_producto_fk PRIMARY KEY ( id );	
+
+
 --relacion producto con proveedor
 ALTER TABLE producto
     ADD CONSTRAINT proveedor_producto_fk FOREIGN KEY ( proveedor_id )
@@ -172,20 +174,7 @@ ALTER TABLE producto
     ADD CONSTRAINT producto_tipo_fk FOREIGN KEY ( tipo_producto_id )
         REFERENCES tipo_producto ( id );
 	
--- cambiado nombre a descripcion
-CREATE TABLE tipo_producto (
-    id       NUMBER(10) NOT NULL,
-    descripcion   VARCHAR2(45) NOT NULL
-);
 
-ALTER TABLE tipo_producto ADD CONSTRAINT tipo_producto_pk PRIMARY KEY ( id );
--- cambiado nombre a descripcion
-CREATE TABLE familia_producto (
-    id       NUMBER(10) NOT NULL,
-    descripcion   VARCHAR2(45) NOT NULL
-);
-
-ALTER TABLE familia_producto ADD CONSTRAINT familia_producto_pk PRIMARY KEY ( id );
 --AGREGADO ESTADO DE ORDEN DIVIDIDO EN CATEGORIAS COMO PENDIENTE,ENTREGADO,ETC
 
 CREATE TABLE estado_orden(
@@ -207,7 +196,22 @@ CREATE TABLE orden_pedido (
     
 );
 
+--Se crea la tabla orden_pedido_producto
 ALTER TABLE orden_pedido ADD CONSTRAINT orden_pedido_pk PRIMARY KEY ( id );
+CREATE TABLE orden_pedido_producto (
+    id                 NUMBER(10) NOT NULL,
+    producto_id        NUMBER(10) NOT NULL,
+    orden_pedido_id    NUMBER(10) NOT NULL,
+    descripcion        VARCHAR2(255),
+    valor              NUMBER(10) NOT NULL
+);
+ALTER TABLE orden_pedido_producto ADD CONSTRAINT orden_pedido_producto_pk PRIMARY KEY ( id );
+
+
+--Relacion orden_pedido_producto con orden_pedido
+ALTER TABLE orden_pedido_producto
+    ADD CONSTRAINT orden_producto_orden_pedido_fk FOREIGN KEY ( orden_pedido_id )
+        REFERENCES orden_pedido ( id );
 
 --relacion orden_pedido con proveedor
 ALTER TABLE orden_pedido
@@ -225,18 +229,6 @@ ALTER TABLE orden_pedido
 ALTER TABLE orden_pedido
     ADD CONSTRAINT estado_orden_fk FOREIGN KEY ( estado_orden_id )
         REFERENCES estado_orden ( id );
-
-
---(HUGO)HASTA ACA REVISE PARA CREAR USUARIOS Y TABLAS QUE ME CORRESPONDIAN ....
---(JORDAN)AGREGADO ARREGLOS A TABLAS QUE ME CORRESPONDIAN,INCLUYENDO ORDEN DE PEDIDO > PROVEEDOR
-
---*********************
--- AL CARGAR EL RESTO DEL SCRIPT ME GENERA ERROR EN VISUAL STUDIO AL CARGAR LA BD,,, :o
---*********************
-
-/*
-
-
 
 CREATE TABLE factura (
     id                NUMBER(10) NOT NULL,
@@ -350,10 +342,20 @@ CREATE TABLE servicio_oden_compra (
     valor              NUMBER(10) NOT NULL,
     descripcion        VARCHAR2(45) NOT NULL
 );
-
 ALTER TABLE servicio_oden_compra ADD CONSTRAINT servicio_oden_compra_pk PRIMARY KEY ( id );
 
 
+
+
+--(HUGO)HASTA ACA REVISE PARA CREAR USUARIOS Y TABLAS QUE ME CORRESPONDIAN ....
+--(JORDAN)AGREGADO ARREGLOS A TABLAS QUE ME CORRESPONDIAN,INCLUYENDO ORDEN DE PEDIDO > PROVEEDOR
+--(Chris) Algunas PK y FK me daban error porque en algunos el alter table estaba antes de crear la tabla, cambie los ordenes y se solucionó. Quite tambien unos atributos que no iban en la tabla usuario.
+
+--*********************
+-- AL CARGAR EL RESTO DEL SCRIPT ME GENERA ERROR EN VISUAL STUDIO AL CARGAR LA BD,,, :o
+--*********************
+--EL SCRIPT FUNCIONA HASTA LA CREACION DE LA TABLA servicio_orden_compra, TENGO QUE ARREGAR LAS SIGUIENTES RELACIONES.
+/*
 
 
 ALTER TABLE factura
@@ -395,30 +397,7 @@ ALTER TABLE minuta
 ALTER TABLE habitacion_orden_compra
     ADD CONSTRAINT orden_compra_habitacion_fk FOREIGN KEY ( habitacion_id )
         REFERENCES habitacion ( id );
-
-ALTER TABLE orden_pedido
-    ADD CONSTRAINT orden_pedido_empleado_fk FOREIGN KEY ( empleado_id )
-        REFERENCES empleado ( id );
-
-ALTER TABLE orden_pedido
-    ADD CONSTRAINT orden_pedido_proveedor_fk FOREIGN KEY ( proveedor_id )
-        REFERENCES proveedor ( id );
-
-ALTER TABLE orden_pedido_producto
-    ADD CONSTRAINT orden_producto_orden_pedido_fk FOREIGN KEY ( orden_pedido_id )
-        REFERENCES orden_pedido ( id );
-
-ALTER TABLE orden_pedido_producto
-    ADD CONSTRAINT orden_producto_producto_fk FOREIGN KEY ( producto_id )
-        REFERENCES producto ( id );
-
-ALTER TABLE producto
-    ADD CONSTRAINT producto_familia_producto_fk FOREIGN KEY ( familia_producto_id )
-        REFERENCES familia_producto ( id );
-
-ALTER TABLE producto
-    ADD CONSTRAINT producto_tipo_producto_fk FOREIGN KEY ( tipo_producto_id )
-        REFERENCES tipo_producto ( id );
+        
 
 ALTER TABLE servicio_oden_compra
     ADD CONSTRAINT serv_compra_orden_compra_fk FOREIGN KEY ( orden_compra_id )
@@ -435,9 +414,6 @@ ALTER TABLE servicio_factura
 ALTER TABLE servicio_factura
     ADD CONSTRAINT servicio_factura_servicio_fk FOREIGN KEY ( servicio_id )
         REFERENCES servicio ( id );
-
-
-		
 */
 
 
