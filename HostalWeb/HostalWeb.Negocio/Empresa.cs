@@ -59,16 +59,28 @@ namespace HostalWeb.Negocio
             {
                 try
                 {
+<<<<<<< HEAD
+                    //objeto que entra en la base de datos
+                    Datos.EMPRESA objetoDato = new Datos.EMPRESA()
+                    {
+                        ID = ID_EMPRESA,
+=======
                 //objeto que entra en la base de datos
                 Datos.EMPRESA objetoDato = new Datos.EMPRESA()
                 {
+>>>>>>> eea9b802608d92eb856d1711fecd61904de6ff9f
                         RUT = _rut,
                         DV =_dv,
                         NOMBRE = NOMBRE_EMPRESA,
                         DIRECCION = DIRECCION_EMPRESA,
                         GIRO = GIRO_EMPRESA
+<<<<<<< HEAD
+            };
+                    Conexion.ModeloEntities.EMPRESA.Add(objetoDato);
+=======
                     };
                 Conexion.ModeloEntities.EMPRESA.Add(objetoDato);
+>>>>>>> eea9b802608d92eb856d1711fecd61904de6ff9f
                 Conexion.ModeloEntities.SaveChanges(); //abre la conexion, hace el comando sql, actualiza la BD, cierra la conexion
                 return true;
                 }
@@ -88,12 +100,22 @@ namespace HostalWeb.Negocio
                         where empre.RUT == _rut
                         select empre
                         ).First();
+<<<<<<< HEAD
+                            ID_EMPRESA = empresaDatos.ID;
+                            NOMBRE_EMPRESA = empresaDatos.NOMBRE;
+                            DIRECCION_EMPRESA = empresaDatos.DIRECCION;
+                            GIRO_EMPRESA = empresaDatos.GIRO;
+                            _dv = empresaDatos.DV;
+                //si no lo encuentra el resultado sera null 
+                return true;
+=======
                     NOMBRE_EMPRESA = empresaDatos.NOMBRE;
                     DIRECCION_EMPRESA = empresaDatos.DIRECCION;
                     GIRO_EMPRESA = empresaDatos.GIRO;
                     _dv = empresaDatos.DV;
                     //si no lo encuentra el resultado sera null 
                     return true;
+>>>>>>> eea9b802608d92eb856d1711fecd61904de6ff9f
                 }
                 catch (Exception)
                 {
@@ -108,6 +130,10 @@ namespace HostalWeb.Negocio
                     Datos.EMPRESA empresaDatos =
                         Conexion.ModeloEntities.EMPRESA.First(e => e.RUT == _rut);
                         //aqui usamos lambda
+<<<<<<< HEAD
+                        empresaDatos.ID = ID_EMPRESA;
+=======
+>>>>>>> eea9b802608d92eb856d1711fecd61904de6ff9f
                         empresaDatos.NOMBRE = NOMBRE_EMPRESA;
                         empresaDatos.DIRECCION = DIRECCION_EMPRESA;
                         empresaDatos.GIRO = GIRO_EMPRESA;
