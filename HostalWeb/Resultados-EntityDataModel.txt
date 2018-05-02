@@ -1,3 +1,0 @@
-﻿Archivo de modelo generado: HostalEDM.edmx.
-La carga de los metadatos desde la base de datos tardó 00:00:00.7043361.
-La generación del modelo tardó 00:00:11.8874848.
