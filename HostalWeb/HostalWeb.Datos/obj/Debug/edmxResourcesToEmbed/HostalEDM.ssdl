@@ -33,46 +33,6 @@
     <Property Name="ID" Type="number" Precision="10" Scale="0" Nullable="false" />
     <Property Name="DESCRIPCION" Type="varchar2" MaxLength="40" Nullable="false" />
   </EntityType>
-  <EntityType Name="ESTADO_ORDEN">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="45" Nullable="false" />
-  </EntityType>
-  <EntityType Name="FAMILIA_PRODUCTO">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="45" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ORDEN_PEDIDO">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="PROVEEDOR_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="PRODUCTO_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="DETALLE" Type="varchar2" MaxLength="255" Nullable="false" />
-    <Property Name="EMPLEADO_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="TOTAL" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="ESTADO_ORDEN_ID" Type="number" Precision="10" Scale="0" />
-  </EntityType>
-  <EntityType Name="PRODUCTO">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="NOMBRE" Type="varchar2" MaxLength="45" />
-    <Property Name="FECHA_VENCIMIENTO" Type="date" />
-    <Property Name="TIPO_PRODUCTO_ID" Type="number" Precision="10" Scale="0" />
-    <Property Name="FAMILIA_ID" Type="number" Precision="10" Scale="0" />
-    <Property Name="PROVEEDOR_ID" Type="number" Precision="10" Scale="0" />
-    <Property Name="CODIGO_BARRAS" Type="number" Precision="17" Scale="0" />
-    <Property Name="STOCK_TOTAL" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="PRECIO" Type="number" Precision="10" Scale="0" Nullable="false" />
-  </EntityType>
   <EntityType Name="PROVEEDOR">
     <Key>
       <PropertyRef Name="ID" />
@@ -88,13 +48,6 @@
     <Property Name="USUARIO_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="RUBRO">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="45" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TIPO_PRODUCTO">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -155,90 +108,6 @@
       </Principal>
       <Dependent Role="EMPLEADO">
         <PropertyRef Name="USUARIO_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ESTADO_ORDEN_FK">
-    <End Role="ESTADO_ORDEN" Type="Self.ESTADO_ORDEN" Multiplicity="0..1" />
-    <End Role="ORDEN_PEDIDO" Type="Self.ORDEN_PEDIDO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ESTADO_ORDEN">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ORDEN_PEDIDO">
-        <PropertyRef Name="ESTADO_ORDEN_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ORDEN_EMPLEADO_FK">
-    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="1" />
-    <End Role="ORDEN_PEDIDO" Type="Self.ORDEN_PEDIDO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EMPLEADO">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ORDEN_PEDIDO">
-        <PropertyRef Name="EMPLEADO_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ORDEN_PRODUCTO_FK">
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
-    <End Role="ORDEN_PEDIDO" Type="Self.ORDEN_PEDIDO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PRODUCTO">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ORDEN_PEDIDO">
-        <PropertyRef Name="PRODUCTO_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ORDEN_PROVEEDOR_FK">
-    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="1" />
-    <End Role="ORDEN_PEDIDO" Type="Self.ORDEN_PEDIDO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PROVEEDOR">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ORDEN_PEDIDO">
-        <PropertyRef Name="PROVEEDOR_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PRODUCTO_FAMILIA_FK">
-    <End Role="FAMILIA_PRODUCTO" Type="Self.FAMILIA_PRODUCTO" Multiplicity="0..1" />
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="FAMILIA_PRODUCTO">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PRODUCTO">
-        <PropertyRef Name="FAMILIA_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PRODUCTO_TIPO_FK">
-    <End Role="TIPO_PRODUCTO" Type="Self.TIPO_PRODUCTO" Multiplicity="0..1" />
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TIPO_PRODUCTO">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PRODUCTO">
-        <PropertyRef Name="TIPO_PRODUCTO_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PROVEEDOR_PRODUCTO_FK">
-    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PROVEEDOR">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PRODUCTO">
-        <PropertyRef Name="PROVEEDOR_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -342,13 +211,8 @@
     <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="ESTADO_EMPLEADO" EntityType="Self.ESTADO_EMPLEADO" Schema="HOSTALDB" store:Type="Tables" />
-    <EntitySet Name="ESTADO_ORDEN" EntityType="Self.ESTADO_ORDEN" Schema="HOSTALDB" store:Type="Tables" />
-    <EntitySet Name="FAMILIA_PRODUCTO" EntityType="Self.FAMILIA_PRODUCTO" Schema="HOSTALDB" store:Type="Tables" />
-    <EntitySet Name="ORDEN_PEDIDO" EntityType="Self.ORDEN_PEDIDO" Schema="HOSTALDB" store:Type="Tables" />
-    <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="RUBRO" EntityType="Self.RUBRO" Schema="HOSTALDB" store:Type="Tables" />
-    <EntitySet Name="TIPO_PRODUCTO" EntityType="Self.TIPO_PRODUCTO" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="TRABAJADOR" EntityType="Self.TRABAJADOR" Schema="HOSTALDB" store:Type="Tables" />
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="HOSTALDB" store:Type="Tables" />
@@ -359,34 +223,6 @@
     <AssociationSet Name="EMPLEADO_USUARIO_FK" Association="Self.EMPLEADO_USUARIO_FK">
       <End Role="USUARIO" EntitySet="USUARIO" />
       <End Role="EMPLEADO" EntitySet="EMPLEADO" />
-    </AssociationSet>
-    <AssociationSet Name="ESTADO_ORDEN_FK" Association="Self.ESTADO_ORDEN_FK">
-      <End Role="ESTADO_ORDEN" EntitySet="ESTADO_ORDEN" />
-      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
-    </AssociationSet>
-    <AssociationSet Name="ORDEN_EMPLEADO_FK" Association="Self.ORDEN_EMPLEADO_FK">
-      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
-      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
-    </AssociationSet>
-    <AssociationSet Name="ORDEN_PRODUCTO_FK" Association="Self.ORDEN_PRODUCTO_FK">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
-    </AssociationSet>
-    <AssociationSet Name="ORDEN_PROVEEDOR_FK" Association="Self.ORDEN_PROVEEDOR_FK">
-      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
-      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
-    </AssociationSet>
-    <AssociationSet Name="PRODUCTO_FAMILIA_FK" Association="Self.PRODUCTO_FAMILIA_FK">
-      <End Role="FAMILIA_PRODUCTO" EntitySet="FAMILIA_PRODUCTO" />
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-    </AssociationSet>
-    <AssociationSet Name="PRODUCTO_TIPO_FK" Association="Self.PRODUCTO_TIPO_FK">
-      <End Role="TIPO_PRODUCTO" EntitySet="TIPO_PRODUCTO" />
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-    </AssociationSet>
-    <AssociationSet Name="PROVEEDOR_PRODUCTO_FK" Association="Self.PROVEEDOR_PRODUCTO_FK">
-      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
     </AssociationSet>
     <AssociationSet Name="PROVEEDOR_RUBRO_FK" Association="Self.PROVEEDOR_RUBRO_FK">
       <End Role="RUBRO" EntitySet="RUBRO" />

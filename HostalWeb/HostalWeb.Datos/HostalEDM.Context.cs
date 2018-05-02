@@ -28,13 +28,8 @@ namespace HostalWeb.Datos
         public virtual DbSet<EMPLEADO> EMPLEADO { get; set; }
         public virtual DbSet<EMPRESA> EMPRESA { get; set; }
         public virtual DbSet<ESTADO_EMPLEADO> ESTADO_EMPLEADO { get; set; }
-        public virtual DbSet<ESTADO_ORDEN> ESTADO_ORDEN { get; set; }
-        public virtual DbSet<FAMILIA_PRODUCTO> FAMILIA_PRODUCTO { get; set; }
-        public virtual DbSet<ORDEN_PEDIDO> ORDEN_PEDIDO { get; set; }
-        public virtual DbSet<PRODUCTO> PRODUCTO { get; set; }
         public virtual DbSet<PROVEEDOR> PROVEEDOR { get; set; }
         public virtual DbSet<RUBRO> RUBRO { get; set; }
-        public virtual DbSet<TIPO_PRODUCTO> TIPO_PRODUCTO { get; set; }
         public virtual DbSet<TIPO_USUARIO> TIPO_USUARIO { get; set; }
         public virtual DbSet<TRABAJADOR> TRABAJADOR { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }

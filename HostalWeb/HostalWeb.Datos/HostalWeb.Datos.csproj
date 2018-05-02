@@ -68,12 +68,6 @@
     <Compile Include="ESTADO_EMPLEADO.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="ESTADO_ORDEN.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FAMILIA_PRODUCTO.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="HostalEDM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,20 +83,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HostalEDM.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ORDEN_PEDIDO.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PRODUCTO.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVEEDOR.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="RUBRO.cs">
-      <DependentUpon>HostalEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TIPO_PRODUCTO.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="TIPO_USUARIO.cs">

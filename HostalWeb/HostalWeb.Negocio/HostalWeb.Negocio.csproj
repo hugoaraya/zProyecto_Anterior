@@ -61,8 +61,6 @@
     <Compile Include="Empresa.cs" />
     <Compile Include="Colecciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proveedor.cs" />
-    <Compile Include="Rubro.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
