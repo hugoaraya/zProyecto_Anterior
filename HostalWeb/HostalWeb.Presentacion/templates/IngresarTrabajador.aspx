@@ -20,13 +20,13 @@
   
 
     <br /><br />
-    <asp:Button ID="btnCreate" runat="server" Text="Ingresar"  Width="470px" OnClick="btnCreate_Click" />
+    <asp:Button ID="btnCreate" runat="server" Text="Ingresar"  Width="470px"  />
     <br />
-    <asp:Button ID="btnRead" runat="server" Text="Buscar" OnClick="btnRead_Click" Width="470px" />
+    <asp:Button ID="btnRead" runat="server" Text="Buscar"  Width="470px" />
     <br />
-    <asp:Button ID="btnUpdate" runat="server" Text="Modificar"  Width="470px" OnClick="btnUpdate_Click" />
+    <asp:Button ID="btnUpdate" runat="server" Text="Modificar"  Width="470px"  />
     <br />
-    <asp:Button ID="btnlimpiar" runat="server"  Text="Limpiar Campos" Width="470px" OnClick="btnlimpiar_Click" />
+    <asp:Button ID="btnlimpiar" runat="server"  Text="Limpiar Campos" Width="470px"  />
     <br />
     <asp:Label ID="lblMessages" runat="server" Text=""></asp:Label>
     <br />
