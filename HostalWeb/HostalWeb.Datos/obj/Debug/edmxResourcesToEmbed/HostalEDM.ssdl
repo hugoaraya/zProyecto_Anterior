@@ -45,7 +45,7 @@
     <Property Name="DIRECCION" Type="varchar2" MaxLength="45" Nullable="false" />
     <Property Name="CORREO" Type="varchar2" MaxLength="50" />
     <Property Name="RUBRO_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="USUARIO_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="USUARIO_ID" Type="number" Precision="10" Scale="0" />
   </EntityType>
   <EntityType Name="RUBRO">
     <Key>
@@ -72,7 +72,7 @@
     <Property Name="APELLIDO" Type="varchar2" MaxLength="45" Nullable="false" />
     <Property Name="TELEFONO" Type="varchar2" MaxLength="20" />
     <Property Name="CORREO" Type="varchar2" MaxLength="50" />
-    <Property Name="EMPRESA_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="EMPRESA_ID" Type="number" Precision="10" Scale="0" />
     <Property Name="USUARIO_ID" Type="number" Precision="10" Scale="0" />
   </EntityType>
   <EntityType Name="USUARIO">
@@ -83,9 +83,6 @@
     <Property Name="NOMBRE" Type="varchar2" MaxLength="45" Nullable="false" />
     <Property Name="CONTRASENA" Type="varchar2" MaxLength="45" Nullable="false" />
     <Property Name="TIPO_USUARIO_ID" Type="number" Precision="10" Scale="0" Nullable="false" />
-    <Property Name="TRABAJADOR_ID" Type="number" Precision="10" Scale="0" />
-    <Property Name="EMPLEADO_ID" Type="number" Precision="10" Scale="0" />
-    <Property Name="PROVEEDOR_ID" Type="number" Precision="10" Scale="0" />
   </EntityType>
   <Association Name="EMPLEADO_ESTADO_FK">
     <End Role="ESTADO_EMPLEADO" Type="Self.ESTADO_EMPLEADO" Multiplicity="1" />
@@ -124,7 +121,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="PROVEEDOR_USUARIO_FK">
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
     <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="USUARIO">
@@ -136,7 +133,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="TRABAJADOR_EMPRESA_FK">
-    <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="1" />
+    <End Role="EMPRESA" Type="Self.EMPRESA" Multiplicity="0..1" />
     <End Role="TRABAJADOR" Type="Self.TRABAJADOR" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="EMPRESA">
@@ -159,30 +156,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="USUARIO_EMPLEADO_FK">
-    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EMPLEADO">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="USUARIO">
-        <PropertyRef Name="EMPLEADO_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="USUARIO_PROVEEDOR_FK">
-    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PROVEEDOR">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="USUARIO">
-        <PropertyRef Name="PROVEEDOR_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="USUARIO_TIPO_USUARIO_FK">
     <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="1" />
     <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
@@ -192,18 +165,6 @@
       </Principal>
       <Dependent Role="USUARIO">
         <PropertyRef Name="TIPO_USUARIO_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="USUARIO_TRABAJADOR_FK">
-    <End Role="TRABAJADOR" Type="Self.TRABAJADOR" Multiplicity="0..1" />
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TRABAJADOR">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="USUARIO">
-        <PropertyRef Name="TRABAJADOR_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -240,20 +201,8 @@
       <End Role="USUARIO" EntitySet="USUARIO" />
       <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
     </AssociationSet>
-    <AssociationSet Name="USUARIO_EMPLEADO_FK" Association="Self.USUARIO_EMPLEADO_FK">
-      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
-    </AssociationSet>
-    <AssociationSet Name="USUARIO_PROVEEDOR_FK" Association="Self.USUARIO_PROVEEDOR_FK">
-      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
-    </AssociationSet>
     <AssociationSet Name="USUARIO_TIPO_USUARIO_FK" Association="Self.USUARIO_TIPO_USUARIO_FK">
       <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
-    </AssociationSet>
-    <AssociationSet Name="USUARIO_TRABAJADOR_FK" Association="Self.USUARIO_TRABAJADOR_FK">
-      <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
       <End Role="USUARIO" EntitySet="USUARIO" />
     </AssociationSet>
   </EntityContainer>

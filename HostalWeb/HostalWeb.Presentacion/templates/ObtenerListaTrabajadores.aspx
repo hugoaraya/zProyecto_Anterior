@@ -3,4 +3,5 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Listado de Trabajadores: </h2>
+    <asp:GridView ID="GVTrabajadores" runat="server" AllowPaging="True" OnPageIndexChanging="GVTrabajadores_PageIndexChanging" HorizontalAlign="Center"></asp:GridView>
 </asp:Content>

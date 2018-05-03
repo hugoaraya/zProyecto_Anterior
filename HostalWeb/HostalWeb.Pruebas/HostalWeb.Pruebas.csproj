@@ -71,10 +71,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HostalWeb.Datos\HostalWeb.Datos.csproj">
-      <Project>{586f6f6d-d9fc-411c-aefe-201f161518e0}</Project>
-      <Name>HostalWeb.Datos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HostalWeb.Negocio\HostalWeb.Negocio.csproj">
       <Project>{3931619c-0d0d-4e0b-bdd6-7169e593e61e}</Project>
       <Name>HostalWeb.Negocio</Name>

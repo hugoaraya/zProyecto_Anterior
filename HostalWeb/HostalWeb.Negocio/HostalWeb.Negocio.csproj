@@ -61,6 +61,7 @@
     <Compile Include="Empresa.cs" />
     <Compile Include="Colecciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trabajador.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -68,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HostalWeb.Datos\HostalWeb.Datos.csproj">
-      <Project>{586f6f6d-d9fc-411c-aefe-201f161518e0}</Project>
+      <Project>{34d7ba36-e5dd-49d4-99c6-c7195c3aae25}</Project>
       <Name>HostalWeb.Datos</Name>
     </ProjectReference>
   </ItemGroup>

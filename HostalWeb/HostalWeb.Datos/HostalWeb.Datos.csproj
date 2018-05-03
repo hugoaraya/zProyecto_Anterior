@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{586F6F6D-D9FC-411C-AEFE-201F161518E0}</ProjectGuid>
+    <ProjectGuid>{34D7BA36-E5DD-49D4-99C6-C7195C3AAE25}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HostalWeb.Datos</RootNamespace>
@@ -101,20 +101,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
     <EntityDeploy Include="HostalEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HostalEDM.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
     <None Include="HostalEDM.edmx.diagram">
       <DependentUpon>HostalEDM.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="HostalEDM.Context.tt">
@@ -127,6 +124,9 @@
       <DependentUpon>HostalEDM.edmx</DependentUpon>
       <LastGenOutput>HostalEDM.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
