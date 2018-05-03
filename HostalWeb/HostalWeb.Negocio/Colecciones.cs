@@ -28,5 +28,29 @@ namespace HostalWeb.Negocio
             }
             return salida;
         }
+        public List<Trabajador> ListadoTrabajadores()
+        {
+            List<Trabajador> salida = new List<Trabajador>();
+            //guarad todos los datos de todas las empresas
+            foreach (Datos.TRABAJADOR datostrabajador in Conexion.ModeloEntities.TRABAJADOR)
+            {
+                salida.Add(
+                    new Trabajador()
+                    {
+                        ID = datostrabajador.ID,
+                        RUT = datostrabajador.RUT + datostrabajador.DV,
+                        NOMBRE = datostrabajador.NOMBRE,
+                        TELEFONO = datostrabajador.TELEFONO,
+                        CORREO = datostrabajador.CORREO,
+                        EMPRESA_NOMBRE = datostrabajador.EMPRESA.NOMBRE,
+                        USUARIO_NOMBRE = datostrabajador.USUARIO.NOMBRE
+                    }
+                    );
+                      }
+                    return salida;
+        }
+
+
+
     }
 }

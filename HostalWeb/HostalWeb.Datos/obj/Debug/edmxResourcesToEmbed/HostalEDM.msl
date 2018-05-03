@@ -90,9 +90,6 @@
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
           <ScalarProperty Name="TIPO_USUARIO_ID" ColumnName="TIPO_USUARIO_ID" />
-          <ScalarProperty Name="TRABAJADOR_ID" ColumnName="TRABAJADOR_ID" />
-          <ScalarProperty Name="EMPLEADO_ID" ColumnName="EMPLEADO_ID" />
-          <ScalarProperty Name="PROVEEDOR_ID" ColumnName="PROVEEDOR_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

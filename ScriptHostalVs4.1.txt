@@ -2,8 +2,7 @@
 --LIMPIEZA DE AMBIENTE...
 --SELECT 'DROP TABLE '||table_name||' CASCADE CONSTRAINTS;' FROM user_tables
 
-
---MODIFICADA quite campo nombre..
+--TABLAS OK..
 CREATE TABLE tipo_usuario (
     id            NUMBER(10) NOT NULL,
     descripcion   VARCHAR2(45) NOT NULL
@@ -11,24 +10,19 @@ CREATE TABLE tipo_usuario (
 ALTER TABLE tipo_usuario ADD CONSTRAINT tipo_usuario_pk PRIMARY KEY ( id );
 
 
---MODIFICADA quite NOT NULL a trabajador_id,empleado_id y proveedor_id
 CREATE TABLE usuario (
     id                NUMBER(10) NOT NULL,
     nombre            VARCHAR2(45) NOT NULL,
     contrasena        VARCHAR2(45) NOT NULL,
-    tipo_usuario_id   NUMBER(10) NOT NULL,
-    trabajador_id     NUMBER(10),
-    empleado_id       NUMBER(10),
-    proveedor_id      NUMBER(10)
+    tipo_usuario_id   NUMBER(10) NOT NULL
 );
 ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( id );
 
 ALTER TABLE usuario
     ADD CONSTRAINT usuario_tipo_usuario_fk FOREIGN KEY ( tipo_usuario_id )
         REFERENCES tipo_usuario ( id );
+		
 
-		
-		
 --agregue estado_empleado para ver si es trabajador del hostal o esta despedido		
 CREATE TABLE estado_empleado (
     id			      NUMBER(10) NOT NULL,
@@ -46,8 +40,8 @@ CREATE TABLE empleado (
     apellido     VARCHAR2(45),
     cargo        VARCHAR2(45) NOT NULL,
     telefono	 VARCHAR2(20),
-    correo	 	 VARCHAR2(50),
-	estado_id    NUMBER(10) NOT NULL,
+    correo	 VARCHAR2(50),
+    estado_id    NUMBER(10) NOT NULL,
     usuario_id   NUMBER(10)
 );
 
@@ -61,9 +55,6 @@ ALTER TABLE empleado
     ADD CONSTRAINT empleado_estado_fk FOREIGN KEY ( estado_id )
         REFERENCES estado_empleado ( id );
 --agregue relacion usuario empleado ..		
-ALTER TABLE usuario 
-    ADD CONSTRAINT usuario_empleado_fk FOREIGN KEY ( empleado_id )
-        REFERENCES empleado ( id );
 
 		
 		
@@ -90,9 +81,9 @@ CREATE TABLE trabajador (
     dv           CHAR(1) NOT NULL,
     nombre       VARCHAR2(45) NOT NULL,
     apellido     VARCHAR2(45) NOT NULL,
-	telefono	 VARCHAR2(20),
-    correo	 	 VARCHAR2(50),
-    empresa_id   NUMBER(10) NOT NULL,
+    telefono	 VARCHAR2(20),
+    correo	 VARCHAR2(50),
+    empresa_id   NUMBER(10),
     usuario_id   NUMBER(10)
 );
 ALTER TABLE trabajador ADD CONSTRAINT trabajador_pk PRIMARY KEY ( id );
@@ -104,13 +95,7 @@ ALTER TABLE trabajador
 ALTER TABLE trabajador
     ADD CONSTRAINT trabajador_usuario_fk FOREIGN KEY ( usuario_id )
         REFERENCES usuario ( id );
---agregue relacion  usuario trabajador
-ALTER TABLE usuario
-    ADD CONSTRAINT usuario_trabajador_fk FOREIGN KEY ( trabajador_id )
-        REFERENCES trabajador ( id );
-
 		
---MODIFICADO elimine rubro_id   NUMBER NOT NULL y canbie nombre por descripcion
 CREATE TABLE rubro (
     id         	NUMBER(10) NOT NULL,
     descripcion VARCHAR2(45) NOT NULL
@@ -118,7 +103,7 @@ CREATE TABLE rubro (
 ALTER TABLE rubro ADD CONSTRAINT rubro_pk PRIMARY KEY ( id );
 
 
---MODiFICADO largo telefono  - elimine rubro_rubro_id   NUMBER NOT NULL --agregue correo
+--MODiFICADO largo telefono  - elimine rubro_rubro_id   NUMBER NOT NULL --agregue -- HA quite NOT NULL a usuario_id y elimine relacion usuario Proveedor
 CREATE TABLE proveedor (
     id               NUMBER(10) NOT NULL,
     rut              NUMBER(10) NOT NULL,
@@ -126,9 +111,9 @@ CREATE TABLE proveedor (
     nombre           VARCHAR2(45) NOT NULL,
     telefono         NUMBER(20),
     direccion        VARCHAR2(45) NOT NULL,
-	correo	 	 	 VARCHAR2(50),
+    correo	     VARCHAR2(50),
     rubro_id         NUMBER(10) NOT NULL,
-    usuario_id       NUMBER(10) NOT NULL
+    usuario_id       NUMBER(10)
 );
 ALTER TABLE proveedor ADD CONSTRAINT proveedor_pk PRIMARY KEY ( id );
 
@@ -139,12 +124,13 @@ ALTER TABLE proveedor
 ALTER TABLE proveedor
     ADD CONSTRAINT proveedor_usuario_fk FOREIGN KEY ( usuario_id )
         REFERENCES usuario ( id );
---agregue relacion usuario proveedor.		
-ALTER TABLE usuario
-    ADD CONSTRAINT usuario_proveedor_fk FOREIGN KEY ( proveedor_id )
-        REFERENCES proveedor ( id );
-	
-		
+--elimine relacion usuario proveedor.		
+
+
+-(HUGO)HASTA ACA REVISE PARA CREAR USUARIOS Y TABLAS QUE ME CORRESPONDIAN ....
+-(HUGO) ACTUALICE CAMBIOS DE USUARIO QUITANDO RELACIONES DEL SCRIPT
+
+
 --familia_producto_id  eliminado, stock_saldo cambiado a precio
 CREATE TABLE producto (
     id                    NUMBER(10) NOT NULL,
@@ -227,7 +213,7 @@ ALTER TABLE orden_pedido
         REFERENCES estado_orden ( id );
 
 
---(HUGO)HASTA ACA REVISE PARA CREAR USUARIOS Y TABLAS QUE ME CORRESPONDIAN ....
+-
 --(JORDAN)AGREGADO ARREGLOS A TABLAS QUE ME CORRESPONDIAN,INCLUYENDO ORDEN DE PEDIDO > PROVEEDOR
 
 --*********************
