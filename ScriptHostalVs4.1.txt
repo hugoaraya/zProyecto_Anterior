@@ -119,7 +119,7 @@ CREATE TABLE proveedor (
     direccion        VARCHAR2(45) NOT NULL,
 	correo	 	 	 VARCHAR2(50),
     rubro_id         NUMBER(10) NOT NULL,
-    usuario_id       NUMBER(10) NOT NULL
+    usuario_id       NUMBER(10)
 );
 ALTER TABLE proveedor ADD CONSTRAINT proveedor_pk PRIMARY KEY ( id );
 
@@ -160,6 +160,7 @@ CREATE TABLE familia_producto (
 );
 ALTER TABLE familia_producto ADD CONSTRAINT familia_producto_fk PRIMARY KEY ( id );	
 
+--(HUGO)HASTA ACA REVISE PARA CREAR USUARIOS Y TABLAS QUE ME CORRESPONDIAN ....
 
 --relacion producto con proveedor
 ALTER TABLE producto
@@ -173,6 +174,7 @@ ALTER TABLE producto
 ALTER TABLE producto
     ADD CONSTRAINT producto_tipo_fk FOREIGN KEY ( tipo_producto_id )
         REFERENCES tipo_producto ( id );
+	
 	
 
 --AGREGADO ESTADO DE ORDEN DIVIDIDO EN CATEGORIAS COMO PENDIENTE,ENTREGADO,ETC
@@ -345,11 +347,9 @@ CREATE TABLE servicio_oden_compra (
 ALTER TABLE servicio_oden_compra ADD CONSTRAINT servicio_oden_compra_pk PRIMARY KEY ( id );
 
 
-
-
---(HUGO)HASTA ACA REVISE PARA CREAR USUARIOS Y TABLAS QUE ME CORRESPONDIAN ....
 --(JORDAN)AGREGADO ARREGLOS A TABLAS QUE ME CORRESPONDIAN,INCLUYENDO ORDEN DE PEDIDO > PROVEEDOR
---(Chris) Algunas PK y FK me daban error porque en algunos el alter table estaba antes de crear la tabla, cambie los ordenes y se solucionó. Quite tambien unos atributos que no iban en la tabla usuario.
+
+--(Chris) Algunas PK y FK me daban error porque en algunos el alter table estaba antes de crear la tabla, cambie los ordenes y se solucionÃ³. Quite tambien unos atributos que no iban en la tabla usuario.
 
 --*********************
 -- AL CARGAR EL RESTO DEL SCRIPT ME GENERA ERROR EN VISUAL STUDIO AL CARGAR LA BD,,, :o
@@ -446,11 +446,9 @@ insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO
 insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO_ID,PROVEEDOR_ID) values (3,'ciente1','cliente1',2,null,null,null);
 insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO_ID,PROVEEDOR_ID) values (4,'proveedor1','proveedor1',2,null,null,null);
 
-
-
 --select * from EMPLEADO;
 insert into EMPLEADO (ID,RUT,DV,NOMBRE,APELLIDO,CARGO,TELEFONO,CORREO,ESTADO_ID,USUARIO_ID)
-values (1,1,'9','Administrador','Dueño','Dueño','123456789','correo@hostalclarita.cl',1,1);
+values (1,1,'9','Administrador','DueÃ±o','DueÃ±o','123456789','correo@hostalclarita.cl',1,1);
 
 UPDATE USUARIO SET EMPLEADO_ID = 1 WHERE ID = 1;
 
