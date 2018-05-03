@@ -426,16 +426,27 @@ insert into TIPO_USUARIO (ID,DESCRIPCION) values (2,'Empleado');
 insert into TIPO_USUARIO (ID,DESCRIPCION) values (3,'Cliente');
 insert into TIPO_USUARIO (ID,DESCRIPCION) values (4,'Proveedor');
 
+
+--select * from rubro;
+insert into rubro (ID,DESCRIPCION) values (1,'Limpieza');
+insert into rubro (ID,DESCRIPCION) values (2,'Abarrotes');
+insert into rubro (ID,DESCRIPCION) values (3,'Alimentos');
+insert into rubro (ID,DESCRIPCION) values (4,'Panaderia');
+
+--select * from estado_empleado;
+insert into estado_empleado (ID,DESCRIPCION) values (1,'Contratado');
+insert into estado_empleado (ID,DESCRIPCION) values (2,'Despedido');
+insert into estado_empleado (ID,DESCRIPCION) values (3,'Temporal');
+
+/* -- HAY QUE ACTUALIZAR INSERT DE AQUI EN ADELANTE SI QUIEREN OCUPARLOS..
+
 --select * from USUARIO;
 insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO_ID,PROVEEDOR_ID) values (1,'admin','admin',1,null,null,null);
 insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO_ID,PROVEEDOR_ID) values (2,'empleado1','empleado1',3,null,null,null);
 insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO_ID,PROVEEDOR_ID) values (3,'ciente1','cliente1',2,null,null,null);
 insert into USUARIO (ID,NOMBRE,CONTRASENA,TIPO_USUARIO_ID,TRABAJADOR_ID,EMPLEADO_ID,PROVEEDOR_ID) values (4,'proveedor1','proveedor1',2,null,null,null);
 
---select * from estado_empleado;
-insert into estado_empleado (ID,DESCRIPCION) values (1,'Contratado');
-insert into estado_empleado (ID,DESCRIPCION) values (2,'Despedido');
-insert into estado_empleado (ID,DESCRIPCION) values (3,'Temporal');
+
 
 --select * from EMPLEADO;
 insert into EMPLEADO (ID,RUT,DV,NOMBRE,APELLIDO,CARGO,TELEFONO,CORREO,ESTADO_ID,USUARIO_ID)
@@ -452,11 +463,7 @@ insert into TRABAJADOR (ID,RUT,DV,NOMBRE,APELLIDO,TELEFONO,CORREO,EMPRESA_ID,USU
 values ('1',1,'9','nomTrabajador1e1','apTrabajador1e1','1234567890','correo@hostalclarita.cl',1,3);
 UPDATE USUARIO SET TRABAJADOR_ID = 1 WHERE ID = 3;
 
---select * from rubro;
-insert into rubro (ID,DESCRIPCION) values (1,'Limpieza');
-insert into rubro (ID,DESCRIPCION) values (2,'Abarrotes');
-insert into rubro (ID,DESCRIPCION) values (3,'Alimentos');
-insert into rubro (ID,DESCRIPCION) values (4,'Panaderia');
+
 
 --select * from proveedor
 insert into proveedor (ID,RUT,DV,NOMBRE,TELEFONO,DIRECCION,CORREO,RUBRO_ID,USUARIO_ID)
