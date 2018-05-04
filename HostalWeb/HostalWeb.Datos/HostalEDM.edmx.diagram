@@ -7,7 +7,7 @@
       <Diagram DiagramId="a893fa564a4a4b0ba0364cb614452d54" Name="Diagram1" ZoomLevel="52">
         <EntityTypeShape EntityType="Model.EMPLEADO" Width="1.5" PointX="7.625" PointY="4.5" />
         <EntityTypeShape EntityType="Model.EMPRESA" Width="1.5" PointX="12.875" PointY="9.125" />
-        <EntityTypeShape EntityType="Model.ESTADO_EMPLEADO" Width="1.5" PointX="5.375" PointY="5.5" />
+        <EntityTypeShape EntityType="Model.ESTADO_EMPLEADO" Width="1.5" PointX="0.75" PointY="0.875" />
         <EntityTypeShape EntityType="Model.ESTADO_ORDEN" Width="1.5" PointX="10.625" PointY="9.25" />
         <EntityTypeShape EntityType="Model.FAMILIA_PRODUCTO" Width="1.5" PointX="12.125" PointY="12.125" />
         <EntityTypeShape EntityType="Model.ORDEN_PEDIDO" Width="1.5" PointX="12.875" PointY="4.75" />
@@ -16,8 +16,8 @@
         <EntityTypeShape EntityType="Model.RUBRO" Width="1.5" PointX="9.875" PointY="1.5" />
         <EntityTypeShape EntityType="Model.TIPO_PRODUCTO" Width="1.5" PointX="12.125" PointY="14.375" />
         <EntityTypeShape EntityType="Model.TIPO_USUARIO" Width="1.5" PointX="7.625" PointY="2" />
-        <EntityTypeShape EntityType="Model.TRABAJADOR" Width="1.5" PointX="15.125" PointY="4.75" />
-        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="9.875" PointY="4.5" />
+        <EntityTypeShape EntityType="Model.TRABAJADOR" Width="1.5" PointX="15.875" PointY="5.125" />
+        <EntityTypeShape EntityType="Model.USUARIO" PointX="4.5" PointY="4.125" Width="1.5" />
         <AssociationConnector Association="Model.EMPLEADO_ESTADO_FK" />
         <AssociationConnector Association="Model.EMPLEADO_USUARIO_FK" />
         <AssociationConnector Association="Model.ORDEN_EMPLEADO_FK" />
@@ -31,7 +31,6 @@
         <AssociationConnector Association="Model.PROVEEDOR_PRODUCTO_FK" />
         <AssociationConnector Association="Model.PROVEEDOR_RUBRO_FK" />
         <AssociationConnector Association="Model.PROVEEDOR_USUARIO_FK" />
-        <AssociationConnector Association="Model.USUARIO_PROVEEDOR_FK" />
         <AssociationConnector Association="Model.USUARIO_TIPO_USUARIO_FK" />
         <AssociationConnector Association="Model.TRABAJADOR_USUARIO_FK" />
         <AssociationConnector Association="Model.USUARIO_TRABAJADOR_FK" />
