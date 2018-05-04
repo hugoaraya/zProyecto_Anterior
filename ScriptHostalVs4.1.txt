@@ -233,7 +233,7 @@ ALTER TABLE orden_pedido
 CREATE TABLE factura (
     id                NUMBER(10) NOT NULL,
     orden_compra_id   NUMBER(10) NOT NULL,
-    empresa_id        NUMBER NOT NULL,
+    empresa_id        NUMBER(10) NOT NULL,
     total             NUMBER(10) NOT NULL
 );
 
@@ -345,23 +345,6 @@ CREATE TABLE servicio_oden_compra (
 ALTER TABLE servicio_oden_compra ADD CONSTRAINT servicio_oden_compra_pk PRIMARY KEY ( id );
 
 
-
-
---(HUGO)HASTA ACA REVISE PARA CREAR USUARIOS Y TABLAS QUE ME CORRESPONDIAN ....
---(JORDAN)AGREGADO ARREGLOS A TABLAS QUE ME CORRESPONDIAN,INCLUYENDO ORDEN DE PEDIDO > PROVEEDOR
---(Chris) Algunas PK y FK me daban error porque en algunos el alter table estaba antes de crear la tabla, cambie los ordenes y se solucionó. Quite tambien unos atributos que no iban en la tabla usuario.
-
---*********************
--- AL CARGAR EL RESTO DEL SCRIPT ME GENERA ERROR EN VISUAL STUDIO AL CARGAR LA BD,,, :o
---*********************
---EL SCRIPT FUNCIONA HASTA LA CREACION DE LA TABLA servicio_orden_compra, TENGO QUE ARREGAR LAS SIGUIENTES RELACIONES.
-/*
-
-
-ALTER TABLE factura
-    ADD CONSTRAINT factura_empresa_fk FOREIGN KEY ( empresa_id )
-        REFERENCES empresa ( id );
-
 ALTER TABLE habitacion_orden_compra
     ADD CONSTRAINT hab_orden_orden_compra_fk FOREIGN KEY ( orden_compra_id )
         REFERENCES orden_compra ( id );
@@ -373,6 +356,7 @@ ALTER TABLE habitacion_factura
 ALTER TABLE habitacion_factura
     ADD CONSTRAINT habitacion_factura_hab_fk FOREIGN KEY ( habitacion_id )
         REFERENCES habitacion ( id );
+
 
 ALTER TABLE huesped
     ADD CONSTRAINT huesped_habitacion_fk FOREIGN KEY ( habitacion_id )
@@ -394,10 +378,10 @@ ALTER TABLE minuta
     ADD CONSTRAINT minuta_servicio_fk FOREIGN KEY ( servicio_id)
         REFERENCES servicio ( id );
 
+
 ALTER TABLE habitacion_orden_compra
     ADD CONSTRAINT orden_compra_habitacion_fk FOREIGN KEY ( habitacion_id )
         REFERENCES habitacion ( id );
-        
 
 ALTER TABLE servicio_oden_compra
     ADD CONSTRAINT serv_compra_orden_compra_fk FOREIGN KEY ( orden_compra_id )
@@ -414,7 +398,9 @@ ALTER TABLE servicio_factura
 ALTER TABLE servicio_factura
     ADD CONSTRAINT servicio_factura_servicio_fk FOREIGN KEY ( servicio_id )
         REFERENCES servicio ( id );
-*/
+ALTER TABLE factura
+    ADD CONSTRAINT factura_empresa_fk FOREIGN KEY ( empresa_id )
+        REFERENCES empresa ( id );
 
 
 -- ESTE DOCUMENTO SE VEE MEJOR EN SQL DEVELOPER --- Y ES PARA POBLAR DATOS ANTES DE PROGRAMAR
