@@ -12,27 +12,20 @@ namespace HostalWeb.Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class ORDEN_PEDIDO
+    public partial class MINUTA
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ORDEN_PEDIDO()
+        public MINUTA()
         {
-            this.ORDEN_PEDIDO_PRODUCTO = new HashSet<ORDEN_PEDIDO_PRODUCTO>();
+            this.MINUTA_PLATO = new HashSet<MINUTA_PLATO>();
         }
     
         public int ID { get; set; }
-        public int PROVEEDOR_ID { get; set; }
-        public int PRODUCTO_ID { get; set; }
-        public string DETALLE { get; set; }
-        public int EMPLEADO_ID { get; set; }
-        public int TOTAL { get; set; }
-        public Nullable<int> ESTADO_ORDEN_ID { get; set; }
+        public Nullable<System.DateTime> DIA { get; set; }
+        public Nullable<int> SERVICIO_ID { get; set; }
     
-        public virtual EMPLEADO EMPLEADO { get; set; }
-        public virtual ESTADO_ORDEN ESTADO_ORDEN { get; set; }
-        public virtual PRODUCTO PRODUCTO { get; set; }
-        public virtual PROVEEDOR PROVEEDOR { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDEN_PEDIDO_PRODUCTO> ORDEN_PEDIDO_PRODUCTO { get; set; }
+        public virtual ICollection<MINUTA_PLATO> MINUTA_PLATO { get; set; }
+        public virtual SERVICIO SERVICIO { get; set; }
     }
 }

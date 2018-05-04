@@ -12,27 +12,26 @@ namespace HostalWeb.Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class TRABAJADOR
+    public partial class HABITACION
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TRABAJADOR()
+        public HABITACION()
         {
+            this.HABITACION_FACTURA = new HashSet<HABITACION_FACTURA>();
             this.HUESPED = new HashSet<HUESPED>();
+            this.HABITACION_ORDEN_COMPRA = new HashSet<HABITACION_ORDEN_COMPRA>();
         }
     
         public int ID { get; set; }
-        public int RUT { get; set; }
-        public string DV { get; set; }
-        public string NOMBRE { get; set; }
-        public string APELLIDO { get; set; }
-        public string TELEFONO { get; set; }
-        public string CORREO { get; set; }
-        public int EMPRESA_ID { get; set; }
-        public Nullable<int> USUARIO_ID { get; set; }
+        public string ESTADO { get; set; }
+        public int VALOR { get; set; }
+        public string DESCRIPCION { get; set; }
     
-        public virtual EMPRESA EMPRESA { get; set; }
-        public virtual USUARIO USUARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HABITACION_FACTURA> HABITACION_FACTURA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HUESPED> HUESPED { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HABITACION_ORDEN_COMPRA> HABITACION_ORDEN_COMPRA { get; set; }
     }
 }

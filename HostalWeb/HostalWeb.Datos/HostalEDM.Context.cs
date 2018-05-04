@@ -38,5 +38,18 @@ namespace HostalWeb.Datos
         public virtual DbSet<TIPO_USUARIO> TIPO_USUARIO { get; set; }
         public virtual DbSet<TRABAJADOR> TRABAJADOR { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }
+        public virtual DbSet<FACTURA> FACTURA { get; set; }
+        public virtual DbSet<HABITACION> HABITACION { get; set; }
+        public virtual DbSet<HABITACION_FACTURA> HABITACION_FACTURA { get; set; }
+        public virtual DbSet<HABITACION_ORDEN_COMPRA> HABITACION_ORDEN_COMPRA { get; set; }
+        public virtual DbSet<HUESPED> HUESPED { get; set; }
+        public virtual DbSet<MINUTA> MINUTA { get; set; }
+        public virtual DbSet<MINUTA_PLATO> MINUTA_PLATO { get; set; }
+        public virtual DbSet<ORDEN_COMPRA> ORDEN_COMPRA { get; set; }
+        public virtual DbSet<ORDEN_PEDIDO_PRODUCTO> ORDEN_PEDIDO_PRODUCTO { get; set; }
+        public virtual DbSet<PLATO> PLATO { get; set; }
+        public virtual DbSet<SERVICIO> SERVICIO { get; set; }
+        public virtual DbSet<SERVICIO_FACTURA> SERVICIO_FACTURA { get; set; }
+        public virtual DbSet<SERVICIO_ODEN_COMPRA> SERVICIO_ODEN_COMPRA { get; set; }
     }
 }

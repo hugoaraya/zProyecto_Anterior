@@ -68,3 +68,17 @@ C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb
 C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\HostalWeb.Datos.pdb
 C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\EntityFramework.xml
 C:\Users\420NiggaBytes\Documents\GitHub\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\HostalWeb.Negocio.dll.config
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\HostalWeb.Negocio.dll
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\HostalWeb.Negocio.pdb
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\EntityFramework.dll
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\HostalWeb.Datos.dll
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\HostalWeb.Datos.pdb
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\EntityFramework.xml
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\obj\Debug\HostalWeb.Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\obj\Debug\HostalWeb.Negocio.dll
+C:\Users\Chriss\Desktop\Proyecto_Hostal_2018\HostalWeb\HostalWeb.Negocio\obj\Debug\HostalWeb.Negocio.pdb

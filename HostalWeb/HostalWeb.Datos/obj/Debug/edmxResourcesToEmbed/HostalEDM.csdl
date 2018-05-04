@@ -19,16 +19,12 @@
       <End Role="EMPLEADO" EntitySet="EMPLEADO" />
     </AssociationSet>
     <AssociationSet Name="EMPLEADO_USUARIO_FK" Association="Model.EMPLEADO_USUARIO_FK">
-      <End Role="USUARIO" EntitySet="USUARIO" />
-      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+      <End EntitySet="USUARIO" Role="USUARIO" />
+      <End EntitySet="EMPLEADO" Role="EMPLEADO" />
     </AssociationSet>
     <AssociationSet Name="ORDEN_EMPLEADO_FK" Association="Model.ORDEN_EMPLEADO_FK">
       <End Role="EMPLEADO" EntitySet="EMPLEADO" />
       <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
-    </AssociationSet>
-    <AssociationSet Name="USUARIO_EMPLEADO_FK" Association="Model.USUARIO_EMPLEADO_FK">
-      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
     </AssociationSet>
     <AssociationSet Name="TRABAJADOR_EMPRESA_FK" Association="Model.TRABAJADOR_EMPRESA_FK">
       <End Role="EMPRESA" EntitySet="EMPRESA" />
@@ -63,24 +59,89 @@
       <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
     </AssociationSet>
     <AssociationSet Name="PROVEEDOR_USUARIO_FK" Association="Model.PROVEEDOR_USUARIO_FK">
-      <End Role="USUARIO" EntitySet="USUARIO" />
-      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
-    </AssociationSet>
-    <AssociationSet Name="USUARIO_PROVEEDOR_FK" Association="Model.USUARIO_PROVEEDOR_FK">
-      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End EntitySet="USUARIO" Role="USUARIO" />
+      <End EntitySet="PROVEEDOR" Role="PROVEEDOR" />
     </AssociationSet>
     <AssociationSet Name="USUARIO_TIPO_USUARIO_FK" Association="Model.USUARIO_TIPO_USUARIO_FK">
-      <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End EntitySet="TIPO_USUARIO" Role="TIPO_USUARIO" />
+      <End EntitySet="USUARIO" Role="USUARIO" />
     </AssociationSet>
     <AssociationSet Name="TRABAJADOR_USUARIO_FK" Association="Model.TRABAJADOR_USUARIO_FK">
-      <End Role="USUARIO" EntitySet="USUARIO" />
-      <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
+      <End EntitySet="USUARIO" Role="USUARIO" />
+      <End EntitySet="TRABAJADOR" Role="TRABAJADOR" />
     </AssociationSet>
-    <AssociationSet Name="USUARIO_TRABAJADOR_FK" Association="Model.USUARIO_TRABAJADOR_FK">
+    <EntitySet Name="FACTURA" EntityType="Model.FACTURA" />
+    <EntitySet Name="HABITACION" EntityType="Model.HABITACION" />
+    <EntitySet Name="HABITACION_FACTURA" EntityType="Model.HABITACION_FACTURA" />
+    <EntitySet Name="HABITACION_ORDEN_COMPRA" EntityType="Model.HABITACION_ORDEN_COMPRA" />
+    <EntitySet Name="HUESPED" EntityType="Model.HUESPED" />
+    <EntitySet Name="MINUTA" EntityType="Model.MINUTA" />
+    <EntitySet Name="MINUTA_PLATO" EntityType="Model.MINUTA_PLATO" />
+    <EntitySet Name="ORDEN_COMPRA" EntityType="Model.ORDEN_COMPRA" />
+    <EntitySet Name="ORDEN_PEDIDO_PRODUCTO" EntityType="Model.ORDEN_PEDIDO_PRODUCTO" />
+    <EntitySet Name="PLATO" EntityType="Model.PLATO" />
+    <EntitySet Name="SERVICIO" EntityType="Model.SERVICIO" />
+    <EntitySet Name="SERVICIO_FACTURA" EntityType="Model.SERVICIO_FACTURA" />
+    <EntitySet Name="SERVICIO_ODEN_COMPRA" EntityType="Model.SERVICIO_ODEN_COMPRA" />
+    <AssociationSet Name="FACTURA_EMPRESA_FK" Association="Model.FACTURA_EMPRESA_FK">
+      <End Role="EMPRESA" EntitySet="EMPRESA" />
+      <End Role="FACTURA" EntitySet="FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="HABITACION_FACTURA_FACTURA_FK" Association="Model.HABITACION_FACTURA_FACTURA_FK">
+      <End Role="FACTURA" EntitySet="FACTURA" />
+      <End Role="HABITACION_FACTURA" EntitySet="HABITACION_FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="SERVICIO_FACTURA_FACTURA_FK" Association="Model.SERVICIO_FACTURA_FACTURA_FK">
+      <End Role="FACTURA" EntitySet="FACTURA" />
+      <End Role="SERVICIO_FACTURA" EntitySet="SERVICIO_FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="HABITACION_FACTURA_HAB_FK" Association="Model.HABITACION_FACTURA_HAB_FK">
+      <End Role="HABITACION" EntitySet="HABITACION" />
+      <End Role="HABITACION_FACTURA" EntitySet="HABITACION_FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="HUESPED_HABITACION_FK" Association="Model.HUESPED_HABITACION_FK">
+      <End Role="HABITACION" EntitySet="HABITACION" />
+      <End Role="HUESPED" EntitySet="HUESPED" />
+    </AssociationSet>
+    <AssociationSet Name="ORDEN_COMPRA_HABITACION_FK" Association="Model.ORDEN_COMPRA_HABITACION_FK">
+      <End Role="HABITACION" EntitySet="HABITACION" />
+      <End Role="HABITACION_ORDEN_COMPRA" EntitySet="HABITACION_ORDEN_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="HAB_ORDEN_ORDEN_COMPRA_FK" Association="Model.HAB_ORDEN_ORDEN_COMPRA_FK">
+      <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
+      <End Role="HABITACION_ORDEN_COMPRA" EntitySet="HABITACION_ORDEN_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="HUESPED_TRABAJADOR_FK" Association="Model.HUESPED_TRABAJADOR_FK">
       <End Role="TRABAJADOR" EntitySet="TRABAJADOR" />
-      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="HUESPED" EntitySet="HUESPED" />
+    </AssociationSet>
+    <AssociationSet Name="MINUTA_PLATO_MINUTA_FK" Association="Model.MINUTA_PLATO_MINUTA_FK">
+      <End Role="MINUTA" EntitySet="MINUTA" />
+      <End Role="MINUTA_PLATO" EntitySet="MINUTA_PLATO" />
+    </AssociationSet>
+    <AssociationSet Name="MINUTA_SERVICIO_FK" Association="Model.MINUTA_SERVICIO_FK">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+      <End Role="MINUTA" EntitySet="MINUTA" />
+    </AssociationSet>
+    <AssociationSet Name="MINUTA_PLATO_PLATO_FK" Association="Model.MINUTA_PLATO_PLATO_FK">
+      <End Role="PLATO" EntitySet="PLATO" />
+      <End Role="MINUTA_PLATO" EntitySet="MINUTA_PLATO" />
+    </AssociationSet>
+    <AssociationSet Name="SERV_COMPRA_ORDEN_COMPRA_FK" Association="Model.SERV_COMPRA_ORDEN_COMPRA_FK">
+      <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
+      <End Role="SERVICIO_ODEN_COMPRA" EntitySet="SERVICIO_ODEN_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="ORDEN_PRODUCTO_ORDEN_PEDIDO_FK" Association="Model.ORDEN_PRODUCTO_ORDEN_PEDIDO_FK">
+      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+      <End Role="ORDEN_PEDIDO_PRODUCTO" EntitySet="ORDEN_PEDIDO_PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="SERVICIO_COMPRA_SERVICIO_FK" Association="Model.SERVICIO_COMPRA_SERVICIO_FK">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+      <End Role="SERVICIO_ODEN_COMPRA" EntitySet="SERVICIO_ODEN_COMPRA" />
+    </AssociationSet>
+    <AssociationSet Name="SERVICIO_FACTURA_SERVICIO_FK" Association="Model.SERVICIO_FACTURA_SERVICIO_FK">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+      <End Role="SERVICIO_FACTURA" EntitySet="SERVICIO_FACTURA" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="EMPLEADO">
@@ -100,7 +161,6 @@
     <NavigationProperty Name="ESTADO_EMPLEADO" Relationship="Model.EMPLEADO_ESTADO_FK" FromRole="EMPLEADO" ToRole="ESTADO_EMPLEADO" />
     <NavigationProperty Name="USUARIO" Relationship="Model.EMPLEADO_USUARIO_FK" FromRole="EMPLEADO" ToRole="USUARIO" />
     <NavigationProperty Name="ORDEN_PEDIDO" Relationship="Model.ORDEN_EMPLEADO_FK" FromRole="EMPLEADO" ToRole="ORDEN_PEDIDO" />
-    <NavigationProperty Name="USUARIO1" Relationship="Model.USUARIO_EMPLEADO_FK" FromRole="EMPLEADO" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="EMPRESA">
     <Key>
@@ -113,6 +173,7 @@
     <Property Name="GIRO" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="DIRECCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TRABAJADOR" Relationship="Model.TRABAJADOR_EMPRESA_FK" FromRole="EMPRESA" ToRole="TRABAJADOR" />
+    <NavigationProperty Name="FACTURA" Relationship="Model.FACTURA_EMPRESA_FK" FromRole="EMPRESA" ToRole="FACTURA" />
   </EntityType>
   <EntityType Name="ESTADO_EMPLEADO">
     <Key>
@@ -153,6 +214,7 @@
     <NavigationProperty Name="ESTADO_ORDEN" Relationship="Model.ESTADO_ORDEN_FK" FromRole="ORDEN_PEDIDO" ToRole="ESTADO_ORDEN" />
     <NavigationProperty Name="PRODUCTO" Relationship="Model.ORDEN_PRODUCTO_FK" FromRole="ORDEN_PEDIDO" ToRole="PRODUCTO" />
     <NavigationProperty Name="PROVEEDOR" Relationship="Model.ORDEN_PROVEEDOR_FK" FromRole="ORDEN_PEDIDO" ToRole="PROVEEDOR" />
+    <NavigationProperty Name="ORDEN_PEDIDO_PRODUCTO" Relationship="Model.ORDEN_PRODUCTO_ORDEN_PEDIDO_FK" FromRole="ORDEN_PEDIDO" ToRole="ORDEN_PEDIDO_PRODUCTO" />
   </EntityType>
   <EntityType Name="PRODUCTO">
     <Key>
@@ -189,7 +251,6 @@
     <NavigationProperty Name="PRODUCTO" Relationship="Model.PROVEEDOR_PRODUCTO_FK" FromRole="PROVEEDOR" ToRole="PRODUCTO" />
     <NavigationProperty Name="RUBRO" Relationship="Model.PROVEEDOR_RUBRO_FK" FromRole="PROVEEDOR" ToRole="RUBRO" />
     <NavigationProperty Name="USUARIO" Relationship="Model.PROVEEDOR_USUARIO_FK" FromRole="PROVEEDOR" ToRole="USUARIO" />
-    <NavigationProperty Name="USUARIO1" Relationship="Model.USUARIO_PROVEEDOR_FK" FromRole="PROVEEDOR" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="RUBRO">
     <Key>
@@ -230,26 +291,20 @@
     <Property Name="USUARIO_ID" Type="Int32" />
     <NavigationProperty Name="EMPRESA" Relationship="Model.TRABAJADOR_EMPRESA_FK" FromRole="TRABAJADOR" ToRole="EMPRESA" />
     <NavigationProperty Name="USUARIO" Relationship="Model.TRABAJADOR_USUARIO_FK" FromRole="TRABAJADOR" ToRole="USUARIO" />
-    <NavigationProperty Name="USUARIO1" Relationship="Model.USUARIO_TRABAJADOR_FK" FromRole="TRABAJADOR" ToRole="USUARIO" />
+    <NavigationProperty Name="HUESPED" Relationship="Model.HUESPED_TRABAJADOR_FK" FromRole="TRABAJADOR" ToRole="HUESPED" />
   </EntityType>
   <EntityType Name="USUARIO">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-    <Property Name="CONTRASENA" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-    <Property Name="TIPO_USUARIO_ID" Type="Int32" Nullable="false" />
-    <Property Name="TRABAJADOR_ID" Type="Int32" />
-    <Property Name="EMPLEADO_ID" Type="Int32" />
-    <Property Name="PROVEEDOR_ID" Type="Int32" />
+    <Property Name="ID" Nullable="false" Type="Int32" />
+    <Property Name="NOMBRE" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="CONTRASENA" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="TIPO_USUARIO_ID" Nullable="false" Type="Int32" />
     <NavigationProperty Name="EMPLEADO" Relationship="Model.EMPLEADO_USUARIO_FK" FromRole="USUARIO" ToRole="EMPLEADO" />
-    <NavigationProperty Name="EMPLEADO1" Relationship="Model.USUARIO_EMPLEADO_FK" FromRole="USUARIO" ToRole="EMPLEADO" />
     <NavigationProperty Name="PROVEEDOR" Relationship="Model.PROVEEDOR_USUARIO_FK" FromRole="USUARIO" ToRole="PROVEEDOR" />
-    <NavigationProperty Name="PROVEEDOR1" Relationship="Model.USUARIO_PROVEEDOR_FK" FromRole="USUARIO" ToRole="PROVEEDOR" />
     <NavigationProperty Name="TIPO_USUARIO" Relationship="Model.USUARIO_TIPO_USUARIO_FK" FromRole="USUARIO" ToRole="TIPO_USUARIO" />
     <NavigationProperty Name="TRABAJADOR" Relationship="Model.TRABAJADOR_USUARIO_FK" FromRole="USUARIO" ToRole="TRABAJADOR" />
-    <NavigationProperty Name="TRABAJADOR1" Relationship="Model.USUARIO_TRABAJADOR_FK" FromRole="USUARIO" ToRole="TRABAJADOR" />
   </EntityType>
   <Association Name="EMPLEADO_ESTADO_FK">
     <End Type="Model.ESTADO_EMPLEADO" Role="ESTADO_EMPLEADO" Multiplicity="1" />
@@ -264,8 +319,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="EMPLEADO_USUARIO_FK">
-    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="0..1" />
-    <End Type="Model.EMPLEADO" Role="EMPLEADO" Multiplicity="*" />
+    <End Type="Model.USUARIO" Multiplicity="0..1" Role="USUARIO" />
+    <End Type="Model.EMPLEADO" Multiplicity="*" Role="EMPLEADO" />
     <ReferentialConstraint>
       <Principal Role="USUARIO">
         <PropertyRef Name="ID" />
@@ -283,18 +338,6 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="ORDEN_PEDIDO">
-        <PropertyRef Name="EMPLEADO_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="USUARIO_EMPLEADO_FK">
-    <End Type="Model.EMPLEADO" Role="EMPLEADO" Multiplicity="0..1" />
-    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="EMPLEADO">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="USUARIO">
         <PropertyRef Name="EMPLEADO_ID" />
       </Dependent>
     </ReferentialConstraint>
@@ -396,8 +439,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="PROVEEDOR_USUARIO_FK">
-    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="1" />
-    <End Type="Model.PROVEEDOR" Role="PROVEEDOR" Multiplicity="*" />
+    <End Type="Model.USUARIO" Multiplicity="1" Role="USUARIO" />
+    <End Type="Model.PROVEEDOR" Multiplicity="*" Role="PROVEEDOR" />
     <ReferentialConstraint>
       <Principal Role="USUARIO">
         <PropertyRef Name="ID" />
@@ -407,21 +450,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="USUARIO_PROVEEDOR_FK">
-    <End Type="Model.PROVEEDOR" Role="PROVEEDOR" Multiplicity="0..1" />
-    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PROVEEDOR">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="USUARIO">
-        <PropertyRef Name="PROVEEDOR_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="USUARIO_TIPO_USUARIO_FK">
-    <End Type="Model.TIPO_USUARIO" Role="TIPO_USUARIO" Multiplicity="1" />
-    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="*" />
+    <End Type="Model.TIPO_USUARIO" Multiplicity="1" Role="TIPO_USUARIO" />
+    <End Type="Model.USUARIO" Multiplicity="*" Role="USUARIO" />
     <ReferentialConstraint>
       <Principal Role="TIPO_USUARIO">
         <PropertyRef Name="ID" />
@@ -432,8 +463,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="TRABAJADOR_USUARIO_FK">
-    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="0..1" />
-    <End Type="Model.TRABAJADOR" Role="TRABAJADOR" Multiplicity="*" />
+    <End Type="Model.USUARIO" Multiplicity="0..1" Role="USUARIO" />
+    <End Type="Model.TRABAJADOR" Multiplicity="*" Role="TRABAJADOR" />
     <ReferentialConstraint>
       <Principal Role="USUARIO">
         <PropertyRef Name="ID" />
@@ -443,15 +474,330 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="USUARIO_TRABAJADOR_FK">
-    <End Type="Model.TRABAJADOR" Role="TRABAJADOR" Multiplicity="0..1" />
-    <End Type="Model.USUARIO" Role="USUARIO" Multiplicity="*" />
+  <EntityType Name="FACTURA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ORDEN_COMPRA_ID" Type="Int32" Nullable="false" />
+    <Property Name="EMPRESA_ID" Type="Int32" Nullable="false" />
+    <Property Name="TOTAL" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EMPRESA" Relationship="Model.FACTURA_EMPRESA_FK" FromRole="FACTURA" ToRole="EMPRESA" />
+    <NavigationProperty Name="HABITACION_FACTURA" Relationship="Model.HABITACION_FACTURA_FACTURA_FK" FromRole="FACTURA" ToRole="HABITACION_FACTURA" />
+    <NavigationProperty Name="SERVICIO_FACTURA" Relationship="Model.SERVICIO_FACTURA_FACTURA_FK" FromRole="FACTURA" ToRole="SERVICIO_FACTURA" />
+  </EntityType>
+  <EntityType Name="HABITACION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ESTADO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VALOR" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HABITACION_FACTURA" Relationship="Model.HABITACION_FACTURA_HAB_FK" FromRole="HABITACION" ToRole="HABITACION_FACTURA" />
+    <NavigationProperty Name="HUESPED" Relationship="Model.HUESPED_HABITACION_FK" FromRole="HABITACION" ToRole="HUESPED" />
+    <NavigationProperty Name="HABITACION_ORDEN_COMPRA" Relationship="Model.ORDEN_COMPRA_HABITACION_FK" FromRole="HABITACION" ToRole="HABITACION_ORDEN_COMPRA" />
+  </EntityType>
+  <EntityType Name="HABITACION_FACTURA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="HABITACION_ID" Type="Int32" Nullable="false" />
+    <Property Name="FACTURA_ID" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="VALOR" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FACTURA" Relationship="Model.HABITACION_FACTURA_FACTURA_FK" FromRole="HABITACION_FACTURA" ToRole="FACTURA" />
+    <NavigationProperty Name="HABITACION" Relationship="Model.HABITACION_FACTURA_HAB_FK" FromRole="HABITACION_FACTURA" ToRole="HABITACION" />
+  </EntityType>
+  <EntityType Name="HABITACION_ORDEN_COMPRA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="HABITACION_ID" Type="Int32" Nullable="false" />
+    <Property Name="ORDEN_COMPRA_ID" Type="Int32" Nullable="false" />
+    <Property Name="VALOR" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HABITACION" Relationship="Model.ORDEN_COMPRA_HABITACION_FK" FromRole="HABITACION_ORDEN_COMPRA" ToRole="HABITACION" />
+    <NavigationProperty Name="ORDEN_COMPRA" Relationship="Model.HAB_ORDEN_ORDEN_COMPRA_FK" FromRole="HABITACION_ORDEN_COMPRA" ToRole="ORDEN_COMPRA" />
+  </EntityType>
+  <EntityType Name="HUESPED">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TRABAJADOR_ID" Type="Int32" Nullable="false" />
+    <Property Name="HABITACION_ID" Type="Int32" Nullable="false" />
+    <Property Name="ENTRADA" Type="Int32" Nullable="false" />
+    <Property Name="SALIDA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HABITACION" Relationship="Model.HUESPED_HABITACION_FK" FromRole="HUESPED" ToRole="HABITACION" />
+    <NavigationProperty Name="TRABAJADOR" Relationship="Model.HUESPED_TRABAJADOR_FK" FromRole="HUESPED" ToRole="TRABAJADOR" />
+  </EntityType>
+  <EntityType Name="MINUTA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DIA" Type="DateTime" Precision="6" />
+    <Property Name="SERVICIO_ID" Type="Int32" />
+    <NavigationProperty Name="MINUTA_PLATO" Relationship="Model.MINUTA_PLATO_MINUTA_FK" FromRole="MINUTA" ToRole="MINUTA_PLATO" />
+    <NavigationProperty Name="SERVICIO" Relationship="Model.MINUTA_SERVICIO_FK" FromRole="MINUTA" ToRole="SERVICIO" />
+  </EntityType>
+  <EntityType Name="MINUTA_PLATO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MINUTA_ID" Type="Int32" Nullable="false" />
+    <Property Name="PLATO_ID" Type="Int32" Nullable="false" />
+    <Property Name="HORA" Type="DateTime" />
+    <NavigationProperty Name="MINUTA" Relationship="Model.MINUTA_PLATO_MINUTA_FK" FromRole="MINUTA_PLATO" ToRole="MINUTA" />
+    <NavigationProperty Name="PLATO" Relationship="Model.MINUTA_PLATO_PLATO_FK" FromRole="MINUTA_PLATO" ToRole="PLATO" />
+  </EntityType>
+  <EntityType Name="ORDEN_COMPRA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DETALLE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="EMPRESA_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREADOR_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <NavigationProperty Name="HABITACION_ORDEN_COMPRA" Relationship="Model.HAB_ORDEN_ORDEN_COMPRA_FK" FromRole="ORDEN_COMPRA" ToRole="HABITACION_ORDEN_COMPRA" />
+    <NavigationProperty Name="SERVICIO_ODEN_COMPRA" Relationship="Model.SERV_COMPRA_ORDEN_COMPRA_FK" FromRole="ORDEN_COMPRA" ToRole="SERVICIO_ODEN_COMPRA" />
+  </EntityType>
+  <EntityType Name="ORDEN_PEDIDO_PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="PRODUCTO_ID" Type="Int32" Nullable="false" />
+    <Property Name="ORDEN_PEDIDO_ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="VALOR" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ORDEN_PEDIDO" Relationship="Model.ORDEN_PRODUCTO_ORDEN_PEDIDO_FK" FromRole="ORDEN_PEDIDO_PRODUCTO" ToRole="ORDEN_PEDIDO" />
+  </EntityType>
+  <EntityType Name="PLATO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MINUTA_PLATO" Relationship="Model.MINUTA_PLATO_PLATO_FK" FromRole="PLATO" ToRole="MINUTA_PLATO" />
+  </EntityType>
+  <EntityType Name="SERVICIO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="VALOR" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MINUTA" Relationship="Model.MINUTA_SERVICIO_FK" FromRole="SERVICIO" ToRole="MINUTA" />
+    <NavigationProperty Name="SERVICIO_ODEN_COMPRA" Relationship="Model.SERVICIO_COMPRA_SERVICIO_FK" FromRole="SERVICIO" ToRole="SERVICIO_ODEN_COMPRA" />
+    <NavigationProperty Name="SERVICIO_FACTURA" Relationship="Model.SERVICIO_FACTURA_SERVICIO_FK" FromRole="SERVICIO" ToRole="SERVICIO_FACTURA" />
+  </EntityType>
+  <EntityType Name="SERVICIO_FACTURA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SERVICIO_ID" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="VALOR" Type="Int32" Nullable="false" />
+    <Property Name="FACTURA_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FACTURA" Relationship="Model.SERVICIO_FACTURA_FACTURA_FK" FromRole="SERVICIO_FACTURA" ToRole="FACTURA" />
+    <NavigationProperty Name="SERVICIO" Relationship="Model.SERVICIO_FACTURA_SERVICIO_FK" FromRole="SERVICIO_FACTURA" ToRole="SERVICIO" />
+  </EntityType>
+  <EntityType Name="SERVICIO_ODEN_COMPRA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SERVICIO_ID" Type="Int32" Nullable="false" />
+    <Property Name="ORDEN_COMPRA_ID" Type="Int32" Nullable="false" />
+    <Property Name="VALOR" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ORDEN_COMPRA" Relationship="Model.SERV_COMPRA_ORDEN_COMPRA_FK" FromRole="SERVICIO_ODEN_COMPRA" ToRole="ORDEN_COMPRA" />
+    <NavigationProperty Name="SERVICIO" Relationship="Model.SERVICIO_COMPRA_SERVICIO_FK" FromRole="SERVICIO_ODEN_COMPRA" ToRole="SERVICIO" />
+  </EntityType>
+  <Association Name="FACTURA_EMPRESA_FK">
+    <End Type="Model.EMPRESA" Role="EMPRESA" Multiplicity="1" />
+    <End Type="Model.FACTURA" Role="FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPRESA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FACTURA">
+        <PropertyRef Name="EMPRESA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HABITACION_FACTURA_FACTURA_FK">
+    <End Type="Model.FACTURA" Role="FACTURA" Multiplicity="1" />
+    <End Type="Model.HABITACION_FACTURA" Role="HABITACION_FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HABITACION_FACTURA">
+        <PropertyRef Name="FACTURA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SERVICIO_FACTURA_FACTURA_FK">
+    <End Type="Model.FACTURA" Role="FACTURA" Multiplicity="1" />
+    <End Type="Model.SERVICIO_FACTURA" Role="SERVICIO_FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SERVICIO_FACTURA">
+        <PropertyRef Name="FACTURA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HABITACION_FACTURA_HAB_FK">
+    <End Type="Model.HABITACION" Role="HABITACION" Multiplicity="1" />
+    <End Type="Model.HABITACION_FACTURA" Role="HABITACION_FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HABITACION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HABITACION_FACTURA">
+        <PropertyRef Name="HABITACION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HUESPED_HABITACION_FK">
+    <End Type="Model.HABITACION" Role="HABITACION" Multiplicity="1" />
+    <End Type="Model.HUESPED" Role="HUESPED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HABITACION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HUESPED">
+        <PropertyRef Name="HABITACION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORDEN_COMPRA_HABITACION_FK">
+    <End Type="Model.HABITACION" Role="HABITACION" Multiplicity="1" />
+    <End Type="Model.HABITACION_ORDEN_COMPRA" Role="HABITACION_ORDEN_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HABITACION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HABITACION_ORDEN_COMPRA">
+        <PropertyRef Name="HABITACION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HAB_ORDEN_ORDEN_COMPRA_FK">
+    <End Type="Model.ORDEN_COMPRA" Role="ORDEN_COMPRA" Multiplicity="1" />
+    <End Type="Model.HABITACION_ORDEN_COMPRA" Role="HABITACION_ORDEN_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDEN_COMPRA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HABITACION_ORDEN_COMPRA">
+        <PropertyRef Name="ORDEN_COMPRA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HUESPED_TRABAJADOR_FK">
+    <End Type="Model.TRABAJADOR" Role="TRABAJADOR" Multiplicity="1" />
+    <End Type="Model.HUESPED" Role="HUESPED" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TRABAJADOR">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="USUARIO">
+      <Dependent Role="HUESPED">
         <PropertyRef Name="TRABAJADOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MINUTA_PLATO_MINUTA_FK">
+    <End Type="Model.MINUTA" Role="MINUTA" Multiplicity="1" />
+    <End Type="Model.MINUTA_PLATO" Role="MINUTA_PLATO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MINUTA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MINUTA_PLATO">
+        <PropertyRef Name="MINUTA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MINUTA_SERVICIO_FK">
+    <End Type="Model.SERVICIO" Role="SERVICIO" Multiplicity="0..1" />
+    <End Type="Model.MINUTA" Role="MINUTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SERVICIO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MINUTA">
+        <PropertyRef Name="SERVICIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MINUTA_PLATO_PLATO_FK">
+    <End Type="Model.PLATO" Role="PLATO" Multiplicity="1" />
+    <End Type="Model.MINUTA_PLATO" Role="MINUTA_PLATO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PLATO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MINUTA_PLATO">
+        <PropertyRef Name="PLATO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SERV_COMPRA_ORDEN_COMPRA_FK">
+    <End Type="Model.ORDEN_COMPRA" Role="ORDEN_COMPRA" Multiplicity="1" />
+    <End Type="Model.SERVICIO_ODEN_COMPRA" Role="SERVICIO_ODEN_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDEN_COMPRA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SERVICIO_ODEN_COMPRA">
+        <PropertyRef Name="ORDEN_COMPRA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORDEN_PRODUCTO_ORDEN_PEDIDO_FK">
+    <End Type="Model.ORDEN_PEDIDO" Role="ORDEN_PEDIDO" Multiplicity="1" />
+    <End Type="Model.ORDEN_PEDIDO_PRODUCTO" Role="ORDEN_PEDIDO_PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDEN_PEDIDO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORDEN_PEDIDO_PRODUCTO">
+        <PropertyRef Name="ORDEN_PEDIDO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SERVICIO_COMPRA_SERVICIO_FK">
+    <End Type="Model.SERVICIO" Role="SERVICIO" Multiplicity="1" />
+    <End Type="Model.SERVICIO_ODEN_COMPRA" Role="SERVICIO_ODEN_COMPRA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SERVICIO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SERVICIO_ODEN_COMPRA">
+        <PropertyRef Name="SERVICIO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SERVICIO_FACTURA_SERVICIO_FK">
+    <End Type="Model.SERVICIO" Role="SERVICIO" Multiplicity="1" />
+    <End Type="Model.SERVICIO_FACTURA" Role="SERVICIO_FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SERVICIO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SERVICIO_FACTURA">
+        <PropertyRef Name="SERVICIO_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

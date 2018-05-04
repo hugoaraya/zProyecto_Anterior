@@ -71,7 +71,19 @@
     <Compile Include="ESTADO_ORDEN.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="FACTURA.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="FAMILIA_PRODUCTO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HABITACION.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HABITACION_FACTURA.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HABITACION_ORDEN_COMPRA.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="HostalEDM.Context.cs">
@@ -89,7 +101,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HostalEDM.edmx</DependentUpon>
     </Compile>
+    <Compile Include="HUESPED.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MINUTA.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MINUTA_PLATO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDEN_COMPRA.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="ORDEN_PEDIDO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDEN_PEDIDO_PRODUCTO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PLATO.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="PRODUCTO.cs">
@@ -100,6 +130,15 @@
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="RUBRO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SERVICIO.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SERVICIO_FACTURA.cs">
+      <DependentUpon>HostalEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SERVICIO_ODEN_COMPRA.cs">
       <DependentUpon>HostalEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="TIPO_PRODUCTO.cs">

@@ -138,12 +138,142 @@
     <EntitySetMapping Name="USUARIO">
       <EntityTypeMapping TypeName="Model.USUARIO">
         <MappingFragment StoreEntitySet="USUARIO">
-          <ScalarProperty Name="PROVEEDOR_ID" ColumnName="PROVEEDOR_ID" />
-          <ScalarProperty Name="EMPLEADO_ID" ColumnName="EMPLEADO_ID" />
-          <ScalarProperty Name="TRABAJADOR_ID" ColumnName="TRABAJADOR_ID" />
           <ScalarProperty Name="TIPO_USUARIO_ID" ColumnName="TIPO_USUARIO_ID" />
           <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACTURA">
+      <EntityTypeMapping TypeName="Model.FACTURA">
+        <MappingFragment StoreEntitySet="FACTURA">
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+          <ScalarProperty Name="ORDEN_COMPRA_ID" ColumnName="ORDEN_COMPRA_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HABITACION">
+      <EntityTypeMapping TypeName="Model.HABITACION">
+        <MappingFragment StoreEntitySet="HABITACION">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HABITACION_FACTURA">
+      <EntityTypeMapping TypeName="Model.HABITACION_FACTURA">
+        <MappingFragment StoreEntitySet="HABITACION_FACTURA">
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FACTURA_ID" ColumnName="FACTURA_ID" />
+          <ScalarProperty Name="HABITACION_ID" ColumnName="HABITACION_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HABITACION_ORDEN_COMPRA">
+      <EntityTypeMapping TypeName="Model.HABITACION_ORDEN_COMPRA">
+        <MappingFragment StoreEntitySet="HABITACION_ORDEN_COMPRA">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="ORDEN_COMPRA_ID" ColumnName="ORDEN_COMPRA_ID" />
+          <ScalarProperty Name="HABITACION_ID" ColumnName="HABITACION_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HUESPED">
+      <EntityTypeMapping TypeName="Model.HUESPED">
+        <MappingFragment StoreEntitySet="HUESPED">
+          <ScalarProperty Name="SALIDA" ColumnName="SALIDA" />
+          <ScalarProperty Name="ENTRADA" ColumnName="ENTRADA" />
+          <ScalarProperty Name="HABITACION_ID" ColumnName="HABITACION_ID" />
+          <ScalarProperty Name="TRABAJADOR_ID" ColumnName="TRABAJADOR_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MINUTA">
+      <EntityTypeMapping TypeName="Model.MINUTA">
+        <MappingFragment StoreEntitySet="MINUTA">
+          <ScalarProperty Name="SERVICIO_ID" ColumnName="SERVICIO_ID" />
+          <ScalarProperty Name="DIA" ColumnName="DIA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MINUTA_PLATO">
+      <EntityTypeMapping TypeName="Model.MINUTA_PLATO">
+        <MappingFragment StoreEntitySet="MINUTA_PLATO">
+          <ScalarProperty Name="HORA" ColumnName="HORA" />
+          <ScalarProperty Name="PLATO_ID" ColumnName="PLATO_ID" />
+          <ScalarProperty Name="MINUTA_ID" ColumnName="MINUTA_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDEN_COMPRA">
+      <EntityTypeMapping TypeName="Model.ORDEN_COMPRA">
+        <MappingFragment StoreEntitySet="ORDEN_COMPRA">
+          <ScalarProperty Name="CREADOR_ID" ColumnName="CREADOR_ID" />
+          <ScalarProperty Name="EMPRESA_ID" ColumnName="EMPRESA_ID" />
+          <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDEN_PEDIDO_PRODUCTO">
+      <EntityTypeMapping TypeName="Model.ORDEN_PEDIDO_PRODUCTO">
+        <MappingFragment StoreEntitySet="ORDEN_PEDIDO_PRODUCTO">
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ORDEN_PEDIDO_ID" ColumnName="ORDEN_PEDIDO_ID" />
+          <ScalarProperty Name="PRODUCTO_ID" ColumnName="PRODUCTO_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLATO">
+      <EntityTypeMapping TypeName="Model.PLATO">
+        <MappingFragment StoreEntitySet="PLATO">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICIO">
+      <EntityTypeMapping TypeName="Model.SERVICIO">
+        <MappingFragment StoreEntitySet="SERVICIO">
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICIO_FACTURA">
+      <EntityTypeMapping TypeName="Model.SERVICIO_FACTURA">
+        <MappingFragment StoreEntitySet="SERVICIO_FACTURA">
+          <ScalarProperty Name="FACTURA_ID" ColumnName="FACTURA_ID" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="SERVICIO_ID" ColumnName="SERVICIO_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICIO_ODEN_COMPRA">
+      <EntityTypeMapping TypeName="Model.SERVICIO_ODEN_COMPRA">
+        <MappingFragment StoreEntitySet="SERVICIO_ODEN_COMPRA">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="ORDEN_COMPRA_ID" ColumnName="ORDEN_COMPRA_ID" />
+          <ScalarProperty Name="SERVICIO_ID" ColumnName="SERVICIO_ID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

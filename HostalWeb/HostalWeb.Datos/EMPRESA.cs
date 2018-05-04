@@ -18,6 +18,7 @@ namespace HostalWeb.Datos
         public EMPRESA()
         {
             this.TRABAJADOR = new HashSet<TRABAJADOR>();
+            this.FACTURA = new HashSet<FACTURA>();
         }
     
         public int ID { get; set; }
@@ -29,5 +30,7 @@ namespace HostalWeb.Datos
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TRABAJADOR> TRABAJADOR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FACTURA> FACTURA { get; set; }
     }
 }
