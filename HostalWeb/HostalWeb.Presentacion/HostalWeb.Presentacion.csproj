@@ -132,7 +132,6 @@
     <Content Include="styles\menu-style.css" />
     <Content Include="templates\IngresarEmpresa.aspx" />
     <Content Include="templates\MantenedorEmpresa.aspx" />
-    <Content Include="templates\ObtenerListaEmpresas.aspx" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -197,13 +196,6 @@
     </Compile>
     <Compile Include="templates\MantenedorEmpresa.aspx.designer.cs">
       <DependentUpon>MantenedorEmpresa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="templates\ObtenerListaEmpresas.aspx.cs">
-      <DependentUpon>ObtenerListaEmpresas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="templates\ObtenerListaEmpresas.aspx.designer.cs">
-      <DependentUpon>ObtenerListaEmpresas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

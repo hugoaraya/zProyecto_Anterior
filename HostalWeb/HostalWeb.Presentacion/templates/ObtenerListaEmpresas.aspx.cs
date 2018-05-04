@@ -9,7 +9,6 @@ namespace HostalWeb.Presentacion.templates
 {
     public partial class ObtenerListaEmpresas : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {

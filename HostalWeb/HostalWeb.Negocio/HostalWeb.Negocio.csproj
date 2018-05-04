@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Empleado.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Colecciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
